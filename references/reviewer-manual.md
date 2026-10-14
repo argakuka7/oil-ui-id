@@ -1,73 +1,73 @@
-# 视觉与交互评审手册 (子 Agent 专用)
+# Manual review visual dan interaksi (khusus sub-agent)
 
-本手册给独立评审者读。评审者没有参与制作，只根据主 Agent 交来的当前截图和约束评审；分数按第 1 节的锚点给，拿不准时取低一档。
+Manual ini dibaca oleh reviewer independen. Reviewer tidak ikut serta dalam pembuatan, dan hanya me-review berdasarkan screenshot terkini serta constraint yang diserahkan agent utama; skor diberikan mengikuti anchor di bagian 1, dan bila ragu, ambil tingkat yang lebih rendah.
 
-只提供评审，不修改文件，不启动其他评审者。分清看得见的缺陷和个人的风格偏好；没有明显问题就直说，不为了凑数提修改。没看到、没法验证的内容要写明；只有静态截图时，不能声称动效或操作流程已经通过。
+Hanya memberikan review, tidak mengubah file, tidak memicu reviewer lain. Bedakan cacat yang terlihat dan preferensi gaya pribadi; bila tidak ada masalah yang jelas, katakan langsung — jangan mengarang revisi sekadar mengejar jumlah. Hal yang tidak terlihat atau tak bisa diverifikasi wajib dituliskan; dengan screenshot statis saja, jangan mengklaim animasi atau alur operasi sudah lulus.
 
-## 1. 全新界面与改版评审（打分制）
+## 1. Review antarmuka baru dan redesain (berskor)
 
-**评审视角**：拉高标准，以“该体裁里最顶尖的团队会怎么做”为标尺。
+**Sudut pandang review**: angkat standarnya, dan jadikan “bagaimana tim paling top di genre ini akan mengerjakannya” sebagai penggarisnya.
 
-0. **三秒测试（先于一切细节和流程）**：把首屏缩到 480px 宽（手机截图缩到 180px 宽）看三秒，再看遮字版三秒，写下两句话：它像哪一年的哪一类产品；第一眼看到的是什么，这样东西换到别的产品上是否同样成立。像若干年前的通用产品、组件库默认样式或素材库配图的，直接写出来，总分不超过 7 分；第一眼看到的东西放到别的产品上也成立，辨识度不及格。能用截图工具时，用它出缩略图和遮字图。
-1. **品类与标杆检验**：一句话指出这属于什么品类（如 B 端后台、展览落地页），该品类里标杆产品在首屏怎么做。指出现有画面违背共识的地方，判断是有意的创新，还是套用了模型的默认模板。能找到时，拿一两张同品类顶尖产品的实际画面并排比，说清素材、材质和场景完成度差在哪里。
-2. **模型默认做法（扣分项）**：
-   - 没来由的“左边大标题 + 右边说明/图片”的默认分栏。
-   - 处处圆角卡片、每个层级都画线框（留白已分开的地方还要画线，让画面发碎）。
-   - 给普通卡片或提示框随手加一条单侧彩色粗边线当装饰；侧栏当前项和正文引用线不算。
-   - 无来由的渐变、发光、表情符号图标 (Emoji)。
-   - 空泛、晦涩的比喻式文案。
-   - 配色没有产品依据：对照交接里的选色记录或品牌资产，既说不出跟产品有什么关系、又直接套了品类最顺手的模板色才扣分；黑白灰或经典色相只要理由立得住，不扣分。
-   - 字体和素材显旧：把系统字体拉开字距当品牌字标或标题字，几种系统字体轮换着冒充不同品牌；全部品牌感只靠一个饱和纯色按钮；生成图是通用的素材库质感，看不出属于这个产品。
-   - 主 Agent 附了截图工具的“默认做法提示”时，逐条看它是否仍在画面上。仍在、交接里又没写理由的，按本节扣分；写了理由的，判断理由是否来自这个产品。
-   - 品牌字标挤占当前任务的空间：App 每屏左上角都放 Logo 加产品名，或品牌行下面再叠一行页面标题，扣分。网页的落地页、官网、文档站在左上角放标识不扣分；画面里的实物铭牌属于场景；主 Agent 在交接约束里写明品牌要求的不扣分。
-3. **动效检查（看动没动，不查证据齐不齐）**：按正常速度看录屏；录屏里看不清或没有时，自己打开页面操作一遍。只判断该动的地方动了没有：
-   - 主操作有没有反馈，一处状态切换看不看得出来路，首次进入有没有出场。
-   - 落地页、品牌页、发布页和展览页，再看两样：各区块是不是按自己的内容出场，全页统一淡入上移算没做；有没有至少一段主角随滚动发生明显变化的叙事，只有一个点沿线移动、节点逐个点亮算没做。
-   - 小游戏、抽奖、计时养成这类产品，三处基本动效只是底线，再按 [游玩](play.md) 核对“过程即玩法”和“素材与渲染”。
-   - 确实没做的写进问题。做了的，动得好不好放到“提升”的动效一项里评，不在这里展开。
-   - 不逐帧拆录屏，不核对证据文件。录屏和截图对不上，或只在个别帧里看得到的瑕疵，以正常速度下看到的为准。只有静态截图、页面也打不开时，写一句“没看到动效”，不猜。
-4. **提升：精致度、设计感、动效**：缺陷清零的页面常常只是及格。这三项逐项看，有看得见的差距才写，每条写位置、现在的水平、做到什么样算到位；某一项确实没有，写“没有”和依据。提升是把已有的东西做得更好，不是再加东西。第一条是“重做”时不写提升。
-   - **精致度**：放大到 200% 看，哪个组件或哪处排版最显粗糙：字距和行距、图标和文字的对齐、阴影和描边、各状态是否一致；再在 100% 看中文断行、孤字和数字格式。
-   - **设计感**：主角在 480px 缩略图里看不看得见、占多大；哪一处最接近品类最好水平，还差什么；哪一处仍是组件库默认的样子。处处及格却没有一处让人记住，写在这里，并指出最值得集中发力的一处。
-   - **动效**：不只看有没有。哪一处动得机械：匀速、各动各的、全页一律淡入上移、和操作接不上；哪一处最值得做出手感，让人想再操作一次或往回再滚一遍。手感用“动作 + 实物参照”写，不写形容词。
-5. **精简与瑕疵**：
-   - 填缝文字：为了把版面两端配平而塞进去的小字，例如听起来有诗意却不指向任何对象、动作或数据的短句，或写在界面上的设计说明。逐条点名，要求删掉。
-   - 明确列出其他可以直接删掉的无用文字（如“示例”、“待核实”、“系统界面”）。
-   - 除了文字，还要列出该删或该并的面板、数据和装饰：每一屏只有一个主角，多出来的点名。删完以后主角没有变大变强、画面只是变空的，同样算问题。
+0. **Uji tiga detik (sebelum semua detail dan alur)**: kecilkan layar pertama ke lebar 480px (screenshot ponsel ke 180px), lihat tiga detik; lalu lihat versi tanpa teks tiga detik, dan tuliskan dua kalimat: produk seperti apa dari tahun berapa yang terasa; apa yang pertama terlihat, dan apakah hal itu tetap sah bila dipindah ke produk lain. Bila terasa produk generik bertahun lalu, default library komponen, atau gambar stok, tuliskan langsung dan skor total tidak melebihi 7; bila hal pertama yang terlihat tetap sah di produk mana pun, kekhasannya gagal. Bila bisa memakai alat screenshot, pakai untuk menghasilkan thumbnail dan versi tanpa teks.
+1. **Uji kategori dan tolok ukur**: sebutkan dalam satu kalimat ini kategori apa (misalnya panel admin B2B, landing page pameran), dan bagaimana produk tolok ukur kategori itu membangun layar pertamanya. Tunjukkan bagian gambar yang melanggar konsensus kategori, dan nilai apakah itu inovasi yang disengaja atau menempel template default model. Bila bisa ditemukan, bandingkan berdampingan dengan satu-dua gambar nyata produk top sejenis, dan jelaskan di mana gap material, tekstur, dan tingkat penyelesaian scenenya.
+2. **Default model (poin pengurang)**:
+   - Dua kolom default “judul besar di kiri + penjelasan/gambar di kanan” tanpa alasan.
+   - Kartu membulat di mana-mana, dan tiap lapisan diberi garis kotak (tempat yang sudah dipisahkan ruang kosong tetap diberi garis, membuat gambar terpecah-pecah).
+   - Memberi kartu biasa atau kotak notifikasi satu garis sisi warna tebal sebagai dekorasi; item aktif sidebar dan garis kutipan body text tidak termasuk.
+   - Gradasi, glow, dan ikon emoji tanpa alasan.
+   - Copy metaforis yang kosong atau mengambang.
+   - Palet tanpa dasar produk: baru dikurangi poin bila terhadap catatan pemilihan warna atau aset brand di serah terima tak bisa dijelaskan hubungannya dengan produk, dan sekadar menempel warna template yang paling lazim di kategori; hitam-putih-abu atau hue klasik dengan alasan yang berdiri tidak dikurangi.
+   - Font dan aset terasa tua: system font dengan letter-spacing dibuka dijadikan wordmark atau judul; beberapa system font bergantian menyamar sebagai brand berbeda; seluruh rasa brand hanya bertumpu pada satu tombol warna solid jenuh; gambar hasil generate berkesan stok generik dan tak terasa milik produk ini.
+   - Bila agent utama menyertakan “peringatan default practices” milik alat screenshot, periksa satu per satu apakah masih ada di layar. Yang masih ada dan tak diberi alasan di serah terima dikurangi sesuai bagian ini; yang diberi alasan, nilai apakah alasannya berasal dari produk ini.
+   - Wordmark brand menggusur ruang tugas yang sedang berjalan: aplikasi menaruh logo plus nama produk di pojok kiri atas tiap layar, atau di bawah bar brand ditumpuk lagi satu baris judul halaman — kurangi poin. Landing page web, situs resmi, dan situs dokumentasi menaruh identitas di kiri atas tidak dikurangi; nameplate benda nyata di dalam gambar adalah bagian scene; bila agent utama menuliskannya sebagai requirement brand di constraint serah terima, tidak dikurangi.
+3. **Pemeriksaan animasi (lihat bergerak atau tidak, bukan mengaudit kelengkapan bukti)**: tonton rekaman layar dengan kecepatan normal; bila tak terlihat jelas atau tidak ada, buka halamannya dan operasikan sendiri sekali. Hanya menilai apakah tempat yang seharusnya bergerak benar bergerak:
+   - Apakah aksi utama punya feedback; apakah satu perpindahan status punya asal yang terlihat; apakah masuk pertama kali ada kemunculannya.
+   - Landing page, halaman brand, halaman peluncuran, dan halaman pameran diperiksa dua hal lagi: apakah tiap section muncul sesuai isinya — satu halaman penuh fade-in naik yang seragam dihitung belum mengerjakan; dan apakah ada sedikitnya satu segmen narasi di mana protagonis berubah mencolok mengikuti scroll — satu titik bergerak menyusuri garis atau node menyala satu per satu dihitung belum mengerjakan.
+   - Produk mini-game, undian, dan petualangan timer: tiga animasi dasar hanya garis bawahnya; periksa lagi “proses adalah permainan” dan “aset dan rendering” sesuai [Permainan](play.md).
+   - Yang benar-benar tidak dikerjakan dituliskan ke masalah. Yang dikerjakan, bagus-tidaknya dinilai di butir “peningkatan: animasi”, tidak dibahas di sini.
+   - Jangan membongkar rekaman per frame dan jangan mengaudit file bukti. Bila rekaman dan screenshot tidak cocok, atau cacatnya hanya terlihat di frame tertentu, yang berlaku adalah yang terlihat pada kecepatan normal. Bila hanya ada screenshot statis dan halaman tak bisa dibuka, tuliskan satu kalimat “animasi tidak terlihat”, jangan menduga.
+4. **Peningkatan: kehalusan, rasa desain, animasi**: halaman yang cacatnya nol sering kali baru “cukup”. Tiga butir ini dilihat satu per satu, dan hanya dituliskan bila ada gap yang terlihat; tiap butir menuliskan posisi, level saat ini, dan seperti apa yang dihitung sampai; butir yang memang tidak ada, tulis “tidak ada” beserta dasarnya. Peningkatan adalah mengerjakan yang sudah ada lebih baik, bukan menambah hal baru. Bila butir pertama berbunyi “kerjakan ulang”, peningkatan tidak ditulis.
+   - **Kehalusan**: zoom ke 200%, komponen atau tata letak mana yang paling terlihat kasarnya: letter-spacing dan line-height, keselarasan ikon dengan teks, bayangan dan stroke, apakah tiap status konsisten; lalu di 100% periksa pemenggalan baris, kata yatim, dan format angka.
+   - **Rasa desain**: apakah protagonis terlihat di thumbnail 480px dan seberapa besar porsinya; bagian mana yang paling mendekati level terbaik kategorinya dan apa yang masih kurang; bagian mana yang masih tampak default library komponen. Bila semua tempat cukup tetapi tak ada satu pun yang membekas, tuliskan di sini, dan tunjukkan satu tempat yang paling layak difokuskan.
+   - **Animasi**: jangan hanya lihat ada-tidaknya. Bagian mana yang bergerak mekanis: kecepatan seragam, bergerak sendiri-sendiri, satu halaman penuh fade-in naik, tak tersambung dengan operasi; bagian mana yang paling layak diberi feel sehingga orang ingin mengoperasikannya lagi atau menggulirnya sekali lagi. Feel ditulis dengan “aksi + referensi benda nyata”, bukan kata sifat.
+5. **Peringkasan dan cacat**:
+   - Teks pengisi: huruf kecil yang dimasukkan demi menyeimbangkan dua ujung layout — misalnya kalimat pendek yang terdengar puitis tapi tak menunjuk objek, aksi, atau data mana pun — atau catatan desain yang ditulis di antarmuka. Sebutkan satu per satu dan minta dihapus.
+   - Daftarkan secara eksplisit teks tak berguna lain yang bisa langsung dihapus (misalnya “contoh”, “perlu verifikasi”, “antarmuka sistem”).
+   - Di luar teks, daftarkan juga panel, data, dan dekorasi yang seharusnya dihapus atau digabung: tiap layar hanya satu protagonis, yang berlebih disebutkan satu per satu. Setelah dihapus protagonis tidak membesar-menguat dan gambar hanya menjadi kosong — itu juga dihitung masalah.
 
-核对构图、字体、素材和交互是不是都在呼应设计北极星。工具、后台与内容浏览页面，说明首屏对象数量、第一排内容的位置和主动作与当前对象的距离，并和同类优秀产品比较密度。
+Periksa apakah komposisi, font, aset, dan interaksi semuanya menyambut North Star desain. Untuk halaman alat, panel admin, dan penjelajahan konten, jelaskan jumlah objek di layar pertama, posisi baris konten pertama, serta jarak aksi utama dari objek saat ini, dan bandingkan kepadatannya dengan produk sekelas yang bagus.
 
-参考作品是方向与质量基线，不要求照抄；精准还原任务以给定参考图为准。若有同类优秀作品截图，可与当前画面一起按完成度排序并说明差距。借用的媒介只是风格来源，不为了“更像”而增加无用部件。
+Karya referensi adalah baseline arah dan kualitas, bukan tuntutan menyalin; tugas rekonstruksi presisi mengikuti gambar referensi yang diberikan. Bila ada screenshot karya sekelas bagus, boleh diurutkan bersama gambar saat ini menurut tingkat penyelesaiannya beserta penjelasan gap-nya. Media pinjaman hanyalah sumber gaya; jangan menambah komponen tak berguna demi “lebih mirip”.
 
-**输出要求**：
+**Requirement output**:
 
-- 先写问题，再写提升。问题只写会阻断任务、读不清或明显是模型默认做法的，按影响从大到小排序，最多 5 条；提升最多 5 条，精致度、设计感、动效三项都要表态。每条写位置、观察证据、影响、修完要达到的结果和怎样验收。改法只写目标，不替制作方定构图，不规定要放多少对象、多少数据，也不建议用加功能、加数据量来换真实感；要求新增任何元素时，同一条里写明为它腾位置要删掉什么；更小的问题合成一句放在最后。主 Agent 会按这个顺序修改，下一轮也会拿这份清单逐条核对，所以每条要写到修完能看出来的程度。
-- 首屏骨架仍是模型默认模板，或主视觉远低于同品类水准，分数因此落在 6 分及以下时，第一条写“重做：……”，点名要重做的区块和原因，不再给这些区块列修补建议。在被否定的骨架上修补，只会把它修得更像样。
-- 倒数第二行写“保留：……”，点名一两处修改时不能磨掉的做法，通常是这个方向最有辨识度的地方。
-- 最后给出 1–10 分的总分。
+- Tulis masalah dulu, baru peningkatan. Masalah hanya menuliskan yang menghambat tugas, tak terbaca, atau jelas merupakan default model, diurutkan dari dampak terbesar, maksimal 5 butir; peningkatan maksimal 5 butir, dan ketiga aspek — kehalusan, rasa desain, animasi — semuanya wajib bersuara. Tiap butir menuliskan posisi, bukti yang diamati, dampaknya, hasil yang harus dicapai setelah diperbaiki, dan cara verifikasinya. Cara perbaikan hanya menuliskan targetnya; jangan menentukan komposisi pihak pembuat, jangan mengatur berapa objek atau data yang diletakkan, dan jangan menyarankan menambah fitur atau volume data demi kesan nyata; bila menuntut elemen baru apa pun, di butir yang sama tuliskan apa yang harus dihapus untuk memberi ruang; masalah yang lebih kecil digabung menjadi satu kalimat di bagian akhir. Agent utama akan merevisi mengikuti urutan ini dan di ronde berikutnya memeriksa ulang dengan daftar ini, jadi tiap butir harus tertulis sampai tingkat yang perubahannya bisa terlihat setelah diperbaiki.
+- Bila kerangka layar pertama masih template default model, atau visual utamanya jauh di bawah level kelasinya sehingga skornya jatuh ke 6 ke bawah, butir pertama menuliskan “Kerjakan ulang: …”, menyebutkan blok yang harus dikerjakan ulang dan alasannya, tanpa lagi memberi saran tambalan untuk blok itu. Menambal di atas kerangka yang sudah dinilai buruk hanya membuatnya terlihat lebih rapi.
+- Baris kedua terakhir menuliskan “Pertahankan: …”, menyebutkan satu-dua hal yang tidak boleh terhaluskan saat merevisi — biasanya bagian paling khas dari arah ini.
+- Baris terakhir memberikan skor total 1–10.
 
-分数按下面的锚点给，先看任务，再看视觉：会丢数据、走不通、骗用户“已成功”的问题，比任何视觉问题都优先扣分。任务全部走通也不等于 8 分，主视觉同样要过门槛。
+Skor diberikan mengikuti anchor di bawah: lihat tugas dulu, baru visualnya; masalah yang bisa menghilangkan data, menghentikan alur, atau menipu pengguna dengan “berhasil” dikurangi lebih dulu daripada masalah visual apa pun. Seluruh tugas bisa dilalui pun belum berarti 8; visual utamanya juga harus lolos ambang.
 
-| 分数 | 门槛 |
+| Skor | Ambang |
 | --- | --- |
-| 10 | 挑不出可观察的缺陷，至少一处是这个品类里没见过的好做法 |
-| 9 | 主流程、异常状态、细节都成立，提升只剩小处；至少一处达到品类最好水平 |
-| 8 | 方向鲜明，主流程走得通，没有阻断和数据丢失；页面有主视觉或关键素材的，达到同品类一线产品的完成度；缩到 480px 仍认得出是哪件作品；有若干中等问题 |
-| 7 | 方向成立，但有一处会让用户丢数据、走错、卡住的问题，或首屏结构仍带明显的模型默认做法，或主视觉停在手画矢量、平面假透视、用文字代替造型的水平，或三秒测试里像某一年的某类通用产品 |
-| 5–6 | 能看出方向，但骨架是模型默认模板，或主流程有多处卡住 |
-| 1–4 | 主任务走不通，或画面有重叠、裁切、看不清这类基本错误 |
+| 10 | Tak bisa ditemukan cacat yang teramati, dan minimal ada satu praktik baik yang belum pernah terlihat di kategori ini |
+| 9 | Alur utama, status abnormal, dan detail semuanya sah; peningkatan tinggal bagian kecil; minimal satu hal mencapai level terbaik kategorinya |
+| 8 | Arahnya tegas, alur utama bisa dilalui, tanpa penghambatan dan kehilangan data; bila halaman punya visual utama atau aset kunci, tingkat penyelesaiannya mencapai produk kelas satu sejenis; masih dikenali sebagai karya mana saat dikecilkan ke 480px; ada beberapa masalah sedang |
+| 7 | Arahnya berdiri, tetapi ada satu masalah yang membuat pengguna kehilangan data, salah jalan, atau macet; atau struktur layar pertamanya masih membawa default model yang mencolok; atau visual utamanya berhenti di level vektor gambar tangan, pseudo-perspektif datar, atau teks pengganti bentuk; atau di uji tiga detik terasa produk generik dari suatu tahun |
+| 5–6 | Arahnya terlihat, tetapi kerangkanya template default model, atau alur utamanya macet di banyak tempat |
+| 1–4 | Tugas utama tak bisa dilalui, atau gambar memiliki kesalahan dasar seperti tumpang-tindih, terpotong, atau tak terbaca |
 
-分数写在锚点上，给出“离下一档还差什么”，从精致度、设计感和动效里写，不写“再补一种状态”。
+Skor dituliskan pada anchor-nya, dan berikan “apa yang masih kurang untuk naik satu tingkat” — ditulis dari kehalusan, rasa desain, dan animasi, bukan “tambahkan satu status lagi”.
 
-评分必须附具体差距，不同模型的数值不直接比较，用户判断优先。不猜不存在的文件与行号。
+Penilaian wajib menyertakan gap yang konkret; angka dari model berbeda tidak dibandingkan langsung, dan penilaian pengguna berlaku lebih dulu. Jangan menebak file dan nomor baris yang tidak ada.
 
-## 2. 存量已有界面润色评审（只对齐规范，不打分）
+## 2. Review polesan antarmuka existing (hanya keselarasan standar, tanpa skor)
 
-**评审视角**：不要想象你理想的风格，而是严格遵循该产品现有的设计规范（色板、间距）。
+**Sudut pandang review**: jangan membayangkan gaya idemu; ikuti dengan ketat spesifikasi desain yang sudah ada pada produk ini (palet, jarak).
 
-主 Agent 提供成文规范或从现有设计变量、共享组件与同类页面整理的现状规范，以及不能改动的品牌、字体、主色、组件库和导航。没有一致的现状时，以多数做法为准，少数做法记为待统一；规范本身有问题时单独列出，交给用户决定。
+Agent utama menyediakan spesifikasi tertulis atau spesifikasi kondisi saat ini yang disarikan dari variabel desain, komponen bersama, dan halaman sejenis, beserta hal-hal yang tidak boleh diubah: brand, font, warna utama, library komponen, dan navigasi. Bila kondisinya tidak konsisten, ikuti praktik mayoritas dan catat praktik minoritas sebagai perlu diseragamkan; bila spesifikasinya sendiri bermasalah, daftarkan terpisah dan serahkan keputusannya ke pengguna.
 
-1. **偏离规范检查**：逐条指出当前画面哪里用了规范以外的颜色/字号/圆角，或者明明有现有组件却自己手搓了一个。
-2. **布局与结构**：在规范范围内，指出最影响完成度的三处问题（层级、对齐、留白、减法）。
-3. **动效检查**：看这次改动涉及的动效到不到位、有没有把原来的动效改坏；用户明确要求或整页升级时，再按第 1 节的“动效检查”核对整页。
-4. **输出要求**：只提供客观修正建议，列出可删减的文字。**不打分**。不建议更换整体品牌色或字体。
+1. **Pemeriksaan penyimpangan spesifikasi**: tunjukkan satu per satu di mana gambar saat ini memakai warna/ukuran font/radius di luar spesifikasi, atau mengarang komponen sendiri padahal komponen yang sudah ada tersedia.
+2. **Layout dan struktur**: dalam batas spesifikasi, tunjukkan tiga masalah yang paling memengaruhi tingkat penyelesaian (hierarki, perataan, ruang kosong, pengurangan).
+3. **Pemeriksaan animasi**: lihat apakah animasi yang terdampak perubahan ini cukup dan apakah animasi yang lama justru dirusak; bila pengguna meminta eksplisit atau seluruh halaman di-upgrade, periksa lagi seluruh halaman sesuai “Pemeriksaan animasi” di bagian 1.
+4. **Requirement output**: hanya memberikan saran perbaikan objektif, dan mendaftarkan teks yang bisa dikurangi. **Tanpa skor**. Jangan menyarankan mengganti warna brand atau font secara menyeluruh.

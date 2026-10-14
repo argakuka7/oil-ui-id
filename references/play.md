@@ -1,18 +1,18 @@
-# 游玩与强手感操控
+# Permainan dan kontrol dengan feel kuat
 
-小游戏、抽奖、扭蛋、计时养成，以及旋钮、拉杆、摇杆这类强手感操控，过程本身就是产品：用户来看转轮减速、硬币被推下、娃娃差点滑落。这类界面先读本文，其余规范照常适用。
+Mini-game, undian, gachapon, petualangan berbasis timer, serta kontrol dengan feel kuat seperti knob, tuas, dan joystick — prosesnya sendiri adalah produknya: pengguna datang menonton roda melambat, koin terdorong jatuh, atau boneka nyaris terjatuh. Antarmuka seperti ini membaca dokumen ini dulu; spesifikasi lainnya tetap berlaku seperti biasa.
 
-## 过程即玩法
+## Proses adalah permainan
 
-- 演出可以比普通界面切换长，例如三个转轮依次停下共 2 秒左右，不按“超过 500ms 就会让人等”截短。
-- 扣了费、出了结果就先存好：刷新不丢，不重复扣，奖励只结算一次。在哪一刻存，按玩法定。
-- 演出期间写清哪些操作锁住；连按不能重复扣费。
-- 旋钮、拉杆这类手势从按下的位置开始跟手，过了生效点才算一次，没到就松手不扣。
-- 减少动态效果时，玩法照常算出结果，只是画面直接到位；不能把玩法本身停住。
-- 手感看录屏判断：减速是否连续、停下时有没有顿挫、收益从哪里飞到哪里。三帧只能说明状态。
+- Pertunjukan boleh lebih panjang daripada pergantian antarmuka biasa, misalnya tiga roda berhenti bergiliran total sekitar 2 detik; tidak dipangkas mengikuti “lebih dari 500ms membuat orang menunggu”.
+- Setelah biaya terpotong dan hasil keluar, simpan dulu: refresh tidak menghilangkannya, biaya tidak terpotong dua kali, dan reward hanya dicairkan satu kali. Pada momen apa disimpan, ditentukan oleh mekanik permainannya.
+- Selama pertunjukan, tuliskan jelas operasi mana yang terkunci; tekanan beruntun tidak boleh memotong biaya dua kali.
+- Gesture seperti knob dan tuas mengikuti tangan mulai dari posisi ditekan; melewati titik efektif baru dihitung sekali, dan dilepas sebelum sampai tidak dipotong biayanya.
+- Saat reduce motion, permainan tetap menghitung hasilnya seperti biasa; hanya gambarnya yang langsung di posisi akhir. Jangan menghentikan permainan itu sendiri.
+- Feel dinilai lewat rekaman layar: apakah pelanannya kontinu, apakah berhentinya tersendat, dan dari mana ke mana reward-nya terbang. Tiga frame hanya bisa membuktikan status.
 
-## 素材与渲染
+## Aset dan rendering
 
-- 角色、藏品、道具、符号和材质贴图是这类界面的主角，默认用生图做，动手前先列素材清单。手写 SVG 和 CSS 只画界面图标和简单图形，拿它们画角色和道具，会落到图标包的质感。成套出图的做法见 [素材](media.md) 的“成套素材”；宿主没有生图能力时，按同一份文件交素材简报，不拿手画的图形冒充成品。
-- 乐趣来自空间和物理时，用实时 3D 渲染场景，例如堆叠、碰撞、推挤、摆动，或透明、金属材质；生成的图当贴图和精灵用，做法见 [素材](media.md) 的“实时 3D”。树木生长、天气这类自然变化，用成套生成图通常更好。
-- 素材放进场景后再看一次：受光和场景一致，有接触阴影，侧面、背面和翻落时不露出纸片的边。图生成了，不等于放进场景就可信。
+- Karakter, koleksi, properti, simbol, dan texture material adalah protagonis antarmuka jenis ini, dan default-nya dibuat dengan gambar hasil generate; sebelum mulai, susun dulu daftar asetnya. SVG gambar tangan dan CSS hanya menggambar ikon antarmuka dan bentuk sederhana — memakai keduanya untuk karakter dan properti akan jatuh ke kesan paket ikon. Cara menghasilkan aset set lihat “Aset set” di [Aset](media.md); bila host tak punya kemampuan generate, serahkan brief aset dengan file yang sama dan jangan menyamarkan gambar tangan sebagai hasil akhir.
+- Bila keseruannya berasal dari ruang dan fisika, render scene-nya dengan 3D real-time — misalnya menumpuk, bertabrakan, mendorong, berayun, atau material transparan dan logam; gambar hasil generate dipakai sebagai texture dan sprite, caranya lihat “3D real-time” di [Aset](media.md). Perubahan natural seperti pohon tumbuh atau cuaca biasanya lebih baik memakai rangkaian gambar hasil generate.
+- Setelah aset masuk scene, lihat sekali lagi: pencahayaannya konsisten dengan scene, ada contact shadow, dan saat bersandar, terbalik, atau jatuh tidak memperlihatkan tepi kertasnya. Gambar sudah jadi bukan berarti langsung terpercaya di dalam scene.

@@ -1,201 +1,199 @@
-# 设计方向
+# Arah Desain
 
-## 目录导航
+## Navigasi isi
 
-- [认品类，拆标杆](#认品类拆标杆)
-- [先定调性，再求差异](#先定调性再求差异)（含 [模糊词翻译](#模糊词必须翻译)）
-- [用生成引擎起方向](#用生成引擎起方向)
-- [定色彩](#定色彩)
-- [定首屏骨架](#定首屏与工作区骨架)（[说服型骨架](direction-persuasion.md)）
-- [方向卡](#方向卡)
-- [差异检验](#差异检验)
-- [北极星与呼应](#北极星与呼应)
-- [让人记住的一刻](#让人记住的一刻)
-- [参考怎样转为设计决定](#参考怎样转为设计决定)
-- [小样、选择与品味](#小样选择与品味)
+- [Kenali kategori, bongkar tolok ukur](#kenali-kategori-bongkar-tolok-ukur)
+- [Tetapkan tone dulu, baru cari perbedaan](#tetapkan-tone-dulu-baru-cari-perbedaan) (termasuk [Kata samar wajib diterjemahkan](#kata-samar-wajib-diterjemahkan))
+- [Bangun arah dari mesin generatif](#bangun-arah-dari-mesin-generatif)
+- [Tetapkan warna](#tetapkan-warna)
+- [Tetapkan kerangka layar pertama](#tetapkan-kerangka-layar-pertama-dan-workspace) ([Kerangka persuasif](direction-persuasion.md))
+- [Kartu arah](#kartu-arah)
+- [Uji pembeda](#uji-pembeda)
+- [North Star dan keterhubungan](#north-star-dan-keterhubungan)
+- [Momen yang membekas](#momen-yang-membekas)
+- [Cara referensi menjadi keputusan desain](#cara-referensi-menjadi-keputusan-desain)
+- [Mockup, pilihan, dan selera](#mockup-pilihan-dan-selera)
 
-方向的目标是“这个品类里最好的团队会这样做，而且做出了这个产品自己的样子”；只是“和模型的默认不一样”还不够。高级感来自一套语言的完整和细节，不来自题材少见。
+Target arah adalah “tim terbaik di kategori ini akan mengerjakannya seperti ini, dan hasilnya tetap berwajah produk ini sendiri”; sekadar “berbeda dari default model” belum cukup. Kesan premium lahir dari kelengkapan dan detail satu bahasa desain, bukan dari tema yang jarang dipakai.
 
-方向里的题材、材质、场景、字体和配色，每次都从当前产品的内容、受众和使用场合里推出；想到的方向和常见的“网红风格”撞上时，要能说出来自这个产品的理由，否则重选。
+Tema, material, skenario, font, dan palet warna dalam sebuah arah selalu diturunkan dari konten, audiens, dan konteks pemakaian produk saat ini; bila arah yang terpikir bertabrakan dengan “gaya viral” yang umum, harus bisa disebutkan alasannya dari produk ini, jika tidak, pilih ulang.
 
-## 认品类，拆标杆
+## Kenali kategori, bongkar tolok ukur
 
-动手前先认清这是什么品类的产品，再看这个品类里做得最好的产品是怎么做的。这一步给出地板：用户已经习惯的结构，以及一线产品的完成度。后面的调性和生成引擎，是在这块地板之上找这个产品自己的东西。
+Sebelum mulai, kenali dulu ini produk kategori apa, lalu lihat bagaimana produk terbaik di kategori itu mengerjakannya. Langkah ini memberi lantai dasar: struktur yang sudah diharapkan pengguna, dan tingkat penyelesaian produk kelas satu. Tone dan mesin generatif setelahnya mencari kekhasan produk ini di atas lantai dasar itu.
 
-按三步做，每一步都写下来：
+Kerjakan dalam tiga langkah, dan tuliskan setiap langkah:
 
-1. **说出品类和标杆。** 这是什么品类的产品，例如“语言学习 App”“组件库官网”“项目管理工具”“作品画廊”。这个品类里风格最鲜明的两三家是谁。选风格最鲜明的，不一定是最有名的。
-2. **拿到真实画面，再拆其中一家。** 用宿主的浏览器或搜索，取到这两三家标杆的首屏和一个关键控件的真实画面，存进任务目录，对着图拆，不凭记忆写：记忆里的产品常常是它几年前的样子。某一家的页面打不开或者是 404，换一个地址再试一次，还不行就换一家；拿到两家的真实画面就够，打不开的页面不算参考。拆成 6–10 条看得见的要素，每条写两件事：它是什么样，它为什么这样做。按这几层去拆：控件的形状和手感、字体、颜色、图标和插画、状态与反馈、动效、文案语气、首屏放了什么。要拆到能照着做的程度：写出形状、尺寸关系、状态怎样变化，以及它服务的使用场合。拆出来只有“干净、留白、一种强调色”，说明没拆到位，换一家重拆。确实拿不到画面时，在方向卡“标杆与取舍”开头写明“未看图，凭记忆”，并把字体、色彩、主视觉三栏标为待验证：这三栏最容易凭记忆写成模型默认。
-3. **决定留什么、换什么。** 拿本产品的受众、内容和使用场合逐条对照：理由同样成立的留下，理由不成立的换掉，换掉的部分由后面的生成引擎给出替代。结果写进方向卡的“标杆与取舍”。
+1. **Sebutkan kategori dan tolok ukurnya.** Ini produk kategori apa, misalnya “aplikasi belajar bahasa”, “situs component library”, “alat manajemen proyek”, “galeri karya”. Siapa dua-tiga yang bergaya paling menonjol di kategori ini. Pilih yang gayanya paling menonjol — belum tentu yang paling terkenal.
+2. **Dapatkan tampilan nyata, lalu bongkar salah satunya.** Pakai browser atau pencarian milik host untuk mengambil tampilan nyata layar pertama dan satu kontrol kunci dari dua-tiga tolok ukur itu; simpan ke direktori tugas dan bongkar sambil melihat gambar, jangan menulis dari ingatan: produk dalam ingatan sering kali adalah wujudnya bertahun-tahun lalu. Bila halaman salah satunya tidak bisa dibuka atau 404, coba sekali lagi dengan alamat lain; bila tetap gagal, ganti ke yang lain. Dua tampilan nyata sudah cukup; halaman yang tak terbuka tidak dihitung sebagai referensi. Bongkar menjadi 6–10 elemen yang terlihat, dan tiap butir menuliskan dua hal: seperti apa wujudnya, dan mengapa ia dibuat begitu. Bongkar menurut lapisan-lapisan ini: bentuk dan feel kontrol, font, warna, ikon dan ilustrasi, status dan feedback, animasi, nada copy, serta apa saja yang diletakkan di layar pertama. Bongkar sampai tingkat yang bisa ditiru: tuliskan bentuk, hubungan ukuran, cara status berubah, dan konteks pemakaian yang dilayaninya. Bila hasil bongkaran hanya “bersih, ruang kosong, satu warna aksen”, berarti bongkarannya belum sampai; ganti ke yang lain dan bongkar ulang. Bila benar-benar tak bisa mendapatkan tampilan, tuliskan di awal baris “tolok ukur dan trade-off” kartu arah: “belum melihat gambar, dari ingatan”, lalu tandai tiga kolom — font, warna, visual utama — sebagai perlu verifikasi: tiga kolom inilah yang paling mudah tertulis sebagai default model karena disarikan dari ingatan.
+3. **Putuskan apa yang dipertahankan dan apa yang diganti.** Cocokkan satu per satu dengan audiens, konten, dan konteks pemakaian produk ini: yang alasannya tetap berlaku dipertahankan, yang alasannya tidak berlaku diganti, dan bagian yang diganti diberi pengganti oleh mesin generatif setelahnya. Hasilnya ditulis ke bagian “tolok ukur dan trade-off” kartu arah.
 
-拆的时候分清三样东西：
+Saat membongkar, bedakan tiga hal ini:
 
-- **基线**：用户已经期待的结构，例如画廊里作品先行、筛选在顶部，商店里购物车在右上角。沿用它，用户不用重新学。
-- **套路**：这个品类人人都在用的默认版式。一轮方向里至少一个要打破它，见“差异检验”。
-- **撞脸**：字体、配色、主视觉和图标都和某个标杆一样，只换了名字。任何方向都不允许。
+- **Baseline**: struktur yang sudah diharapkan pengguna, misalnya karya tampil duluan di galeri dan filter di bagian atas, atau keranjang di pojok kanan atas pada toko. Ikuti saja, pengguna tidak perlu belajar ulang.
+- **Formula bawaan**: layout default yang dipakai semua orang di kategori ini. Minimal satu arah dalam satu ronde harus memecahkannya, lihat “uji pembeda”.
+- **Tampak kembar**: font, palet, visual utama, dan ikon semuanya sama dengan suatu tolok ukur, hanya namanya yang diganti. Tidak diizinkan pada arah mana pun.
 
-## 先定调性，再求差异
+## Tetapkan tone dulu, baru cari perbedaan
 
-从产品的题材、受众、品牌语气和使用场合推出调性。用五个刻度描述，每个刻度都写出依据：
+Turunkan tone dari tema produk, audiens, nada brand, dan konteks pemakaiannya. Gambarkan dengan lima skala, dan tuliskan dasarnya untuk tiap skala:
 
-| 刻度 | 两端 | 在画面上看什么 |
+| Skala | Dua ujung | Yang dilihat di layar |
 | --- | --- | --- |
-| 能量 | 安静 ↔ 喧闹 | 饱和度、对比、元素是否碰撞 |
-| 完成度 | 粗粝 ↔ 精致 | 边缘处理、颗粒与噪点、对齐是否严格 |
-| 密度 | 疏 ↔ 密 | 留白尺度、叠层、网格纪律 |
-| 分量 | 轻 ↔ 重 | 字重、色块面积、阴影硬度 |
-| 严肃度 | 活泼 ↔ 庄重 | 圆角、插画语言、动效幅度 |
+| Energi | Tenang ↔ Riuh | Saturasi, kontras, apakah elemen saling bertabrakan |
+| Tingkat penyelesaian | Kasar ↔ Halus | Perlakuan tepi, grain dan noise, seberapa ketat perataannya |
+| Kepadatan | Renggang ↔ Padat | Skala ruang kosong, lapisan bertumpuk, disiplin grid |
+| Bobot | Ringan ↔ Berat | Weight font, luas blok warna, kekerasan bayangan |
+| Keseriusan | Ceria ↔ Khidmat | Radius sudut, bahasa ilustrasi, amplitudo animasi |
 
-取值写成“这个产品是什么 → 五个刻度各取哪一端”，依据来自它的受众、内容和使用场合。刻度两端的任何组合都可以完全成立，失败的是没有依据的默认：
+Tulis nilai sebagai “produk ini apa → ujung mana yang dipilih tiap skala”, dengan dasar dari audiens, konten, dan konteks pemakaiannya. Kombinasi apa pun di kedua ujung skala bisa sepenuhnya sah; yang gagal adalah default tanpa dasar:
 
-- 证据指向喧闹粗粝，交付的却是米色卡片、柔和阴影和大留白。这是最常见的失败，设计被磨回了模型默认的“安静高级”。
-- 反过来，为了显得有趣，给一个本该安静的产品硬加颗粒、撕纸边和粗边框。
+- Bukti menunjuk ke riuh dan kasar, tetapi yang diserahkan justru kartu krem, bayangan lembut, dan ruang kosong luas. Ini kegagalan paling umum: desain tergiling kembali ke “tenang premium” default model.
+- Sebaliknya, demi terlihat menarik, memaksakan grain, tepi kertas sobek, dan border tebal pada produk yang seharusnya tenang.
 
-证据已经锁定调性时，所有候选都留在这个调性里，在构图、色彩身份和主视觉上拉开差异。不要为了“平衡”放进一个安静极简的保底方案。只有证据确实模糊时，才让候选分布在不同调性上。
+Saat bukti sudah mengunci tone, semua kandidat tinggal di dalam tone itu, dan perbedaan dijauhkan pada komposisi, identitas warna, dan visual utama. Jangan menyelipkan satu opsi aman minimalis-tenang demi “keseimbangan”. Hanya bila bukti memang ambigu, kandidat boleh tersebar di beberapa tone.
 
-### 模糊词必须翻译
+### Kata samar wajib diterjemahkan
 
-“高级、精致、克制、史诗、有文学感、简洁”不能当作设计理由。用户或你自己说出这类词时，先翻译成可观察的决定：
+“Premium, halus, restraint, epik, terasa literer, minimalis” tidak boleh dipakai sebagai alasan desain. Saat pengguna — atau dirimu sendiri — mengucapkan kata-kata seperti itu, terjemahkan dulu menjadi keputusan yang bisa diamati:
 
-| 模糊词 | 翻译成什么 |
+| Kata samar | Diterjemahkan menjadi apa |
 | --- | --- |
-| 高级 | 先说清是哪一种高级，再决定字体的对比、分隔的方式、间距的尺度和色相的数量。只说高级什么也没决定 |
-| 精致 | 公差：字距怎么调、对齐到几像素的网格、阴影最多几级、色相最多几种 |
-| 克制 | 饱和度预算，例如强调色不超过画面 10%；动效幅度上限；色相数量上限 |
-| 史诗 | 尺度：展示字多大、主图占多少面积、明暗对比多强 |
-| 文学感 | 字族的性格、行长、行高和配色，各取什么值 |
-| 粗糙 | 用哪些手段，各用到什么程度，例如错位多少像素、旋转多少度 |
-| 简洁 | 密度档位，以及删掉什么、为什么删。简洁是结果，不是指令 |
+| Premium | Perjelas dulu premium yang mana, baru putuskan kontras font, cara pemisahan, skala jarak, dan jumlah hue. Kata “premium” saja tidak memutuskan apa pun |
+| Halus (refined) | Toleransi: bagaimana letter-spacing disetel, grid berapa piksel untuk perataan, maksimal berapa tingkat bayangan, maksimal berapa jenis hue |
+| Restraint | Anggaran saturasi, misalnya warna aksen tidak melebihi 10% layar; batas amplitudo animasi; batas jumlah hue |
+| Epik | Skala: seberapa besar huruf display, seberapa luas gambar utama, seberapa kuat kontras terang-gelap |
+| Terasa literer | Karakter font family, panjang baris, line-height, dan palet — nilai mana yang dipilih masing-masing |
+| Kasar (raw) | Sarana apa yang dipakai dan seberapa jauh, misalnya bergeser berapa piksel, diputar berapa derajat |
+| Minimalis | Tingkat kepadatan, serta apa yang dihapus dan mengapa. Minimalis adalah hasil, bukan instruksi |
 
-翻译不出可观察决定的词，从理由里删掉。
+Kata yang tidak bisa diterjemahkan menjadi keputusan yang teramati, hapus dari alasan.
 
-动效与交互上的模糊词同样必须翻译为具体模式：
+Kata samar pada animasi dan interaksi juga wajib diterjemahkan menjadi pola konkret:
 
-| 动效模糊词 | 翻译成什么 |
+| Kata samar animasi | Diterjemahkan menjadi apa |
 | --- | --- |
-| 滚的时候动起来 | 先分清是滑动触发还是滑动驱动，见 [滚动叙事](scroll-narrative.md) 的“滚动交互的两种模式”；未明确时按单向一次性处理 |
-| 切页面丝滑一点 | 选定转场模式：遮罩式、交叠式还是共享元素，取舍和时长见 [动效](motion.md) 的“整页转场的稳定性取舍” |
-| 背景有立体感 | **分层视差**：前后景的速度差和哪些层不做视差，按 [滚动叙事](scroll-narrative.md) 的“视差与一镜到底” |
-| 首屏要有冲击力 | 明确首屏单一主角（大字排版、一件实物、核心 3D 或视频），不堆砌次要修饰；进场时长见 [动效](motion.md) 的“时长和幅度” |
+| “Bergerak saat di-scroll” | Bedakan dulu scroll-triggered atau scroll-driven, lihat “Dua mode interaksi scroll” di [Narasi Scroll](scroll-narrative.md); bila tidak disebutkan, perlakukan sebagai satu arah sekali jalan |
+| “Pindah halaman lebih mulus” | Pilih pola transisi: curtain, overlapping, atau shared element; trade-off dan durasinya lihat “Trade-off stabilitas transisi satu halaman penuh” di [Animasi](motion.md) |
+| “Latar terasa tiga dimensi” | **Paralaks berlapis**: beda kecepatan latar depan-belakang dan lapisan mana yang tidak diberi paralaks, ikuti “Paralaks dan one-shot” di [Narasi Scroll](scroll-narrative.md) |
+| “Layar pertama harus berdampak” | Tetapkan satu protagonis tunggal layar pertama (tipografi besar, satu benda nyata, 3D inti, atau video) tanpa menumpuk ornamen sekunder; durasi masuk lihat “Durasi dan amplitudo” di [Animasi](motion.md) |
 
-## 用生成引擎起方向
+## Bangun arah dari mesin generatif
 
-每个方向都从一个具体的引擎出发，而不是从形容词出发，不同方向最好用不同的引擎。引擎的内容来自这个产品的证据：受众、内容、使用场合和品牌已有的资产。
+Setiap arah berangkat dari satu mesin yang konkret, bukan dari kata sifat, dan arah-arah yang berbeda sebaiknya memakai mesin yang berbeda. Isi mesin berasal dari bukti produk ini: audiens, konten, konteks pemakaian, dan aset brand yang sudah ada.
 
-- **材质 × 环境**：一种材质放在一个具体的环境里。由它推出光照、深度、边缘的处理和动效的阻尼。
-- **一个具体场景**：一个有时间、地点和光线的场景。由场景里的光线、声音、材料和节奏推出质感和动效速度。适合情绪型工具。
-- **角色原型**：给产品一个具体的性格，让性格决定字体和动作。
-- **一场设计运动或文化语法**：选一个和产品的题材、受众或地域有真实联系的设计运动或视觉传统，借用它的语法，而不是贴它的图案。
-- **其他领域的整套表现形式**：把另一个领域的媒介或器物的表达方式借过来。只借它最有辨识度的一两个手法，页面本身仍是原来的体裁；不把那个媒介的部件一件件搬来，那会变成道具堆砌。
-- **有意打破常规**：激进的非对称版式、不和谐的配色与字体、让人不安的留白，但整体仍然好看、功能完整。
+- **Material × lingkungan**: satu material diletakkan di satu lingkungan konkret. Dari sana diturunkan pencahayaan, kedalaman, perlakuan tepi, dan damping animasi.
+- **Satu skenario konkret**: satu adegan dengan waktu, tempat, dan cahaya. Tekstur dan kecepatan animasi diturunkan dari cahaya, suara, material, dan ritme di dalam skenario. Cocok untuk alat yang berbasis emosi.
+- **Arketipe karakter**: beri produk satu karakter konkret, dan biarkan karakter itu menentukan font serta gerakannya.
+- **Satu gerakan desain atau tata bahasa budaya**: pilih satu gerakan desain atau tradisi visual yang punya hubungan nyata dengan tema, audiens, atau wilayah produk, lalu pinjam tata bahasanya — bukan menempel motifnya.
+- **Seluruh bahasa rupa dari bidang lain**: pinjam cara berekspresi dari media atau benda di bidang lain. Pinjam hanya satu-dua tekniknya yang paling khas; halaman tetap ber-genre aslinya. Jangan memindahkan komponen media itu satu per satu — itu menjadi tumpukan properti.
+- **Sengaja memecah konvensi**: layout asimetris yang radikal, palet dan font yang disonan, ruang kosong yang membuat gelisah — tetapi keseluruhannya tetap indah dan fungsinya utuh.
 
-引擎决定结构、手感、质感和动效；颜色按下一节单独定。
+Mesin menentukan struktur, feel, tekstur, dan animasi; warna ditetapkan terpisah di bagian berikutnya.
 
-## 定色彩
+## Tetapkan warna
 
-产品自己的品牌资产、实物和内容画面是颜色的第一来源；主视觉就是产品实物时，主色可以直接从实物里取。没有现成主色时，不要直接拿生成引擎里那种材质或场景的固有色当主色——隐喻一落到黄铜、木纹或暗房，不同的产品最后就会撞进同一组颜色。按三步定：
+Aset brand produk sendiri, benda fisiknya, dan gambar kontennya adalah sumber warna pertama; bila visual utamanya adalah produk fisik itu sendiri, warna utama bisa langsung diambil darinya. Bila belum ada warna utama, jangan langsung menjadikan warna bawaan material atau skenario di mesin generatif sebagai warna utama — begitu metafora mendarat di kuningan, serat kayu, atau darkroom, produk-produk yang berbeda pada akhirnya akan menabrak set warna yang sama. Tetapkan dalam tiga langkah:
 
-1. 先写两行，几个方向共用：这个品类最顺手的默认配色是什么，写出底色和强调色；拆过的标杆各占了哪个色相和明暗。
-2. 每个方向定一套不同的色相和明暗，或明确的黑白，用一句写它来自这个产品的什么：内容、受众或品牌资产。避开刚拆过的标杆配色；至少一个方向跳出这个品类的默认配色。
-3. 写出至少三层：底色、主强调色，以及由它们派生的选中底、描边和禁用态。
+1. Tulis dulu dua baris yang dipakai bersama semua arah: apa palet default yang paling lazim di kategori ini, sebutkan warna dasar dan warna aksennya; serta hue dan terang-gelap apa yang ditempati masing-masing tolok ukur yang sudah dibongkar.
+2. Tiap arah menetapkan set hue dan terang-gelap yang berbeda, atau hitam-putih yang tegas, dengan satu kalimat tentang dari mana asalnya dalam produk ini: konten, audiens, atau aset brand. Hindari palet tolok ukur yang baru saja dibongkar; minimal satu arah keluar dari palet default kategori ini.
+3. Tuliskan minimal tiga lapis: warna dasar, warna aksen utama, serta turunannya — latar terpilih, stroke, dan status disabled.
 
-黑白灰加一种强调色，甚至完全不用彩色，也是完整的色彩身份，这时颜色交给内容：产品截图、用户的照片、一张画。几个方向之间不按明暗分：头号失败是“一个亮、一个暗、一个暖”，每个方向要有自己的色相家族或材质感，明暗只是结果。
+Hitam-putih-abu plus satu warna aksen, bahkan tanpa warna sama sekali, juga merupakan identitas warna yang utuh; saat itu warna diserahkan ke konten: screenshot produk, foto pengguna, sebuah lukisan. Antar-arah tidak dibedakan lewat terang-gelap: kegagalan nomor satu adalah “satu terang, satu gelap, satu hangat”; tiap arah harus punya keluarga hue atau tekstur materialnya sendiri, dan terang-gelap hanyalah hasil akhirnya.
 
-## 定首屏与工作区骨架
+## Tetapkan kerangka layar pertama dan workspace
 
-写文案之前先定骨架，文案去适应骨架。先回答一个问题：**用户来首屏是看什么、做什么？**
+Tetapkan kerangka sebelum menulis copy, dan biarkan copy menyesuaikan kerangka. Jawab dulu satu pertanyaan: **pengguna datang ke layar pertama untuk melihat apa dan melakukan apa?**
 
-- **来听一句话、看一张画、被说服的页面**（落地页、品牌页、产品发布页、展览页）：
-  从 8 种首屏骨架里选，跳出左右分栏默认模板。详见 [说服型页面首屏骨架](direction-persuasion.md)。
-- **来看内容、挑东西或处理对象的页面**（画廊、商店、信息流、文档、作品集、工具和后台）：
-  首屏就是第一排内容本身或工作区。导航、标题和筛选合起来不超过一两行，第一排内容要完整出现在首屏。不放首屏口号，也不放解释这个页面是干什么的段落。按用户最常做的动作安排内容，例如浏览就让内容铺满，处理就让当前对象和动作挨在一起。
-- **两种都有时**（例如商店首页顶上有活动横幅）：以用户最常来做的事为准，横幅可以留，但不能把第一排内容推出首屏。
+- **Halaman untuk mendengar satu kalimat, melihat satu gambar, atau diyakinkan** (landing page, halaman brand, halaman peluncuran produk, halaman pameran): pilih dari 8 kerangka layar pertama, keluar dari template default dua kolom kiri-kanan. Selengkapnya lihat [Kerangka layar pertama halaman persuasif](direction-persuasion.md).
+- **Halaman untuk melihat konten, memilih barang, atau memproses objek** (galeri, toko, feed, dokumen, portofolio, alat, dan panel admin): layar pertama adalah baris konten pertama itu sendiri atau workspace. Navigasi, judul, dan filter digabung tidak lebih dari satu-dua baris, dan baris konten pertama harus tampak utuh di layar pertama. Jangan menaruh slogan layar pertama, juga tidak perlu paragraf yang menjelaskan halaman ini untuk apa. Atur konten mengikuti aksi yang paling sering dilakukan pengguna: untuk menjelajah, biarkan konten memenuhi layar; untuk memproses, dekatkan objek saat ini dengan aksinya.
+- **Bila keduanya ada** (misalnya banner kampanye di atas beranda toko): ikuti yang paling sering dilakukan pengguna; banner boleh tetap ada, tetapi tidak boleh mendorong baris konten pertama keluar dari layar pertama.
 
-## 方向卡
+## Kartu arah
 
-每个方向写一张方向卡，每项都填具体选择，不填形容词。出三个首屏的那一轮，调性和标杆与取舍几个方向共用一份（候选分布在不同调性上时，调性各填各的），每个方向只填北极星、生成引擎、首屏骨架、字体、色彩、主视觉、图标和控件语法；其余各栏在方向选定后、做完整页面之前补齐。派生版式时，每个版式变体只重写首屏骨架、页面结构和主视觉三栏：
+Tiap arah menulis satu kartu arah, tiap isian berupa keputusan konkret, bukan kata sifat. Pada ronde yang menghasilkan tiga layar pertama, tone serta tolok ukur dan trade-off dipakai bersama oleh beberapa arah (bila kandidat tersebar di beberapa tone, tone diisi masing-masing), dan tiap arah hanya mengisi North Star, mesin generatif, kerangka layar pertama, font, warna, visual utama, ikon, dan tata bahasa kontrol; kolom lainnya dilengkapi setelah arah terpilih, sebelum halaman lengkap dikerjakan. Saat menurunkan layout, tiap varian layout hanya menulis ulang tiga kolom: kerangka layar pertama, struktur halaman, dan visual utama:
 
-| 字段 | 要写到的程度 |
+| Kolom | Tingkat detail yang harus dicapai |
 | --- | --- |
-| 北极星 | 一句能指导取舍的意图：给人的第一感受是什么，整页围绕什么展开 |
-| 调性 | 五个刻度的取值及依据 |
-| 标杆与取舍 | 品类是什么，拆的是哪一家，对着哪几张真实画面拆的（写存放路径；没看图就写“未看图，凭记忆”）；沿用了哪几条、换掉了哪几条，各自为什么 |
-| 生成引擎 | 用了哪一种，具体是什么，来自这个产品的什么证据 |
-| 首屏骨架 | 先写用户来首屏看什么。内容页写首屏能看到几个对象、页头占几行；说服型页面写从骨架表里选的哪一种，附 3–5 个方框的首屏线框：每块是什么、占多大面积、阅读从哪里开始 |
-| 页面结构 | 首屏以下怎么组织，例如单列沉浸滚动，或导航、内容、详情三栏 |
-| 各区块的形式 | 首屏以下每个主要区块（产品实样、功能、价格、隐私、结尾等）在这个方向里长成什么东西。形式从生成引擎推出，不是同一个模块换颜色 |
-| 字体 | 具体字族、字重和尺度关系：展示、正文、数字各用什么，相差多大 |
-| 色彩 | 按“定色彩”写：十六进制色值及用途，至少三层，再加一句它来自这个产品的什么 |
-| 主视觉 | 哪张图或哪个图形承担情绪与识别，来自复用、生成还是排版本身 |
-| 图标 | 用哪一套、什么描边粗细和端点，或者不用图标、改用字符和编号 |
-| 控件语法 | 按钮、输入、选中、标签、状态和动效共用的一套形状和手感，用一句话写清，例如圆角多大、描边多粗、按下时怎样变化 |
-| 动效 | 手感用“一个拟声词 + 一个实物的动作”来写，实物从这个产品的领域里找；三处基本动效各怎么动、怎样彼此呼应；落地页类页面再写滚动分镜（区块出场、选了哪种滑动驱动的叙事），见 [滚动叙事](scroll-narrative.md)。见 [动效](motion.md) |
-| 结构性突破 | 改变首屏结构的那一处偏离常规，以及它怎样放大北极星。手写批注、质感按钮、划线这类局部细节不算 |
-| 记忆点 | 集中发力的一两处：在哪个时刻或位置，用什么材质、动作或画法，见“让人记住的一刻” |
-| 放弃什么 | 这个方向主动不要的常见做法 |
+| North Star | Satu kalimat niat yang bisa memandu trade-off: kesan pertama apa yang diberikan, dan di sekeliling apa seluruh halaman berputar |
+| Tone | Nilai kelima skala beserta dasarnya |
+| Tolok ukur dan trade-off | Kategorinya apa, siapa yang dibongkar, terhadap tampilan nyata mana bongkaran dilakukan (tulis path penyimpanannya; bila belum melihat gambar, tulis “belum melihat gambar, dari ingatan”); butir mana yang diikuti, mana yang diganti, dan alasan masing-masing |
+| Mesin generatif | Yang mana yang dipakai, apa secara konkret, dan bukti apa dari produk ini |
+| Kerangka layar pertama | Tulis dulu apa yang dilihat pengguna di layar pertama. Halaman konten: berapa objek terlihat di layar pertama dan berapa baris header; halaman persuasif: kerangka mana yang dipilih dari tabel, disertai wireframe layar pertama 3–5 kotak: tiap blok berisi apa, seberapa luas, dan di mana pembacaan dimulai |
+| Struktur halaman | Bagaimana organisasi di bawah layar pertama, misalnya satu kolom scroll imersif, atau tiga kolom navigasi-konten-detail |
+| Bentuk tiap section | Tiap section utama di bawah layar pertama (contoh nyata produk, fitur, harga, privasi, penutup, dll.) berubah menjadi apa di arah ini. Bentuknya diturunkan dari mesin generatif, bukan modul yang sama yang sekadar diganti warna |
+| Font | Font family, weight, dan hubungan skala yang konkret: display, body, dan angka masing-masing memakai apa, dan bedanya seberapa besar |
+| Warna | Tulis sesuai “Tetapkan warna”: nilai hex dan kegunaannya, minimal tiga lapis, plus satu kalimat dari mana asalnya dalam produk ini |
+| Visual utama | Gambar atau bentuk mana yang memikul emosi dan identitas, dan asalnya: pakai ulang, hasil generate, atau tipografi itu sendiri |
+| Ikon | Set mana yang dipakai, seberapa tebal stroke dan bagaimana bentuk ujungnya; atau tanpa ikon, memakai karakter dan penomoran |
+| Tata bahasa kontrol | Satu set bentuk dan feel yang dipakai bersama oleh tombol, input, selection, label, status, dan animasi; tulis dalam satu kalimat, misalnya radius sudut berapa, seberapa tebal stroke, dan bagaimana berubah saat ditekan |
+| Animasi | Feel ditulis dengan “satu onomatope + satu gerakan benda nyata”, dan bendanya dicari dari dunia produk ini; bagaimana masing-masing dari tiga animasi dasar bergerak dan bagaimana mereka saling menyambung; halaman tipe landing page ditambah storyboard scroll (kemunculan section, teknik narasi scroll-driven mana yang dipilih), lihat [Narasi Scroll](scroll-narrative.md). Lihat juga [Animasi](motion.md) |
+| Terobosan struktural | Satu penyimpangan dari konvensi yang mengubah struktur layar pertama, dan bagaimana ia memperbesar North Star. Detail lokal seperti anotasi tulisan tangan, tombol bertekstur, atau garis coretan tidak dihitung |
+| Titik yang membekas | Satu-dua tempat di mana tenaga difokuskan: pada momen atau posisi mana, dengan material, gerakan, atau gaya gambar apa, lihat “Momen yang membekas” |
+| Apa yang ditinggalkan | Praktik umum yang sengaja tidak diambil oleh arah ini |
 
-北极星、字体、色板和特征直接写进对比页 manifest，与画面一同展示。
+North Star, font, palet, dan karakteristik ditulis langsung ke manifest halaman perbandingan, ditampilkan bersama tampilannya.
 
-## 差异检验
+## Uji pembeda
 
-方向卡写完、做首屏之前，逐条检验。基于选定方向派生版式，或用户已经给了品牌规范时，字体和配色是共用的，下面关于字体和色彩的几条不适用，骨架、主视觉和页面结构仍要各不相同：
+Setelah kartu arah selesai, sebelum layar pertama dibuat, periksa butir demi butir. Bila layout diturunkan dari arah yang sudah terpilih, atau pengguna sudah memberi pedoman brand, font dan palet dipakai bersama: beberapa butir tentang font dan warna di bawah tidak berlaku, tetapi kerangka, visual utama, dan struktur halaman tetap wajib berbeda satu sama lain:
 
-- **比线框，不比描述**：把各方向的首屏线框并排放在一起比。方向的描述可以各不相同，线框却可能都是“左边大标题，右边小块”。线框相似就是同一骨架，重选骨架。
-- **四项至多一项相同**：首屏骨架、字体、色彩、主视觉四项里，任意两个方向至多一项相同；否则就是同一方向的变体，换一个生成引擎重写其中一个。
-- **不按明暗分方向**：每个方向有自己的色相家族或黑白，见“定色彩”。
-- **结构也要不同**：填了“页面结构”的几个候选（版式变体，或都要做成整页的方向），页面组织不能完全相同、只换颜色和质感。候选只需共享核心内容和主要任务。
-- **至少一个走到极端**：在证据允许的调性范围内，至少一个方向在构图、色彩和主视觉上都取明确的选择，不做折中；折中的方向最多一个。
-- **至少一个打破品类套路**：在同一调性内，至少一个方向不用这个品类的默认版式。打破套路不等于抛弃基线。常见套路如下：
-  - 后台：左侧栏、顶栏加卡片网格。
-  - 电商：大横幅、商品网格加页脚。
-  - 社交：底部标签栏、信息流加悬浮按钮。
-  - 落地页：主视觉、特性、用户评价，最后一个行动按钮。
-  - 聊天：左侧联系人，右侧消息。
-  - AI 与开发者工具：黑色背景、紫蓝发光弥散圆晕、浮空粒子与千篇一律的胶囊按钮。
-- **不撞脸**：把每个方向和它拆过的标杆并排看，撞脸就重做，定义见“认品类，拆标杆”。沿用基线不算撞脸。
-- **盲看**：遮住名字和说明只看画面，仍能说出每个方向带给人的不同感受。
+- **Bandingkan wireframe, bukan deskripsi**: letakkan wireframe layar pertama tiap arah berdampingan dan bandingkan. Deskripsi tiap arah boleh berbeda-beda, tetapi wireframe-nya bisa saja semuanya “judul besar di kiri, blok kecil di kanan”. Wireframe yang mirip berarti kerangka yang sama; pilih ulang kerangkanya.
+- **Dari empat hal, maksimal satu yang sama**: dari kerangka layar pertama, font, warna, dan visual utama, dua arah apa pun boleh paling banyak memiliki satu kesamaan; jika tidak, keduanya varian dari arah yang sama — ganti mesin generatif dan tulis ulang salah satunya.
+- **Arah tidak dibedakan lewat terang-gelap**: tiap arah punya keluarga hue atau hitam-putihnya sendiri, lihat “Tetapkan warna”.
+- **Struktur juga harus berbeda**: beberapa kandidat yang mengisi “struktur halaman” (varian layout, atau arah yang semuanya akan dibuat sebagai halaman penuh) tidak boleh punya organisasi halaman yang persis sama dengan hanya mengganti warna dan tekstur. Kandidat cukup berbagi konten inti dan tugas utama.
+- **Minimal satu berani ekstrem**: dalam rentang tone yang diizinkan bukti, minimal satu arah mengambil pilihan yang tegas pada komposisi, warna, dan visual utama tanpa berkompromi; arah yang berkompromi paling banyak satu.
+- **Minimal satu memecah formula kategori**: dalam tone yang sama, minimal satu arah tidak memakai layout default kategori ini. Memecah formula bukan berarti membuang baseline. Formula yang umum:
+  - Panel admin: sidebar kiri, topbar, plus grid kartu.
+  - E-commerce: banner besar, grid produk, plus footer.
+  - Sosial: tab bar bawah, feed, plus tombol mengambang.
+  - Landing page: visual utama, fitur, testimoni, lalu satu tombol aksi terakhir.
+  - Chat: kontak di kiri, pesan di kanan.
+  - Alat AI dan developer: latar hitam, lingkaran cahaya ungu-biru yang menyebar, partikel melayang, dan tombol pill yang itu-itu saja.
+- **Tidak tampak kembar**: lihat tiap arah berdampingan dengan tolok ukur yang dibongkarnya; bila tampak kembar, kerjakan ulang (definisi lihat “Kenali kategori, bongkar tolok ukur”). Mengikuti baseline tidak dihitung tampak kembar.
+- **Uji buta**: tutupi nama dan deskripsinya, lihat hanya gambarnya, dan tetap harus bisa menyebutkan kesan berbeda yang diberikan tiap arah.
 
-首屏做出来后再比一次实际画面：在对比页并排看首屏，眯起眼睛只看明暗块面。块面的分布如果相似，比如都是左边一大块、右边一小块，即使字体和颜色都不同，也回到骨架表重做，不靠换装饰补救。
+Setelah layar pertama jadi, bandingkan sekali lagi tampilan nyatanya: lihat layar pertama berdampingan di halaman perbandingan, sipitkan mata dan lihat hanya bidang terang-gelapnya. Bila distribusi bidangnya mirip — misalnya sama-sama blok besar di kiri dan blok kecil di kanan — meski font dan warnanya berbeda, kembali ke tabel kerangka dan kerjakan ulang; jangan menambalnya dengan mengganti dekorasi.
 
-## 北极星与呼应
+## North Star dan keterhubungan
 
-北极星选定后，把它落成全页一致的关系：每一屏谁是主角，次要信息怎样退后，哪种排版或图形在全页重复出现形成节奏，哪一处用反差突出主操作。
+Setelah North Star terpilih, terjemahkan menjadi hubungan yang konsisten di seluruh halaman: siapa protagonis tiap layar, bagaimana informasi sekunder mundur, tipografi atau bentuk apa yang berulang di seluruh halaman membentuk ritme, dan di titik mana kontras dipakai untuk menonjolkan aksi utama.
 
-结构性突破要动的是结构，例如首屏的骨架、比例或阅读顺序，而不是多加一个装饰；它要么让主题更强，要么把人引向关键动作。精修的时候，别把有辨识度的选择磨平。新加的元素如果不能加强同一个意图，就不加。
+Terobosan struktural harus menyentuh struktur — misalnya kerangka layar pertama, proporsi, atau urutan baca — bukan sekadar menambah satu ornamen; ia memperkuat tema atau mengarahkan orang ke aksi kunci. Saat memoles, jangan menghaluskan pilihan yang justru membuatnya khas. Elemen baru yang tidak memperkuat niat yang sama, jangan ditambahkan.
 
-## 让人记住的一刻
+## Momen yang membekas
 
-每个方向选一两处集中发力，其余保持安静。记忆点通常是一个组件的一次动作：结果、材质、光影、手感和节奏都做到位。
+Tiap arah memilih satu-dua tempat untuk memusatkan tenaga, sisanya tetap tenang. Titik yang membekas biasanya berupa satu aksi dari satu komponen: hasil, material, cahaya-bayangan, feel, dan ritmenya dikerjakan sampai tuntas.
 
-去哪里找：
+Di mana mencarinya:
 
-- **用户会做的动作。** 点按、拖动、切换、提交，比滚动更容易成为记忆点。
-- **关键时刻。** 付款成功、第一次完成任务、升级、删除、上传、等结果。这些时刻情绪最强，一个小动画的回报最高。
-- **边角页面。** 404、空状态、加载、页脚。没人期待，风险又低，最容易出彩。
-- **AI 在工作的时候。** 让过程看得见，进行中和做完的区别直接落在画面和内容变化上，不只靠转圈动画。
+- **Aksi yang akan dilakukan pengguna.** Tap, drag, beralih, submit — lebih mudah menjadi momen yang membekas dibanding scroll.
+- **Momen kunci.** Pembayaran sukses, menyelesaikan tugas pertama kali, upgrade, hapus, upload, menunggu hasil. Emosi di momen-momen ini paling kuat, dan satu animasi kecil memberi imbal hasil paling tinggi.
+- **Halaman pinggiran.** 404, empty state, loading, footer. Tidak diharapkan siapa pun dan risikonya rendah — paling mudah bersinar.
+- **Saat AI sedang bekerja.** Buat prosesnya terlihat; beda antara sedang berjalan dan selesai langsung tampak pada gambar dan perubahan konten, bukan hanya animasi berputar.
 
-怎么想：
+Cara memikirkannya:
 
-- **让结果当场发生。** 状态切换不只换一个图标，而是让被影响的东西当场变化。用户看到的是结果，不是控件在表演。
-- **把数字画成看得见的量。** 百分比、时长、余额，先问能不能画成面积、长度或个数。数字只是标签，量才是画面。
-- **借这个领域里的真东西交付结果。** 先看用户做这件事时手上拿的是什么、眼里看的是什么，例如音轨、画布图层、包裹、账单，借它的样子和动作把状态交出来。票据、打印机、卡带、老游戏机这类复古道具已经泛滥，跟产品无关就不要套。
-- **给控件物理和性格。** 拖动有弹性和重量，按下有光影变化，拉过头会不情愿地弹回来。
-- **画法要说得出来源。** 点阵、字符画、像素、粒子、写实材质这类画法，只有能说出它来自产品做的事时才选。说不出来源就不选；选了就从主视觉一路用到加载、图标和空状态。
+- **Biar hasilnya terjadi di tempat.** Pergantian status bukan sekadar mengganti ikon, tetapi membuat hal yang terdampak berubah saat itu juga. Yang dilihat pengguna adalah hasilnya, bukan kontrol yang sedang pentas.
+- **Gambar angka sebagai kuantitas yang terlihat.** Persentase, durasi, saldo — tanyakan dulu apakah bisa digambar sebagai luas, panjang, atau jumlah. Angka hanya label; kuantitas itulah gambarnya.
+- **Pinjam benda nyata di dunia ini untuk menyerahkan hasil.** Lihat dulu apa yang ada di tangan dan di mata pengguna saat melakukan hal ini — misalnya track audio, layer kanvas, paket, atau tagihan — lalu pinjam wujud dan gerakannya untuk menyerahkan status. Properti retro seperti struk, printer, kaset, dan konsol game lama sudah terlalu sering dipakai; bila tidak berhubungan dengan produk, jangan dipakai.
+- **Beri kontrol fisika dan karakter.** Drag punya elastisitas dan bobot, penekanan mengubah cahaya-bayangan, dan bila ditarik terlalu jauh ia memantul kembali dengan enggan.
+- **Gaya gambar harus bisa disebut asalnya.** Gaya seperti pola titik, seni karakter, piksel, partikel, atau material realistis hanya dipilih bila bisa dijelaskan berasal dari apa yang dikerjakan produk ini. Tidak bisa menjelaskan asal, jangan dipilih; sudah dipilih, pakai konsisten dari visual utama sampai loading, ikon, dan empty state.
 
-## 参考怎样转为设计决定
+## Cara referensi menjadi keputusan desain
 
-先说清这份参考拿来做什么：借它的视觉关系，把它当质量的底线，还是照着它精准还原。看过图再描述它长什么样。借鉴时取的是关系，例如“标题最重，图负责情绪，辅助信息压得很淡”，再拿当前的内容重新组织；不照搬参考里的业务模块、标识和文案。借来的隐喻要落成具体的界面决定，不做成一层妨碍操作的仿真外壳。
+Perjelas dulu referensi ini dipakai untuk apa: meminjam hubungan visualnya, menjadikannya garis dasar kualitas, atau merekonstruksi secara presisi sesuai gambarnya. Lihat gambarnya dulu, baru deskripsikan wujudnya. Saat meminjam, yang diambil adalah hubungannya — misalnya “judul paling berat, gambar bertugas membawa emosi, informasi pendukung ditekan sangat tipis” — lalu disusun ulang dengan konten saat ini; jangan menyalin modul bisnis, identitas, dan copy dari referensi. Metafora pinjaman harus mendarat menjadi keputusan antarmuka yang konkret, bukan dibuat menjadi kulit simulasi yang menghambat operasi.
 
-参考里没有的东西也是决定。参考的首屏没有标题区和说明段，就不要替它补上；参考没有用的装饰，也不要加回去。
+Hal yang tidak ada di referensi juga merupakan keputusan. Bila layar pertama referensi tidak punya area judul dan paragraf penjelas, jangan menambahkannya untuk referensi itu; ornamen yang tidak dipakai referensi, jangan ditambahkan kembali.
 
-## 小样、选择与品味
+## Mockup, pilihan, dan selera
 
-方向只做首屏，不一开始就做多套完整产品；轮次和数量见 SKILL.md 步骤 1。
+Arah hanya dibuat sampai layar pertama, tidak langsung beberapa set produk lengkap; ronde dan jumlahnya lihat langkah 1 di SKILL.md.
 
-首屏选能暴露方向优缺点的那一页：含复杂表单的产品不能只做封面。
+Pilih halaman yang bisa memperlihatkan kekuatan dan kelemahan arah sebagai layar pertama: produk dengan form kompleks tidak bisa hanya membuat sampul.
 
-介绍产品的页面，必须让用户看到产品真正交付的东西：一张生成好的报表、一份导出的合同、一段处理后的真实数据，而不是只用文字承诺“能做什么”。这个实样往往比功能列表更有说服力，也最容易成为首屏以下某一段的主角。
+Halaman yang memperkenalkan produk harus membuat pengguna melihat apa yang benar-benar diserahkan produknya: satu laporan yang sudah jadi, satu kontrak yang sudah diekspor, satu potongan data nyata yang sudah diproses — bukan sekadar janji tertulis “bisa melakukan apa”. Contoh nyata ini biasanya lebih meyakinkan daripada daftar fitur, dan paling mudah menjadi protagonis salah satu segmen di bawah layar pertama.
 
-推荐理由从任务适配、辨识度、内容承载、可读性和实现代价里比出来。请用户补充品味时，问想要什么感受、不要什么和为什么、哪些地方要保留。用户只说“再高级一点”时，用上面的翻译表追问，或拿两张小样让用户比较。
+Alasan rekomendasi ditimbang dari kesesuaian tugas, kekhasan, kapasitas konten, keterbacaan, dan biaya implementasi. Saat meminta pengguna melengkapi selera, tanyakan: kesan apa yang diinginkan, apa yang tidak diinginkan dan mengapa, serta bagian mana yang harus dipertahankan. Bila pengguna hanya berkata “buat lebih premium”, gunakan tabel penerjemahan di atas untuk bertanya lanjut, atau sajikan dua mockup untuk dibandingkan pengguna.
 
-把选定方向和品味写进设计说明，作为后续判断基线。评审提出新风格时，先判断它是否解决原目标；只有当前方向确实不适配，或用户改变目标时，才重新探索。
+Tuliskan arah terpilih dan selera ke catatan desain, sebagai baseline penilaian selanjutnya. Saat review mengusulkan gaya baru, nilai dulu apakah ia menyelesaikan tujuan awal; eksplorasi ulang hanya bila arah saat ini memang tidak cocok, atau pengguna mengubah tujuannya.

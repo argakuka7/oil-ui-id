@@ -1,50 +1,50 @@
-# 工具
+# Alat
 
-本目录自带的程序不需要读源码。这里只写什么时候用和最常用的几条命令；全部选项、动作写法和输出文件见各自的 `--help`，写错时报错会给出照抄就能用的写法。
+Program bawaan direktori ini tidak perlu dibaca source-nya. Di sini hanya dituliskan kapan dipakai dan beberapa perintah yang paling sering; seluruh opsi, cara menulis aksi, dan file output lihat `--help` masing-masing, dan bila salah tulis, pesan errornya memberikan cara penulisan yang bisa langsung disalin.
 
-宿主有自己的浏览器工具时，查看页面、走查流程照常用。要交证据时优先用这里的截图工具：它开一个独立的临时浏览器，不碰用户自己浏览器里的数据。本机缺 Node 22，或者没有 Chrome、Chromium、Edge 时，退回宿主工具，交出同样的证据。任务或项目已经指定了截图工具时，照用它。
+Bila host punya alat browser sendiri, melihat halaman dan menelusuri alur tetap memakainya seperti biasa. Saat harus menyerahkan bukti, utamakan alat screenshot di sini: ia membuka browser sementara yang terpisah dan tidak menyentuh data browser milik pengguna. Bila mesin lokal tidak punya Node 22, atau tidak ada Chrome, Chromium, atau Edge, mundur ke alat host dan serahkan bukti yang sama. Bila tugas atau proyek sudah menetapkan alat screenshot, ikuti itu.
 
-## 截图和录屏
+## Screenshot dan rekaman layar
 
-### 什么时候截，截多少
+### Kapan screenshot, berapa banyak
 
-截图分两种用途，不要混在一起：
+Screenshot ada dua kegunaan, jangan dicampur:
 
-- **看一眼**：改完一批，想看效果。只截当前这一屏，一条命令。把一批改动攒在一起改完再截，不是每改一处截一次；页面没有变，就不重复截。
-- **取证**：用 `--evidence` 一次取齐状态图、并排图、遮字图、2 倍图和录屏。只在两个时候做：送评审之前，交付之前。方向首屏那一轮每个方向只截一张，不取证。
+- **Sekali lihat**: setelah satu batch perubahan selesai, ingin melihat hasilnya. Screenshot layar yang terlihat saja, satu perintah. Kumpulkan dulu satu batch perubahan baru screenshot; bila halaman tidak berubah, jangan screenshot ulang.
+- **Pengambilan bukti**: dengan `--evidence`, ambil sekaligus gambar status, gambar berdampingan, versi tanpa teks, gambar 2×, dan rekaman layar. Hanya pada dua saat: sebelum dikirim ke review, dan sebelum penyerahan. Ronde layar pertama arah: tiap arah cukup satu screenshot, tanpa pengambilan bukti.
 
-每一轮评审只重新取这一轮改动影响到的证据。没有动过的状态和动效，沿用上一轮的文件，交接时注明哪些是沿用的；拿不准有没有被影响到，例如改了共享样式，就重取那一项。
+Tiap ronde review hanya mengambil ulang bukti yang terdampak perubahan ronde itu. Status dan animasi yang tidak disentuh, lanjutkan file ronde sebelumnya dan catat mana yang diwarisi saat serah terima; bila tak yakin terdampak atau tidak — misalnya style bersama ikut berubah — ambil ulang butir itu.
 
-### 常用命令
+### Perintah umum
 
 ```text
-node <skill>/scripts/shoot.mjs <页面地址或 HTML 文件> [选项]
+node <skill>/scripts/shoot.mjs <alamat halaman atau file HTML> [opsi]
 ```
 
-| 要什么 | 加上 |
+| Butuh apa | Tambahkan |
 | --- | --- |
-| 看一眼桌面效果 | `--size desktop`；不写时是手机 390x844 |
-| 操作几步再截 | `--steps "click .open; wait 300"` |
-| 送评审或交付前取证 | `--evidence --states idle,done --steps "send: click .send"` |
-| 落地页录一段从头滚到底 | `--record --steps "scroll 600; scroll 600; scroll 600"`，按页面长度多写几步 |
-| 截图还原：和参考图比对 | `--compare 参考.png --size <参考的逻辑尺寸>` |
-| 给用户指出问题：在元素上画框、标编号 | `--mark "1=.page-head .btn; 2=.toggle-row" --full` |
+| Sekali lihat tampilan desktop | `--size desktop`; tanpa opsi, default ponsel 390x844 |
+| Beroperasi beberapa langkah baru screenshot | `--steps "click .open; wait 300"` |
+| Ambil bukti sebelum review atau penyerahan | `--evidence --states idle,done --steps "send: click .send"` |
+| Landing page, rekam scroll dari atas ke bawah | `--record --steps "scroll 600; scroll 600; scroll 600"`, tambahkan langkah sesuai panjang halaman |
+| Rekonstruksi screenshot: bandingkan dengan referensi | `--compare referensi.png --size <ukuran logis referensi>` |
+| Menunjukkan masalah ke pengguna: kotak dan nomor pada elemen | `--mark "1=.page-head .btn; 2=.toggle-row" --full` |
 
-状态靠地址参数进入，所以页面要能用 `?state=<名字>` 直接打开每个状态。其余选项、选择器和动作的写法、输出文件和 `report.json` 的结构：运行 `node <skill>/scripts/shoot.mjs --help`。拿不准写法时先加 `--dry-run` 检查，不会启动浏览器。同时开着很多任务、截图超时的时候，加 `--timeout-scale 2`。
+Status dimasuki lewat parameter alamat, jadi halaman harus bisa membuka tiap status lewat `?state=<nama>`. Sisa opsi, cara menulis selector dan aksi, file output, dan struktur `report.json`: jalankan `node <skill>/scripts/shoot.mjs --help`. Bila ragu dengan cara penulisannya, tambahkan `--dry-run` dulu untuk memeriksa tanpa membuka browser. Saat banyak tugas berjalan bersamaan dan screenshot timeout, tambahkan `--timeout-scale 2`.
 
-### 看结果
+### Membaca hasil
 
-交给评审前先自己看一眼：默认状态是不是已经加载完，遮字版有没有把图形也一起盖掉。证据有错先重截，再交给评审。汇总里提示录屏和截图不一致时，静止的终态以截图为准，再单独重录那一段核对过渡。画面是空的 WebGL 截图不能当证据。
+Sebelum diserahkan ke reviewer, lihat sendiri dulu: apakah status default sudah selesai dimuat, dan apakah versi tanpa teks ikut menutupi grafis. Bila buktinya salah, screenshot ulang dulu baru serahkan ke reviewer. Bila ringkasannya menandai rekaman layar dan screenshot tidak konsisten, status akhir statis mengikuti screenshot, lalu rekam ulang segmen itu untuk memeriksa transisinya. Screenshot WebGL yang kosong tidak boleh dijadikan bukti.
 
-每张截图还会查一组能从页面样式里直接判断的问题，命令输出里以“默认做法提示”列出：
+Tiap screenshot juga diperiksa terhadap satu set masalah yang bisa dinilai langsung dari style halaman, dan tampil sebagai “peringatan default practices” di output perintah:
 
-- **要改的可读性问题**：文字对比度不达标、正文小于 13px、多行正文行高过紧、首屏里停在透明状态的内容。
-- **改掉或写出理由**：有色底上的灰字、正文行太长，以及模型默认做法：标题上方的眉标和编号标签、彩色单侧边线、渐变文字、卡片里套卡片、表情符号当图标、中文界面里的英文大写标签、标题离上文比离下文还近。保留的项，在交付说明里写出它怎样服务方向。
+- **Masalah keterbacaan yang wajib diubah**: kontras teks tidak memenuhi ambang, body text di bawah 13px, line-height body multi-baris terlalu rapat, konten yang tertahan pada status transparan di layar pertama.
+- **Ubah atau tuliskan alasannya**: teks abu di atas latar berwarna, baris body terlalu panjang, serta default model: eyebrow label dan label nomor di atas judul, garis sisi warna tunggal, teks gradasi, kartu di dalam kartu, emoji sebagai ikon, label kapital Latin di antarmuka non-Latin, dan judul yang jaraknya ke paragraf atas lebih dekat daripada ke paragraf bawah. Butir yang dipertahankan, tuliskan di catatan penyerahan bagaimana ia melayani arah.
 
-检查会误报，例如真实的步骤编号、确实需要的标签；误报在交付说明里写一句。它只认得写法，判断不了好不好看：提示清零之后，仍要自己看截图。检查报出接口 401、404 这类和画面无关的错误时，在交付说明里记一行，不为了让检查通过去改登录、接口这类业务代码。
+Pemeriksaan bisa false positive — misalnya nomor langkah yang nyata atau label yang memang perlu; false positive dicatat satu kalimat di catatan penyerahan. Ia hanya mengenali pola tulisan, tidak bisa menilai bagus-tidaknya: setelah peringatan nol, tetap harus melihat screenshot sendiri. Bila pemeriksaan melaporkan error 401/404 API dan semacamnya yang tak berhubungan dengan tampilan, catat satu baris di catatan penyerahan; jangan mengubah kode bisnis seperti login atau API demi lolos pemeriksaan.
 
-## 写可操作的小样
+## Menulis mockup interaktif
 
-方向探索阶段的首屏不做交互，用不到这一节；选定方向后做完整页面时再用。存量项目照用项目自己的技术栈。
+Layar pertama pada tahap eksplorasi arah tidak membuat interaksi, bagian ini tidak terpakai; gunakan setelah arah terpilih saat mengerjakan halaman lengkap. Proyek existing mengikuti tech stack proyeknya sendiri.
 
-一个组件或一个页面只写一个文件，用地址参数切换状态，不要每个状态复制一份。颜色、字号、间距、圆角先定成十来个 CSS 变量，后面一律引用变量，不引入需要构建的工具。表单、切换、展开这类状态用 Alpine.js 写在 HTML 属性上：把 `<skill>/assets/vendor/alpine.min.js` 复制到任务目录的 `vendor/` 再引用，状态集中在一个 `x-data` 里，初始状态读地址参数。手势跟手、物理模拟、Canvas 和 WebGL 绘制放进单独的 JS 模块，每帧更新的数据不放进 Alpine 的状态。
+Satu komponen atau satu halaman hanya satu file, status diganti lewat parameter alamat; jangan menggandakan file untuk tiap status. Kunci dulu warna, ukuran font, jarak, dan radius ke belasan CSS variable, dan setelahnya selalu rujuk variable; jangan memasukkan alat yang butuh build. Status seperti form, toggle, dan expand ditulis dengan Alpine.js pada atribut HTML: salin `<skill>/assets/vendor/alpine.min.js` ke `vendor/` di direktori tugas lalu rujuk, kumpulkan status dalam satu `x-data`, dan status awal dibaca dari parameter alamat. Gesture ikut tangan, simulasi fisika, dan gambar Canvas/WebGL diletakkan di modul JS terpisah; data yang diperbarui tiap frame tidak dimasukkan ke status Alpine.

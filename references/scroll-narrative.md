@@ -1,97 +1,97 @@
-# 滚动叙事
+# Narasi Scroll
 
-## 落地页的滚动动效
+## Animasi scroll landing page
 
-落地页、品牌页、产品发布页和展览页，滚动动效和 [动效](motion.md) 的三处基本动效一起验收；文档、文章、工具和后台不做。用成熟的动效库实现，见下文“动效库”。
+Untuk landing page, halaman brand, halaman peluncuran produk, dan halaman pameran, animasi scroll diverifikasi bersama tiga animasi dasar dari [Animasi](motion.md); dokumen, artikel, alat, dan panel admin tidak memakai. Implementasinya dengan library animasi matang, lihat “Library animasi” di bawah.
 
-**必须有两样**：首屏以下的区块按内容出场；至少一段滑动驱动的叙事，让主角在滚动里发生明显变化。**手法按页面挑**：首屏景深、字标收进导航、一镜到底、章节转场镜头、背景随章节变色、宣言逐字亮起，从页面的主视觉和内容里挑最合适的一种，写进分镜并说明理由，不要每页都默认锁住首屏做缩放。
+**Wajib ada dua**: section di bawah layar pertama muncul sesuai kontennya; dan sedikitnya satu segmen narasi scroll-driven yang membuat protagonis berubah secara mencolok di dalam scroll. **Teknik dipilih sesuai halaman**: kedalaman layar pertama, wordmark menyusut ke navigasi, one-shot tanpa potongan, shot transisi antar-bab, latar berganti warna mengikuti bab, manifesto menyala kata demi kata — pilih yang paling cocok dari visual utama dan isi halaman, tuliskan ke storyboard beserta alasannya; jangan mengunci layar pertama untuk efek zoom di setiap halaman secara default.
 
-### 首屏景深（适合首屏有明确前后景层次的页面）
+### Kedalaman layar pertama (cocok untuk layar pertama dengan lapisan depan-belakang yang jelas)
 
-首屏是一个固定住的舞台，滚动直接驱动里面的层次变化，往回滚就倒放：
+Layar pertama adalah panggung yang dipatok diam, scroll langsung menggerakkan perubahan lapisan-lapisannya, scroll mundur memutar balik:
 
-- 首屏固定 100–200vh 的滚动距离，窄屏可缩到 80–120vh。
-- 至少两层以不同速度或方向变化，例如前景推近、背景慢移，或者主视觉和大标题拉开尺度差；背景层动得最慢，前景层最快。
-- 幅度要大到录屏里一眼看出来：主层缩放不少于 15%，或位移不少于 15vh。小于这个幅度，看起来就是页面在普通滚动。
-- 大标题是图形层，可以缩放和视差；正文、按钮和表单不缩放、不做视差，固定后保持可读可点。
-- 结束状态要交接给下一节：主视觉缩到下一节的位置，标题退成背景纹理，或者画面让出一条路给下一节的主角。不要固定结束后整块直接被推走。
+- Layar pertama mematok jarak scroll 100–200vh; layar sempit bisa dipangkas ke 80–120vh.
+- Minimal dua lapisan berubah dengan kecepatan atau arah berbeda — misalnya latar depan mendekat dan latar belakang bergeser lambat, atau visual utama dan judul besar dibuka jarak skala-nya; lapisan latar bergerak paling lambat, lapisan depan paling cepat.
+- Amplitudonya harus besar sampai terlihat sekali lihat di rekaman layar: skala lapisan utama tidak kurang dari 15%, atau perpindahan tidak kurang dari 15vh. Di bawah amplitudo itu, terlihat seperti halaman biasa yang sedang scroll.
+- Judul besar adalah lapisan grafis: boleh di-zoom dan diberi paralaks; body text, tombol, dan form tidak di-zoom dan tidak diberi paralaks, tetap terbaca dan bisa diklik setelah dipatok.
+- Status akhir harus menyerahkan kepada section berikutnya: visual utama menyusut ke posisi section berikutnya, judul mundur menjadi tekstur latar, atau gambar memberi jalan bagi protagonis section berikutnya. Jangan biarkan setelah dipatok selesai seluruh bidang langsung terdorong pergi.
 
-首屏是满版的品牌字标时，用下面的“字标收进导航”。首屏是其他满版文字、产品界面或纯排版时，不一定适合景深，可以把滑动驱动的叙事放在后面。
+Bila layar pertama adalah wordmark brand satu layar penuh, pakai “Wordmark menyusut ke navigasi” di bawah. Bila layar pertama berisi teks satu layar penuh jenis lain, antarmuka produk, atau tipografi murni, kedalaman belum tentu cocok; narasi scroll-driven bisa diletakkan di belakang.
 
-### 字标收进导航（适合首屏是满版品牌字标的页面）
+### Wordmark menyusut ke navigasi (cocok untuk layar pertama berupa wordmark brand satu layar penuh)
 
-首屏就是品牌名本身，滚动时它缩成导航栏里的标志。它用一个元素同时完成满版文字骨架和一段滑动驱动的叙事，适合品牌名短、字形有性格的工作室、品牌和作品集：
+Layar pertama adalah nama brand itu sendiri; saat scroll ia menyusut menjadi logo di dalam navbar. Satu elemen menyelesaikan sekaligus kerangka teks satu layar penuh dan satu segmen narasi scroll-driven; cocok untuk studio, brand, dan portofolio dengan nama brand pendek dan bentuk huruf berkarakter:
 
-- 首屏只有这一个字标，撑满版心宽度，窄屏也保持一行撑满；导航里不再放第二个标志。
-- 滑动驱动，滚过 60–100vh，字标沿一条路径缩到导航标志的位置和尺寸，往回滚放大回来。结束状态就是导航里的标志，位置和尺寸按导航实际量出，交接时不跳。
-- 缩放同一个元素的变换，不动画字号；字标用 SVG，或按容器宽度算出的字号。
-- 字标让出首屏的同时，下一节内容已经进入画面，不留一整屏空白。
-- 字标从满版缩成导航标志，是主角明显的缩放和一次交接，算一段滑动驱动的叙事；同一页不再另做首屏景深。
-- 减少动态效果时，字标留在首屏不缩放，导航从一开始就显示标志。
+- Layar pertama hanya berisi wordmark itu, memenuhi lebar bidang konten, dan di layar sempit tetap satu baris penuh; di dalam navigasi tidak diletakkan logo kedua.
+- Scroll-driven, melewati 60–100vh; wordmark menyusut menyusuri satu path ke posisi dan ukuran logo di navigasi, dan membesar kembali saat scroll mundur. Status akhirnya adalah logo di dalam navigasi; posisi dan ukurannya diukur dari navigasi yang sebenarnya, dan serah terimanya tanpa lompatan.
+- Skala memakai transform elemen yang sama, bukan menganimasikan font-size; wordmark memakai SVG, atau font-size yang dihitung dari lebar wadah.
+- Saat wordmark menyerahkan layar pertama, isi section berikutnya sudah masuk ke dalam gambar; jangan menyisakan satu layar kosong.
+- Wordmark menyusut dari satu layar penuh menjadi logo navigasi adalah penyusutan protagonis yang mencolok plus satu serah terima, dan dihitung satu segmen narasi scroll-driven; halaman yang sama tidak lagi membuat kedalaman layar pertama.
+- Saat reduce motion, wordmark tetap di layar pertama tanpa zoom, dan navigasi menampilkan logo sejak awal.
 
-### 区块按内容出场（必须，滑动触发）
+### Section muncul sesuai konten (wajib, scroll-triggered)
 
-首屏以下的每个区块，滚到位置时出场一次，往回滚不重播。出场方式从这个区块的内容和材质推出来，并且符合物理直觉：有重量的落下会过冲后稳住，轻的东西有空气阻力，机械的东西咔嗒到位。
+Setiap section di bawah layar pertama, begitu scroll mencapai posisinya muncul satu kali; scroll mundur tidak memutar ulang. Cara kemunculannya diturunkan dari isi dan material section itu, dan mengikuti intuisi fisika: yang berat jatuh lalu overshoot sebelum tenang, yang ringan punya hambatan udara, yang mekanis klik sampai tempatnya.
 
-| 区块内容 | 出场方式 |
+| Isi section | Cara kemunculan |
 | --- | --- |
-| 卡片、实物、价格牌 | 带重量落下后稳住，过冲幅度见 [动效](motion.md) 的“手感”；后一张被前一张带出 |
-| 列表、时间线、步骤 | 沿阅读方向依次展开，连接线先画出，节点随后落位 |
-| 数字、指标 | 滚到目标值，高位先停、末位后停；不从 0 起跳的用原值起滚 |
-| 线条、图表、路径 | 沿数据或流程的方向描出，端点落定时轻微放大一下 |
-| 图片、照片 | 遮罩从画面主体的方向揭开，图片同时从 1.08 回缩到 1 |
-| 纸、布、标签 | 先快后慢，带一点旋转后摆正，像被放到桌上 |
-| 金属、机械、硬件 | 短促到位，没有软弹，可以带一次很小的回震 |
-| 大标题、口号 | 按词或按行从遮罩里升起，字距从略松收紧 |
+| Kartu, benda nyata, plang harga | Jatuh dengan bobot lalu tenang; amplitudo overshoot lihat “Feel” di [Animasi](motion.md); kartu berikutnya terseret keluar oleh yang sebelumnya |
+| Daftar, timeline, langkah | Membuka satu per satu searah baca; garis penghubung digambar dulu, node menyusul jatuh ke tempatnya |
+| Angka, metrik | Menggulir ke nilai target; digit tinggi berhenti dulu, digit akhir menyusul; yang tidak mulai dari 0 menggulir dari nilai aslinya |
+| Garis, chart, path | Tergambar menyusuri arah data atau proses; saat ujungnya mendarat, zoom kecil sekali |
+| Gambar, foto | Mask tersingkap dari arah subjek gambar; gambar bersamaan menyusut dari 1.08 ke 1 |
+| Kertas, kain, label | Cepat lalu lambat, sedikit berputar sebelum lurus, seperti diletakkan ke atas meja |
+| Logam, mesin, hardware | Sampai tempatnya dengan pendek, tanpa pantulan lunak; boleh disertai satu getaran kecil |
+| Judul besar, slogan | Naik dari balik mask per kata atau per baris; letter-spacing menguncup dari sedikit renggang |
 
-规则：
-- 每个区块的出场写进分镜：重点区块按内容单独设计出场，普通区块保持统一克制的节奏，不要全页从头到尾套同一个淡入上移。
-- 曲线用弹簧或惯性，参数从 [动效](motion.md) 的“手感”表里按材质取，不用默认的 ease。
-- 主角先到，其余被带出，间隔 40–80ms，单个区块的出场总长不超过 900ms。
+Aturan:
+- Kemunculan tiap section dituliskan ke storyboard: section penting dirancang kemunculannya sendiri sesuai isinya; section biasa memakai ritme seragam yang restraint — jangan seluruh halaman dari atas ke bawah memakai satu fade-in naik.
+- Kurva memakai spring atau inersia; parameter diambil dari tabel “Feel” di [Animasi](motion.md) sesuai material, bukan memakai ease default.
+- Protagonis tiba dulu, sisanya terseret keluar dengan jeda 40–80ms; total durasi kemunculan satu section tidak lebih dari 900ms.
 
-### 滑动驱动的叙事（必须至少一段）
+### Narasi scroll-driven (wajib sedikitnya satu segmen)
 
-可以是首屏景深、字标收进导航，也可以是页面中段一段一镜到底，规则见下一节。主角必须在滚动里发生明显变化：缩放、拆解、变形、穿过或形状接力。一个小点沿着线移动、节点逐个点亮，只能算主叙事里的一个细节，不能单独当作主叙事。
+Bisa berupa kedalaman layar pertama, wordmark menyusut ke navigasi, atau satu segmen one-shot di pertengahan halaman; aturannya lihat bagian berikutnya. Protagonis wajib berubah secara mencolok di dalam scroll: zoom, bongkar, metamorfosis, menembus, atau bertitipan bentuk. Satu titik kecil bergerak menyusuri garis atau node menyala satu per satu hanya dihitung detail di dalam narasi utama, tidak bisa berdiri sebagai narasi utama.
 
-### 分镜
+### Storyboard
 
-动手前在方向卡的“动效”一栏写出滚动分镜：选了哪些手法、为什么，每一段占多少滚动距离、主角是谁、每个镜头画面里有什么、什么在动、往哪个方向、文字什么时候出现。先拆两个同类顶级落地页的滚动节拍作参照，写清它们每一段在动什么，再写自己的。
+Sebelum mulai, tuliskan storyboard scroll di kolom “Animasi” kartu arah: teknik mana saja yang dipilih dan mengapa; tiap segmen memakan jarak scroll berapa, protagonisnya siapa, apa isi gambar tiap shot, apa yang bergerak, ke arah mana, dan kapan teks muncul. Bongkar dulu ritme scroll dua landing page top di kategori yang sama sebagai pembanding, tuliskan jelas apa yang bergerak di tiap segmen mereka, baru menulis milikmu sendiri.
 
-## 视差与一镜到底
+## Paralaks dan one-shot
 
-- **一镜到底。** 整段是一次不切换的镜头。一个主角从头走到尾，可以是产品、一根线、一个形状或一个字，每一步长成、变成或让出下一个画面：推近看到细节，拉远看到全貌，转过去看到背面，穿过去进入下一个场景。
-- **主角从产品里找。** 主角是这个产品处理的那样东西，在滚动里走完它自己的过程。找不到只属于这个产品的主角时，退回下面的转场手法，不用通用的漂浮几何。
-- **停下来再说话。** 每个镜头留一段静止，文字在静止时出现；边动边读很累。
-- **视差要有真实的前后。** 只在画面本来就有远近层次时用：前景的物体、中景、远处的背景，越近动得越多，差别要小。正文、按钮和表单不做视差；大标题作为图形层时，按上面的首屏景深处理。
-- **转场也是镜头。** 一个圆从某一点扩开，带出下一节；推进一张图，穿过它到达下一节；背景色在章节之间随阅读慢慢变；一句宣言随滚动逐字亮起。每种手法一页只用一次。
-- **倒着滚也成立。** 每一帧只由滚动位置决定，往回滚自然倒放，刷新或跳到中间也立刻是对的画面。不接管用户的滚动。
-- **留出口。** 长段落前给一个跳过入口；减少动态效果时，把每个静止画面按顺序排成普通区块。
-- **代码做不出来的，交给视频。** 用户想要很强的首屏动画，而效果要靠生成视频或序列帧才做得出来，例如角色转身、产品拆解、镜头穿越场景，可以告诉用户用 [oil-motion](https://github.com/oil-oil/oil-motion) 来做。CSS、SVG、着色器能完成的仍自己做；同一次对话只提一次。
+- **One-shot tanpa potongan.** Seluruh segmen adalah satu shot tanpa pemotongan. Satu protagonis berjalan dari awal sampai akhir — bisa produknya, satu garis, satu bentuk, atau satu huruf — di tiap langkah tumbuh, berubah, atau menyerahkan gambar berikutnya: mendekat untuk melihat detail, menjauh untuk melihat keseluruhan, berputar untuk melihat sisi belakang, menembus untuk memasuki scene berikutnya.
+- **Protagonis dicari dari produk.** Protagonis adalah benda yang diproses produk ini, dan di dalam scroll ia menyelesaikan prosesnya sendiri. Bila tak menemukan protagonis yang hanya dimiliki produk ini, mundur ke teknik transisi di bawah; jangan memakai geometri melayang generik.
+- **Berhenti dulu, baru bicara.** Tiap shot menyisakan satu jeda diam, dan teks muncul saat diam; membaca sambil bergerak itu melelahkan.
+- **Paralaks butuh depan-belakang yang nyata.** Hanya dipakai bila gambar memang punya lapisan jauh-dekat: objek latar depan, latar tengah, latar belakang yang jauh; makin dekat makin banyak bergerak, dan bedanya kecil. Body text, tombol, dan form tidak diberi paralaks; judul besar sebagai lapisan grafis diperlakukan sesuai “Kedalaman layar pertama” di atas.
+- **Transisi juga adalah shot.** Satu lingkaran mengembang dari satu titik membawa keluar section berikutnya; mendorong masuk ke satu gambar dan menembusnya menuju section berikutnya; warna latar berubah pelan mengikuti bacaan antar-bab; satu kalimat manifesto menyala kata demi kata mengikuti scroll. Tiap teknik hanya dipakai satu kali per halaman.
+- **Sah juga saat scroll mundur.** Setiap frame hanya ditentukan oleh posisi scroll; mundur otomatis memutar balik, refresh atau lompat ke tengah pun langsung menampilkan gambar yang benar. Jangan mengambil alih scroll pengguna.
+- **Sisakan pintu keluar.** Sebelum paragraf panjang, berikan pintu lewati; saat reduce motion, susun tiap frame diam menjadi section biasa berurutan.
+- **Yang tak mampu dibuat kode, serahkan ke video.** Bila pengguna ingin animasi layar pertama yang kuat dan efeknya hanya bisa dicapai lewat video hasil generate atau frame sequence — misalnya karakter berbalik, produk dibongkar, kamera menembus scene — boleh menyarankan pengguna memakai [oil-motion](https://github.com/oil-oil/oil-motion). Yang bisa diselesaikan CSS, SVG, dan shader tetap dikerjakan sendiri; hanya disebut sekali per percakapan.
 
-## 滚动交互的两种模式
+## Dua mode interaksi scroll
 
-滚动带来的变化分两种模式：
+Perubahan yang dibawa scroll terbagi dua mode:
 
-- **滑动驱动（Scroll-Driven）。** 动画进程与滚动距离严格 1:1 映射（Scrub）。用户停下则动画停下，往回滚则倒放。首屏景深、一镜到底、3D 视角变换和模型解构只用滑动驱动；除首屏景深外，一镜到底一页最多一段。
-- **滑动触发（Scroll-Triggered）。** 元素滚入视口阈值时，触发一段按自身时长播放的独立动画（如卡片进场、数字上涨）。它什么时候播完由代码决定，不跟着滚动条走。
-  - **默认单向一次性（Once）。** 触发后样式固定，用户向上回滚不重播、不复位，不在阅读中途让内容反复飞入或闪烁。
-  - **离开重置（Reset on Leave）。** 只有强节奏的纯展示页才允许在完全移出视口后重置，不在视口临界点反复触发。
+- **Scroll-driven.** Progres animasi terpetakan 1:1 dengan jarak scroll (scrub). Pengguna berhenti, animasi berhenti; scroll mundur, diputar balik. Kedalaman layar pertama, one-shot, pergantian sudut pandang 3D, dan dekonstruksi model hanya memakai scroll-driven; kecuali kedalaman layar pertama, one-shot paling banyak satu segmen per halaman.
+- **Scroll-triggered.** Begitu elemen masuk threshold viewport, satu animasi independen dipicu dengan durasinya sendiri (misalnya kartu masuk, angka naik). Kapan selesainya diputuskan kode, tidak mengikuti scrollbar.
+  - **Default satu arah sekali jalan (once).** Setelah terpicu gayanya terkunci; scroll naik tidak memutar ulang dan tidak me-reset, tidak membiarkan konten terbang masuk atau berkedip berulang di tengah bacaan.
+  - **Reset saat keluar (reset on leave).** Hanya halaman pamer murni berirama kuat yang boleh me-reset setelah sepenuhnya keluar viewport; tidak memicu berulang di titik kritis viewport.
 
-## 平滑滚动与全屏分段
+## Smooth scroll dan pemecahan layar penuh
 
-- **平滑滚动只管滚起来顺不顺，不算动效。** 用 Lenis 这类库，是为了消掉鼠标滚轮一格一格的跳动，让滑动驱动的动画和视差走得均匀。后台、仪表盘、表单和长文档不开全局平滑滚动，保持原生滚动的即时响应。
-- **慎用全屏分段滚动（Snap Scroll）。** 隐藏滚动条、单次滑动切换整屏的做法只适合特定的全屏展厅与作品封面，常规业务和长文本不用。
+- **Smooth scroll hanya mengurus mulusnya scroll, tidak dihitung animasi.** Library seperti Lenis dipakai untuk menghilangkan lompatan roda mouse per detent, sehingga animasi scroll-driven dan paralaks berjalan merata. Panel admin, dashboard, form, dan dokumen panjang tidak mengaktifkan smooth scroll global; pertahankan respons instan scroll native.
+- **Hemat-hati dengan snap scroll.** Menyembunyikan scrollbar dan mengganti seluruh layar per sekali geser hanya cocok untuk galeri layar penuh dan sampul karya yang khusus; bisnis reguler dan teks panjang tidak memakai.
 
-## 动效库
+## Library animasi
 
-落地页的滚动动效必须用成熟的动效库，不手写滚动监听和逐帧计算：
+Animasi scroll landing page wajib memakai library animasi matang; jangan menulis scroll listener dan perhitungan per frame sendiri:
 
-- **没有框架的页面**：GSAP，滚动用 ScrollTrigger（`scrub` 做滑动驱动，`once` 做滑动触发，`pin` 固定舞台），大标题拆字用 SplitText，元素换位置用 Flip。平滑滚动用 Lenis，并接进 GSAP 的时钟：`lenis.on('scroll', ScrollTrigger.update)`、`gsap.ticker.add((t) => lenis.raf(t * 1000))`、`gsap.ticker.lagSmoothing(0)`。GSAP 和它的插件都可以免费使用。
-- **React、Vue 等项目**：沿用项目已有的动效库（Motion、GSAP 等）；没有时加 GSAP，不另外手写一套。
-- **需要离线打开的作品**：把库文件按固定版本放进作品目录，从本地引用，不依赖 CDN。
-- **减少动态效果**：用 `gsap.matchMedia()` 分开两套：减少时不固定、不缩放，所有区块直接到位，主叙事排成按顺序的静止画面。
-- 只动变换、透明度和滤镜。固定舞台的外层高度就是这段的滚动距离；离屏的动画由库自动暂停。窄屏可以缩短距离、降低幅度，但选定的手法都要保留。
+- **Halaman tanpa framework**: GSAP; scroll memakai ScrollTrigger (`scrub` untuk scroll-driven, `once` untuk scroll-triggered, `pin` mematok panggung), judul besar dipecah per huruf memakai SplitText, elemen pindah posisi memakai Flip. Smooth scroll memakai Lenis dan disambungkan ke jam GSAP: `lenis.on('scroll', ScrollTrigger.update)`, `gsap.ticker.add((t) => lenis.raf(t * 1000))`, `gsap.ticker.lagSmoothing(0)`. GSAP dan plugin-nya bisa dipakai gratis.
+- **Proyek React, Vue, dsb.**: lanjutkan library animasi yang sudah dipakai proyek (Motion, GSAP, dll.); bila belum ada, tambahkan GSAP, jangan menulis satu set sendiri.
+- **Karya yang harus bisa dibuka offline**: taruh file library versi tetap ke direktori karya dan rujuk secara lokal, tanpa bergantung pada CDN.
+- **Reduce motion**: pakai `gsap.matchMedia()` untuk memisahkan dua set: saat aktif, tidak ada pin dan tidak ada zoom, semua section langsung di posisinya, dan narasi utama disusun sebagai frame diam berurutan.
+- Hanya animasikan transform, opacity, dan filter. Tinggi luar panggung yang dipatok adalah jarak scroll segmen itu; animasi off-screen dipause otomatis oleh library. Layar sempit boleh memangkas jarak dan amplitudo, tetapi teknik yang dipilih semua tetap dipertahankan.
 
-## 检查
+## Periksa
 
-从头滚到底，再滚回去，各看一遍：往回滚是否倒放、跳到中段刷新画面是否正确、文字是否在静止时出现、窄屏选定的手法是否都在、开启“减少动态效果”后是否所有内容直接可读。
+Scroll dari atas ke bawah, lalu scroll kembali, lihat keduanya masing-masing sekali: apakah mundur memutar balik, apakah refresh di tengah menampilkan gambar yang benar, apakah teks muncul saat diam, apakah di layar sempit semua teknik yang dipilih masih ada, dan setelah “reduce motion” aktif apakah semua konten langsung terbaca.

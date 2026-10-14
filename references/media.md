@@ -1,142 +1,142 @@
-# 素材
+# Aset
 
-图从哪来、承担什么、怎样和页面接成一体。游戏、收集和养成类产品要的角色、道具、藏品和图集，见“成套素材”。
+Dari mana gambar berasal, memikul apa, dan bagaimana menyatunya dengan halaman. Untuk karakter, properti, koleksi, dan sprite sheet yang dibutuhkan produk game, koleksi, dan petualangan, lihat “Aset set”.
 
-## 目录导航
+## Navigasi isi
 
-- [先定图承担什么](#先定图承担什么)
-- [复用、生成，还是交给代码](#复用生成还是交给代码)
-- [让图承担意思](#让图承担意思)
-- [写提示词](#写提示词)
-- [生成后放进页面再判断](#生成后放进页面再判断)
-- [让图和页面接成一体](#让图和页面接成一体)
-- [让一张画当舞台](#让一张画当舞台)
-- [异质素材的单色化统一](#异质素材的单色化统一)
-- [抽象技术的主视觉推导](#抽象技术的主视觉推导)
-- [成套素材：角色、道具与图集](#成套素材角色道具与图集)
-- [实时 3D](#实时-3d)
-- [生成视频的可选路径](#生成视频的可选路径)
-- [文件与说明](#文件与说明)
+- [Tentukan dulu apa yang dipikul gambar](#tentukan-dulu-apa-yang-dipikul-gambar)
+- [Pakai ulang, hasilkan, atau serahkan ke kode](#pakai-ulang-hasilkan-atau-serahkan-ke-kode)
+- [Biarkan gambar memikul makna](#biarkan-gambar-memikul-makna)
+- [Menulis prompt](#menulis-prompt)
+- [Setelah dihasilkan, dinilai di dalam halaman](#setelah-dihasilkan-dinilai-di-dalam-halaman)
+- [Menyatukan gambar dengan halaman](#menyatukan-gambar-dengan-halaman)
+- [Satu lukisan sebagai panggung](#satu-lukisan-sebagai-panggung)
+- [Unifikasi monokrom aset heterogen](#unifikasi-monokrom-aset-heterogen)
+- [Penurunan visual utama untuk teknologi abstrak](#penurunan-visual-utama-untuk-teknologi-abstrak)
+- [Aset set: karakter, properti, dan sprite sheet](#aset-set-karakter-properti-dan-sprite-sheet)
+- [3D real-time](#3d-real-time)
+- [Jalur opsional video hasil generate](#jalur-opsional-video-hasil-generate)
+- [File dan keterangan](#file-dan-keterangan)
 
-## 先定图承担什么
+## Tentukan dulu apa yang dipikul gambar
 
-素材是设计的起点，不是布局完成后填进去的装饰。先问：如果只保留一张图、一个标题和一个动作，哪张图值得占据这个位置？再决定是否需要更多模块。
+Aset adalah titik awal desain, bukan dekorasi yang diisi setelah layout selesai. Tanyakan dulu: bila hanya boleh menyisakan satu gambar, satu judul, dan satu aksi, gambar mana yang layak menempati posisi itu? Baru setelah itu putuskan apakah perlu modul tambahan.
 
-- **分清差距来自哪里。** 是信息和构图的问题，还是确实缺一张能表达产品和品牌的图。不用更多图片、光效和动画掩盖层级问题，也不因为代码好写，就用通用渐变和几何形状顶替必要的图像。
-- **给每张图一句任务。** 它展示对象、解释关系，还是建立品牌和情绪；要让人一眼看懂什么。答不上来就先别找图，也别生成。图已经说清的，文字不再重复。
-- **后台和工具同样要判断。** 对象缩略图帮助识别，内容封面支持浏览，地图或空间图帮助定位，示意图解释关系；它们可以是界面最有价值的部分。纯数据任务确实不受益时，保留清楚的数据表达，不硬塞气氛图。
-- **图跟着北极星定，页面再和图呼应。** 主体、视角、尺度、光线、颜色、材质和留白由设计北极星决定；页面的字体、背景、边缘处理和运动从这张图建立呼应，也可以用一处受控的反差突出主动作。同组的图统一主体尺度、视角、光线和边缘质感，不是给所有图套同一个滤镜。
-- **图是结构，不是装在盒子里的插图。** 让它跨过版面的分界、占满首屏，或者和文字叠在一起，做法见“让图和页面接成一体”。
-- **先放进真实页面看一轮，再延展其他区域。** 素材没到位时，占位版的审美评审不算最终通过。
+- **Bedakan dari mana gap berasal.** Apakah persoalannya informasi dan komposisi, atau memang kekurangan satu gambar yang mampu mengekspresikan produk dan brand-nya. Jangan menutupi masalah hierarki dengan lebih banyak gambar, efek cahaya, dan animasi; juga jangan mengganti gambar yang wajib ada dengan gradasi generik dan bentuk geometris hanya karena lebih mudah dikodekan.
+- **Berikan satu kalimat tugas untuk tiap gambar.** Ia memamerkan objek, menjelaskan hubungan, atau membangun brand dan emosi; apa yang harus langsung dipahami orang dari situ. Bila tidak bisa dijawab, tunda mencari gambar dan jangan meng-generate. Yang sudah dijelaskan gambar, tidak diulang oleh teks.
+- **Panel admin dan alat juga perlu penilaian ini.** Thumbnail objek membantu pengenalan, sampul konten mendukung penjelajahan, peta atau gambar ruang membantu orientasi, dan diagram menjelaskan hubungan; semuanya bisa jadi bagian antarmuka yang paling bernilai. Bila tugasnya memang murni data dan tidak terbantu, pertahankan penyajian data yang jelas tanpa memaksakan gambar suasana.
+- **Gambar mengikuti North Star, lalu halaman menyambut gambar.** Subjek, sudut pandang, skala, cahaya, warna, material, dan ruang kosong ditentukan North Star desain; font, latar, perlakuan tepi, dan gerak halaman membangun keterhubungan dari gambar ini, dan boleh memakai satu kontras terkendali untuk menonjolkan aksi utama. Gambar-gambar dalam satu kelompok menyatukan skala subjek, sudut pandang, cahaya, dan tekstur tepi — bukan menyamakan semua gambar dengan satu filter.
+- **Gambar adalah struktur, bukan ilustrasi yang dikurung kotak.** Biarkan ia melintasi batas bidang, memenuhi layar pertama, atau bertumpuk dengan teks; caranya lihat “Menyatukan gambar dengan halaman”.
+- **Masukkan dulu ke halaman nyata untuk ditinjau satu putaran, baru kembangkan ke area lain.** Bila aset belum tersedia, review estetika versi placeholder tidak dihitung lolos akhir.
 
-## 复用、生成，还是交给代码
+## Pakai ulang, hasilkan, atau serahkan ke kode
 
-- **有合适的就复用。** 实际看过图再引用它的特征；已有好素材时围绕它设计，不为证明用了工具而重复生成。
-- **没有就做出来。** 没有合适的现成素材、宿主又能生成图片时，主动制作关键素材，不因为正在写前端代码就省掉这一步。按宿主生成工具自己的输入和编辑规则来。
-- **文字和界面交给代码。** 文字、按钮、表单、数据标签和常规布局一律由真实 HTML/CSS 排版，不让生图模型画，也不拿完整截图当可交互的成品：生图画字容易出错，改不了，也不能被选中和读屏。图片只负责物体、材质和光影。
-- **做不了就留简报。** 没有生成能力或图暂时缺着时，预留合适的容器，写一份能执行的素材简报：要表达什么、主体是什么、放在哪、宽窄屏怎样裁切、哪里承载文字、什么细节不能丢。不自动安装工具、切换收费服务，或要求用户把密钥粘进对话。
-- 要转动、有物理或随视角变化的对象见“实时 3D”；预先确定的连续变化见“生成视频的可选路径”。
+- **Bila ada yang cocok, pakai ulang.** Lihat dulu gambarnya secara nyata baru mengutip karakteristiknya; bila sudah ada aset yang bagus, desain di sekelilingnya — jangan meng-generate ulang sekadar untuk membuktikan memakai alat.
+- **Bila tidak ada, buat.** Bila tidak ada aset yang cocok dan host mampu menghasilkan gambar, buat aset kuncinya secara proaktif; jangan melewati langkah ini hanya karena sedang menulis kode frontend. Ikuti aturan input dan edit milik alat generate host masing-masing.
+- **Teks dan antarmuka diserahkan ke kode.** Teks, tombol, form, label data, dan layout reguler seluruhnya ditata dengan HTML/CSS nyata; jangan digambar oleh model gambar, dan jangan menjadikan screenshot utuh sebagai produk interaktif: gambar yang berisi teks mudah salah, tak bisa diubah, tak bisa diseleksi, dan tak terbaca screen reader. Gambar hanya bertugas untuk benda, material, serta cahaya-bayangan.
+- **Bila tak mampu, tinggalkan brief.** Bila tidak ada kemampuan generate atau gambarnya memang belum ada, sisakan wadah yang ukurannya tepat dan tulis brief aset yang bisa dieksekusi: mau mengekspresikan apa, subjeknya apa, diletakkan di mana, bagaimana crop di layar lebar-sempit, di mana area penampung teks, dan detail apa yang tidak boleh hilang. Jangan memasang alat sendiri, berpindah ke layanan berbayar, atau meminta pengguna menempelkan API key ke dalam percakapan.
+- Objek yang perlu diputar, punya fisika, atau berubah mengikuti sudut pandang lihat “3D real-time”; perubahan kontinu yang sudah tertentu sebelumnya lihat “Jalur opsional video hasil generate”.
 
-## 让图承担意思
+## Biarkan gambar memikul makna
 
-生成图最常见的失败不是画得不好，而是画得太满：细节越丰富越像图库照片，放进版面后没有重点，也和页面没有关系。
+Kegagalan paling umum pada gambar hasil generate bukan gambar yang jelek, melainkan gambar yang terlalu penuh: makin kaya detail makin mirip foto stok, dan setelah masuk layout tak ada lagi titik fokusnya — pun tak berhubungan dengan halaman.
 
-跟产品无关的“好看场景”放进版面只会抢戏；处处都画满细节，就等于没有重点。画实物或真实场景时，把主体的质感和光影做足，背景和放字的地方留干净；画抽象功能或前后变化时，可以把大面压成单色、白模或失焦，只让关键的那几处亮出颜色、光或细节。
+“Pemandangan cantik” yang tak berhubungan dengan produk justru mencuri perhatian begitu masuk layout; setiap tempat penuh detail berarti tidak ada yang jadi fokus. Saat menggambar benda nyata atau adegan nyata, kerjakan tekstur dan cahaya subjeknya sampai tuntas, dan biarkan latar serta area penampung teks tetap bersih; saat menggambar fungsi abstrak atau perubahan before-after, bidang luas boleh dipipihkan menjadi monokrom, model polos, atau out of focus, dan hanya beberapa titik kunci itu yang dibiarkan memancarkan warna, cahaya, atau detail.
 
-选能和页面“接上”的主体：
+Pilih subjek yang bisa “tersambung” dengan halaman:
 
-- 能跨过两块色面分界的单个物件。
-- 能延伸出画面的线状物。
-- 能在上面标注的空间：模型、地图、剖面、平面图。
+- Satu benda tunggal yang bisa melintasi batas dua bidang warna.
+- Benda memanjang yang bisa menjulur keluar dari bingkai.
+- Ruang yang bisa diberi anotasi: model, peta, potongan, denah.
 
-这样的主体，之后能和页面里的线、标注和区块连成一体；一张自给自足的风景照做不到。
+Subjek seperti ini kelak bisa menyatu dengan garis, anotasi, dan section milik halaman; foto lanskap yang berdiri sendiri tidak mampu melakukannya.
 
-## 写提示词
+## Menulis prompt
 
-按固定顺序写，每项一两句：
+Tulis dengan urutan tetap, tiap bagian satu-dua kalimat:
 
-1. **主体与表现形式**：什么东西，用什么体裁呈现（照片、插画、模型或图解），体裁从页面的方向推出。
-2. **构图与留白**：主体在画面里的位置和占比，哪一块留空给文字。按已选的首屏骨架写出主体所在的区域和占比，以及留给文字的那一块要完全干净。留白区不要有高光、反光或杂乱纹理，保证文字清晰好读。
-3. **安全距离**：主体、托台与阴影不要贴到文字边缘，留出 10% 左右的空隙，防止屏幕变窄时文字压到物体上。
-4. **背景**：直接写出页面实际使用的十六进制色值，或者要求纯透明背景。色值一致时边缘自然融进网页，不需要额外用 CSS 遮罩去修。
-5. **材质与光**：主光方向、辅光、质感。同一页的多张图用同一个光向。地面反光向留白侧自然衰减，不横扫到文字区。
-6. **排除项**：不要任何文字、标志、伪代码、界面截图或多余漂浮物；小件图标或透明图注明“不要地面投影”，外部投影交由前端 CSS `filter: drop-shadow(...)` 控制。
+1. **Subjek dan bentuk ekspresi**: benda apa, disajikan dalam genre apa (foto, ilustrasi, model, atau diagram); genre diturunkan dari arah halaman.
+2. **Komposisi dan ruang kosong**: posisi dan porsi subjek di dalam bingkai, serta bidang mana yang dikosongkan untuk teks. Tuliskan area dan porsi subjek sesuai kerangka layar pertama yang sudah dipilih, dan pastikan bidang untuk teks benar-benar bersih. Area ruang kosong jangan berisi highlight, pantulan, atau tekstur berantakan agar teksnya jelas terbaca.
+3. **Jarak aman**: subjek, alas, dan bayangan jangan menempel ke tepi teks; sisakan sekitar 10% celah agar teks tidak menindih benda saat layar menyempit.
+4. **Latar**: tuliskan langsung nilai hex yang benar-benar dipakai halaman, atau minta latar transparan murni. Bila nilai warnanya sama, tepi gambar menyatu natural ke halaman tanpa perlu CSS mask tambahan.
+5. **Material dan cahaya**: arah cahaya utama, cahaya bantu, tekstur. Beberapa gambar dalam satu halaman memakai arah cahaya yang sama. Pantulan lantai meredup natural ke arah ruang kosong, tidak menyapu ke area teks.
+6. **Exclusion**: jangan ada teks, logo, pseudo-code, screenshot antarmuka, atau benda melayang berlebih; untuk ikon kecil atau gambar transparan, tuliskan “tanpa bayangan jatuh di lantai” — bayangan luar diserahkan ke CSS `filter: drop-shadow(...)` di frontend.
 
-## 生成后放进页面再判断
+## Setelah dihasilkan, dinilai di dalam halaman
 
-在真实页面、真实尺寸里看，不在图片查看器里判断。单独看很好的图，放进版面后常常主体太满、朝向不对、留白在错的位置。
+Lihat di halaman nyata dengan ukuran nyata, bukan dinilai di image viewer. Gambar yang bagus ketika dilihat sendiri, setelah masuk layout sering kali subjeknya terlalu penuh, arah hadapnya salah, atau ruang kosongnya ada di posisi yang keliru.
 
-不对就改提示词重新生成，并写清要改什么，例如“主体往右移，左边留出一半空间”“去掉地面反光，背景换成页面的色值”。不要围着一张不合适的图改版式。同一批里挑最能排版的一张，不挑细节最多的那张。
+Bila kurang pas, perbaiki prompt dan generate ulang dengan tertulis apa yang harus diubah, misalnya “geser subjek ke kanan, sisakan setengah ruang di kiri” atau “hilangkan pantulan lantai, ganti latar dengan warna hex halaman”. Jangan memutar layout mengikuti satu gambar yang tidak cocok. Dari satu batch, pilih yang paling mudah ditata, bukan yang paling banyak detailnya.
 
-## 让图和页面接成一体
+## Menyatukan gambar dengan halaman
 
-**背景融合。** 要融进背景的主视觉和大图，不加框，也不关进圆角卡片：从图的四角实际取色，页面背景用同一个值，或者用 CSS 遮罩、导出渐隐把四条边淡出到背景色。纯色背景时，提示词里的底色和网页一致，边缘就能自然接上。
+**Melebur ke latar.** Visual utama dan gambar besar yang harus melebur ke latar tidak diberi bingkai dan tidak dikurung kartu membulat: ambil warna nyata dari keempat sudut gambar, samakan nilai latar halaman dengannya, atau gunakan CSS mask dan export fade untuk memudarkan keempat sisinya ke warna latar. Saat latarnya warna solid, menyamakan warna dasar di prompt dengan halaman membuat tepinya menyambung natural.
 
-**透明图。** 先放在最终背景上检查边缘、白边和残留的棋盘格；检查透明通道要看像素，不能看文件后缀。阴影不烘焙在图里，由页面按实际背景加投影，这样换了背景也对。
+**Gambar transparan.** Letakkan dulu di latar final untuk memeriksa tepi, white fringe, dan sisa pola kotak-kotak; memeriksa alpha channel harus melihat piksel, bukan melihat ekstensi file. Bayangan jangan dipanggang ke dalam gambar; tambahkan drop shadow dari halaman sesuai latar yang sebenarnya, sehingga tetap benar bila latar berganti.
 
-**跨越结构。** 透明物件放在两个色块或两个区块的分界线上，让它同时属于两边。
+**Melintasi struktur.** Letakkan benda transparan tepat di garis batas dua blok warna atau dua section, sehingga ia milik kedua sisi sekaligus.
 
-**图和代码接力。** 生成图负责代码做不出来的材质和光，例如金属、玻璃、模型、光影。代码负责需要精确、可编辑、会延续的部分，例如从图里延伸出去的线、路径和标注。如果图里有一段本该延续到页面的部分，就把它裁掉，改用矢量接着画。这样它能准确穿过版面，带上真实文字，并在不同宽度下重新走线。
+**Gambar dan kode bertitipan.** Gambar hasil generate mengerjakan material dan cahaya yang tak mampu dibuat kode — logam, kaca, model, cahaya-bayangan. Kode mengerjakan bagian yang butuh presisi, bisa diedit, dan harus berlanjut: garis, path, dan anotasi yang menjulur keluar dari gambar. Bila ada bagian di gambar yang seharusnya berlanjut ke halaman, potong bagian itu dan lanjutkan dengan vektor. Dengan begitu ia menembus layout secara presisi, membawa teks nyata, dan bisa menata ulang jalurnya pada lebar berbeda.
 
-**标注。** 在图上标注用细引线加文字，不用带底色和阴影的气泡卡片。引线端点要对准图里的真实位置：图在版面里用固定的尺寸和位置，按图片像素换算坐标。窄屏上隐藏标注，或改成图下的列表，不让它们漂移到错误的位置。
+**Anotasi.** Anotasi di atas gambar memakai garis penunjuk tipis plus teks, bukan kartu gelembung berlatar dan berbayangan. Ujung garis penunjuk harus tepat pada posisi nyata di dalam gambar: gambar memakai ukuran dan posisi tetap di layout, dan koordinat dikonversi dari piksel gambar. Sembunyikan anotasi di layar sempit atau ubah menjadi daftar di bawah gambar; jangan biarkan mereka melayang ke posisi yang salah.
 
-**窄屏裁切。** 不把整张大场景等比缩小到看不清。从原图裁出焦点区域另存一张给窄屏用，或用对象定位对准焦点。桌面和手机两种裁切，都要保住承载信息的那几处。
+**Crop layar sempit.** Jangan mengecilkan satu gambar adegan luas secara proporsional hingga tak terbaca. Crop area fokus dari gambar aslinya dan simpan sebagai versi layar sempit, atau gunakan object-position untuk mengunci fokus. Dua versi crop, desktop dan ponsel, sama-sama harus menyelamatkan bagian yang memikul informasi.
 
-**一张图用多次。** 结尾或其他区块可以用同一张图的局部特写，比再生成一张光线和风格对不上的图更统一。
+**Satu gambar dipakai berkali-kali.** Bagian penutup atau section lain boleh memakai close-up dari bagian gambar yang sama — lebih menyatu daripada meng-generate gambar baru yang cahaya dan gayanya tidak cocok.
 
-## 让一张画当舞台
+## Satu lukisan sebagai panggung
 
-另一种用法正好相反：图不讲信息，只给气氛，界面保持黑白克制，全页只用一种有笔触的画当唯一的颜色来源。
+Pemakaian lain justru kebalikannya: gambar tidak membawa informasi, hanya memberi suasana; antarmuka tetap hitam-putih yang restraint, dan seluruh halaman hanya memakai satu lukisan bergaya sapuan kuas sebagai satu-satunya sumber warna.
 
-- **画当舞台，界面在上面演示。** 把真实界面的简化版放在画上，画从四周露出来。滚动时画固定不动，只换前面的界面内容，和“滚动叙事”接得上。
-- **大胆裁切。** 只留画的一角或一个局部，接近抽象，不和界面抢。题材不必和产品字面相关，但气质要对得上。
-- **松和紧互相衬托。** 画越松，界面越要精确、干净；两者一起出现，彼此都更好看。
-- **用得少。** 一张画贯穿全页，或者只在两三处出现，例如价格卡的顶端和页脚；不要每个区块配一张。同一页的画统一画种和笔触。
-- **演示用简化过的真实界面。** 次要内容虚化或换成骨架，只把要讲的那一处做清楚；数字对比直接用界面元素画出来，例如两条长短不同的进度条，而不是另做一张图表。
+- **Lukisan sebagai panggung, antarmuka berdemonstrasi di atasnya.** Letakkan versi sederhana antarmuka nyata di atas lukisan, dan biarkan lukisan tersingkap dari sekelilingnya. Saat scroll, lukisan tetap diam; yang berganti hanya isi antarmuka di depannya — menyambung dengan “narasi scroll”.
+- **Berani memotong.** Sisakan hanya satu sudut atau satu bagian lukisan, mendekati abstrak, tidak berebut perhatian dengan antarmuka. Temanya tak harus berhubungan harfiah dengan produk, tetapi karakternya harus nyambung.
+- **Longgar dan rapat saling menonjolkan.** Makin longgar lukisannya, makin presisi dan bersih antarmukanya harus; keduanya hadir bersama, keduanya makin indah.
+- **Dipakai hemat.** Satu lukisan menembus seluruh halaman, atau hanya muncul di dua-tiga tempat — misalnya puncak kartu harga dan footer; jangan memberi satu lukisan untuk setiap section. Lukisan di satu halaman menyatukan jenis dan sapuan kuasnya.
+- **Demonstrasi memakai antarmuka nyata yang sudah disederhanakan.** Konten sekunder diburamkan atau diganti skeleton; hanya satu hal yang sedang dibahas dibuat jelas. Perbandingan angka digambar langsung dengan elemen antarmuka — misalnya dua progress bar berbeda panjang — bukan membuat chart terpisah.
 
-## 异质素材的单色化统一
+## Unifikasi monokrom aset heterogen
 
-引入历史画作、雕像肖像或外部摄影素材时，彩色位图容易与界面的主题色产生冲突。可以通过统一的单色处理将不同来源的素材收拢到当前方向里：
+Saat memasukkan lukisan historis, patung potret, atau foto eksternal, bitmap berwarna mudah bentrok dengan warna tema antarmuka. Satukan aset dari berbagai sumber ke dalam arah saat ini lewat perlakuan monokrom yang seragam:
 
-- **单色映射**：将素材转为黑白高对比后，把暗部与亮部映射到页面的主色与底色。
-- **网点与点阵抖动**：对写实图片做半色调网点化或微弱的扫描线处理，消解照片的写实质感，让它能和排版、网格共处。
+- **Pemetaan monokrom**: ubah aset menjadi hitam-putih berkontras tinggi, lalu petakan area gelap dan terang ke warna utama dan warna dasar halaman.
+- **Halftone dan dithering titik**: terapkan halftone atau scanline halus pada foto realistis untuk meluruhkan kesan fotografisnya, sehingga ia bisa hidup berdampingan dengan tipografi dan grid.
 
-## 抽象技术的主视觉推导
+## Penurunan visual utama untuk teknologi abstrak
 
-缺少产品截图时，不回退到通用的彩色发光球或大渐变。从产品处理的东西里找一个有形的对象：它读写的数据长什么样，它替代的那件工具或那道工序是什么，它的用户手边有什么。表现形式满足两条：大面积色阶平稳，文字压得住；画面里的线和标尺能由 SVG/CSS 接着画。找不到有形的对象时，主视觉交给排版本身。
+Bila tidak ada screenshot produk, jangan mundur ke bola bercahaya warna-warni generik atau gradasi besar. Cari satu objek berwujud dari hal yang diproses produk: seperti apa bentuk data yang ia baca-tulis, alat atau proses apa yang ia gantikan, apa yang ada di tangan penggunanya. Bentuk ekspresinya harus memenuhi dua syarat: gradasi warna bidang luasnya stabil dan tahan ditindih teks; serta garis dan garis skala di dalam gambar bisa dilanjutkan oleh SVG/CSS. Bila tidak menemukan objek berwujud, serahkan visual utama kepada tipografi itu sendiri.
 
-## 成套素材：角色、道具与图集
+## Aset set: karakter, properti, dan sprite sheet
 
-游戏、收集和养成类产品要的不是一张配图，而是一整套会被反复摆放、翻转、比较的素材。
+Produk game, koleksi, dan petualangan tidak butuh satu gambar pendukung, melainkan satu set aset yang akan dipasang, dibalik, dan dibandingkan berulang-ulang.
 
-- **先写风格说明。** 画法、视角、光向、材质、比例和色板各写一句，同一批的提示词都按它写。
-- **同系列靠轮廓区分。** 统一比例和光向，用耳朵、道具、配饰这类轮廓特征区分个体，不只换颜色。缩到实际显示尺寸还要能一眼分开。
-- **多状态从同一张改出来。** 生长阶段、正反面、开壳前后、不同动作，以第一张为参考图编辑出变体，保持是同一个角色；各状态的落地点对齐到同一条基线。
-- **透明图集按轮廓切。** 格子之间留透明间距，按实际轮廓裁切，不按格子均分，否则会切掉树冠、带进邻格的残片。检查 alpha 像素，不看预览图的背景色，再放到最终背景上看边缘。
-- **贴到物体上要两面成立。** 会翻转、落下或转到侧面的素材，正面背面都要有，边缘沿轮廓闭合。受光交给场景，不在图里烘焙和场景方向相反的光影。
+- **Tulis dulu style guide-nya.** Satu kalimat untuk gaya gambar, sudut pandang, arah cahaya, material, proporsi, dan palet; seluruh prompt dalam satu batch ditulis mengikuti itu.
+- **Seri yang sama dibedakan lewat siluet.** Satukan proporsi dan arah cahaya, bedakan individu lewat ciri siluet seperti telinga, properti, dan aksesori — bukan hanya mengganti warna. Saat diperkecil ke ukuran tampil nyata, masih harus terbedakan sekali lihat.
+- **Multi-status diturunkan dari satu gambar yang sama.** Tahap pertumbuhan, sisi depan-belakang, sebelum-sesudah cangkang terbuka, berbagai aksi: edit variannya dengan gambar pertama sebagai referensi agar tetap karakter yang sama; titik pijak tiap status disejajarkan ke satu baseline yang sama.
+- **Sprite sheet transparan dipotong mengikuti siluet.** Sisakan jarak transparan antar sel, potong mengikuti kontur nyata, bukan membagi rata per sel — kalau tidak, tajuk pohon bisa terpotong dan serpihan sel sebelah bisa terbawa. Periksa piksel alpha, bukan warna latar di preview, lalu letakkan di latar final untuk memeriksa tepinya.
+- **Menempel di benda harus sah dari dua sisi.** Aset yang akan dibalik, jatuh, atau berputar ke samping wajib punya sisi depan dan belakang, dengan tepi tertutup mengikuti kontur. Pencahayaan diserahkan ke scene; jangan memanggang cahaya-bayangan yang berlawanan arah dengan scene ke dalam gambar.
 
-## 实时 3D
+## 3D real-time
 
-三类情况用实时 3D：用户要转动、检视的对象；堆叠、碰撞、推挤、摆动这类物理；玻璃、金属、透明塑料这类随视角变化的材质。一张生成图就能表达的，或者只为了显得高级，都不用。
+Tiga kondisi yang memakai 3D real-time: objek yang harus bisa diputar dan diperiksa pengguna; fisika seperti menumpuk, bertabrakan, mendorong, dan berayun; serta material yang berubah mengikuti sudut pandang seperti kaca, logam, dan plastik transparan. Bila satu gambar hasil generate sudah cukup mengekspresikannya, atau pemakaiannya hanya demi kesan premium, jangan pakai.
 
-- 用 three.js 这类成熟引擎，需要物理时再配一个刚体库。生成的图当贴图、精灵或环境光来源，代码负责空间、运动和受力。
-- 验收看画面，不看用没用库：静帧看得出体积、透视、接触阴影和材质区分；录屏里运动连续，力能传到被推的物体上。
-- 新建的小样把库下载到任务目录的 `vendor/` 并附许可证，不引用 CDN；存量项目按项目已有的依赖方式引入。以模块方式引入的页面和贴图要通过本地服务器打开；要求双击就能打开时，打包成一个普通脚本，贴图内联或放在同目录。
-- 设备像素比上限取 2；页面隐藏或滚出视口时停帧；拿不到 WebGL 时显示同一场景的静态图；减少动态效果时照常算出结果，只关镜头晃动和装饰演出。
-- 截图前确认画布真的画出了内容，见 [工具](tools.md)。
+- Pakai engine matang seperti three.js, dan tambahkan satu library rigid body bila butuh fisika. Gambar hasil generate dipakai sebagai texture, sprite, atau sumber environment light; kode mengerjakan ruang, gerak, dan gaya.
+- Acceptance melihat gambar, bukan mencatat pemakaian library: still frame harus memperlihatkan volume, perspektif, contact shadow, dan pembedaan material; di rekaman layar gerakannya kontinu dan gaya sampai ke benda yang didorong.
+- Mockup baru mengunduh library ke `vendor/` di direktori tugas beserta lisensinya, tanpa merujuk CDN; proyek existing mengikuti cara dependensi yang sudah dipakai proyek. Halaman dan texture yang diimpor sebagai module harus dibuka lewat local server; bila dibutuhkan bisa dibuka dengan dobel-klik, bundel menjadi satu script biasa dengan texture di-inline atau diletakkan di direktori yang sama.
+- Batas device pixel ratio diambil 2; hentikan render saat halaman tersembunyi atau keluar viewport; tampilkan gambar statis scene yang sama bila WebGL tak tersedia; saat efek gerak dikurangi, hasil tetap dihitung seperti biasa dan hanya guncangan kamera serta pertunjukan dekoratif yang dimatikan.
+- Sebelum screenshot, pastikan canvas benar-benar sudah menggambar isinya, lihat [Alat](tools.md).
 
-## 生成视频的可选路径
+## Jalur opsional video hasil generate
 
-要一段能叠在页面上循环播放的素材时，先检查三样：首尾接不接得上，主体的边缘干不干净，背景处理得怎么样。在单色背景上生成再抠像，只是可以试的办法之一：透明和反光的物体抠完可能丢边，或者带上背景的颜色，要放到最终的页面背景上看。
+Bila butuh satu potongan materi yang berulang terus di atas halaman, periksa dulu tiga hal: apakah akhir dan awalnya menyambung, apakah tepi subjeknya bersih, dan bagaimana perlakuan latarnya. Generate di latar monokrom lalu chroma-key hanyalah salah satu cara yang bisa dicoba: benda transparan dan reflektif bisa kehilangan tepi atau membawa warna latar setelah di-key — harus dilihat di atas latar final halaman.
 
-要把几段视频连成一段叙事时，可以拿前一段的最后一帧当下一段的第一帧，或者事先把各段的关键帧统一规划好。播放进度由滚动或手势控制时，要检查跳到任意一帧、倒着播、加载速度和内存占用，不要默认把整段视频解码成一张张大图。
+Bila beberapa potongan video disambung menjadi satu narasi, gunakan frame terakhir potongan sebelumnya sebagai frame pertama potongan berikutnya, atau rencanakan keyframe semua potongan secara seragam sejak awal. Bila progresnya dikendalikan scroll atau gesture, periksa lompatan ke frame mana pun, pemutaran mundur, kecepatan loading, dan pemakaian memori; jangan mengasumsikan seluruh video didekode menjadi gambar-gambar besar.
 
-玻璃、水晶这类需要折射或透光的物体，先在最终页面的背景色上生成画面，让折射和投影烘焙进素材，再用视频抠像模型去掉背景。直接在绿幕上生成再抠像，折射会带着绿色。预渲染的折射和光照只对应生成时的背景，不应承诺会随任意页面内容产生实时物理效果。
+Benda yang butuh refraksi atau transmisi cahaya seperti kaca dan kristal: generate dulu gambarnya di atas warna latar final halaman sehingga refraksi dan bayangannya terpanggang ke dalam materi, lalu hilangkan latarnya dengan model video matting. Generate di green screen lalu key akan membawa warna hijau ke dalam refraksinya. Refraksi dan pencahayaan pra-render hanya berlaku untuk latar saat generate, dan tidak boleh menjanjikan efek fisika real-time yang mengikuti isi halaman apa pun.
 
-透明底的视频和图片一样，可以跨在两个区块的分界上，做法见上文的“跨越结构”。
+Video berlatar transparan sama seperti gambar, boleh dikendaikan di atas batas dua section; caranya lihat “Melintasi struktur” di atas.
 
-## 文件与说明
+## File dan keterangan
 
-- 按显示尺寸的 2 倍导出，不直接内嵌原始大图。不透明的图用 JPEG 或 WebP，透明的用 WebP 或 PNG；单张控制在几百 KB 以内。内嵌成 data URL 后体积会再大约三分之一。
-- 保留提示词、原图和处理后的版本，写清每张图的来源、用途和处理方式，分清复用、裁切、生成和后处理。
-- 生成图和替代素材不冒充真实产品截图、真实场所、真实人物或产品证据。
+- Export pada 2× ukuran tampil, jangan langsung menempel gambar asli yang besar. Yang tak transparan memakai JPEG atau WebP, yang transparan memakai WebP atau PNG; satu gambar dijaga di bawah ratusan KB. Setelah di-inline menjadi data URL, ukurannya bertambah sekitar sepertiga lagi.
+- Simpan prompt, gambar asli, dan versi yang sudah diproses; tuliskan dengan jelas sumber, kegunaan, dan cara memproses tiap gambar, serta bedakan pakai ulang, crop, generate, dan pasca-proses.
+- Gambar hasil generate dan aset pengganti tidak boleh menyamar sebagai screenshot produk nyata, tempat nyata, orang nyata, atau bukti produk.

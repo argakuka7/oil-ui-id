@@ -1,1 +1,1 @@
-The English README is now the default: see [README.md](README.md). 中文版见 [README.zh-CN.md](README.zh-CN.md).
+The original English README lives in the upstream repository: see [README.md at oil-oil/oil-ui](https://github.com/oil-oil/oil-ui#readme). 中文版见 [README.zh-CN.md at oil-oil/oil-ui](https://github.com/oil-oil/oil-ui/blob/main/README.zh-CN.md). This repository hosts the Indonesian translation — see [README.md](README.md).

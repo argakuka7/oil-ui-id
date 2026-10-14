@@ -1,104 +1,104 @@
-# 视觉语言
+# Bahasa Visual
 
-## 目录导航
+## Navigasi isi
 
-- [从整体到局部](#从整体到局部)
-- [焦点与空间](#焦点与空间)
-- [字体与内容](#字体与内容)（含 [可读性是交付门槛](#可读性是交付门槛)）
-- [色彩与表面](#色彩与表面)
-- [控件与图标](#控件与图标)
+- [Dari keseluruhan ke detail](#dari-keseluruhan-ke-detail)
+- [Fokus dan ruang](#fokus-dan-ruang)
+- [Font dan konten](#font-dan-konten) (termasuk [Keterbacaan adalah ambang penyerahan](#keterbacaan-adalah-ambang-penyerahan))
+- [Warna dan permukaan](#warna-dan-permukaan)
+- [Kontrol dan ikon](#kontrol-dan-ikon)
 
-## 从整体到局部
+## Dari keseluruhan ke detail
 
-先看信息的焦点、构图和内容的疏密，再调空间、排版、色彩和细节。前一步已经把问题解决了，就不为了显得用心再往上加样式。
+Lihat dulu fokus informasi, komposisi, dan kepadatan konten, baru menyetel ruang, tipografi, warna, dan detail. Bila langkah sebelumnya sudah menyelesaikan masalahnya, jangan menambah gaya sekadar agar terlihat sungguh-sungguh.
 
-项目里现成的视觉变量、组件和参考，能用就用。没有现成标准时，只定义眼下用得到的几种文字、颜色和间距，不凭空造一整套设计系统。
+Variabel visual, komponen, dan referensi yang sudah ada di proyek, pakai sebisa mungkin. Bila belum ada standar, definisikan hanya beberapa gaya teks, warna, dan jarak yang dibutuhkan saat ini; jangan mengarang satu sistem desain utuh dari nol.
 
-每次修改都要说得出：哪个看得见的元素有问题，问题出在它和谁的关系上，打算怎么调，调完应该好在哪里。看源码能证明样式不一致，证明不了画面变好了。
+Setiap perubahan harus bisa dijelaskan: elemen terlihat mana yang bermasalah, pada hubungannya dengan apa masalah itu muncul, bagaimana berniat menyetelnya, dan setelah disetel harus membaik di mana. Membaca source code bisa membuktikan gaya tidak konsisten, tetapi tidak bisa membuktikan tampilan menjadi lebih baik.
 
-## 焦点与空间
+## Fokus dan ruang
 
-- 每个区域都要让人一眼认出最重要的那条信息或那个动作，其余信息靠更小的字、更轻的字重、更低的对比或靠边的位置退到后面；不让几种强调同时抢注意力。
-- 同一种关系用同一种间距，一组之内紧一些，组和组之间松一些。先用对齐和留白把结构立起来，再看需不需要容器或分隔线。
-- 留白是用来分组、突出重点和控制节奏的。工具界面不为了显得空旷而砍掉必要的信息，品牌页面也不必把首屏塞满。
-- 不对称的版式、跨出边界的图形和很大的文字，都可以用来表达选定的方向，但局部要对得齐，阅读顺序要清楚；有意做成的不对称，不当成错误去改。
-- 区域之间怎么排由父布局管，组件只管自己里面的空间。同一段距离，不要由好几层样式各加一遍。
-- 先把内容直接放在画布上，靠对齐、字号和留白来组织。只有真的需要分组、表示选中、拉开背景对比或划出操作范围时才加容器；不要把页面、模块、条目和条目说明一层层套成卡片。
-- 分隔线和边框不要重复。每条线只做一件事：同一处分隔不叠双线、单线再加一个框；留白已经分开的地方不再补线；不要每个层级都画一遍线。线的粗细对应层级，例如粗线分版面、细线分栏，全页一致。线本身是风格的一部分时照样保留，只删重复的那些。
+- Setiap area harus membuat orang langsung mengenali satu informasi atau satu aksi yang paling penting; informasi lain mundur ke belakang lewat ukuran font yang lebih kecil, weight yang lebih ringan, kontras yang lebih rendah, atau posisi yang menjauh ke tepi. Jangan biarkan beberapa penekanan berebut perhatian bersamaan.
+- Hubungan yang sama memakai jarak yang sama; di dalam satu kelompok lebih rapat, antar-kelompok lebih renggang. Bangun dulu strukturnya lewat perataan dan ruang kosong, baru pertimbangkan apakah perlu wadah atau garis pemisah.
+- Ruang kosong dipakai untuk mengelompokkan, menonjolkan, dan mengendalikan ritme. Antarmuka alat tidak memangkas informasi yang perlu demi terlihat lapang, dan halaman brand juga tidak wajib menyempti layar pertama.
+- Layout asimetris, grafis yang keluar dari batas, dan teks yang sangat besar semuanya boleh dipakai mengekspresikan arah yang dipilih, tetapi bagian lokalnya harus rata dan urutan bacanya jelas; asimetri yang disengaja tidak diperlakukan sebagai kesalahan yang harus diperbaiki.
+- Cara area-area tersusun ditentukan oleh layout induk; komponen hanya mengatur ruang di dalam dirinya. Jarak yang sama jangan ditambahkan berulang oleh beberapa lapis gaya.
+- Letakkan dulu konten langsung di kanvas, dan organisasikan lewat perataan, ukuran font, serta ruang kosong. Wadah baru ditambahkan hanya benar-benar perlu mengelompokkan, menandai selection, memisahkan kontras dengan latar, atau menandai area aksi; jangan melapis-lapiskan halaman, modul, butir, dan keterangan butir menjadi kartu di dalam kartu.
+- Garis pemisah dan border jangan saling mengulang. Setiap garis hanya mengerjakan satu hal: pemisahan di lokasi yang sama tidak menumpuk dua garis, atau satu garis lalu ditambah satu kotak lagi; tempat yang sudah dipisahkan ruang kosong tidak ditambah garis; jangan menggambar ulang garis di setiap lapisan. Ketebalan garis berkorespondensi dengan lapisan — misalnya garis tebal memisahkan bidang halaman, garis tipis memisahkan kolom — dan konsisten di seluruh halaman. Bila garis itu sendiri bagian dari gaya, biarkan; hapus hanya yang berulang.
 
-## 字体与内容
+## Font dan konten
 
-- 把文字分成标题、正文、辅助信息、标签和数据几种角色，每种角色的样式固定下来，层级之间的差别要够大；换不换行、留多少空间，按真实内容的长度来定。
-- 用产品实际的语言检查字形、字重和回退字体。英文样例好看，不代表中文排出来也成立；中英文混排时，看基线是否对齐、两种字看起来是否一样重。
-- 正文的行长和行高，按读起来舒服来定；密集的表格是给人扫视和比较的，不照搬文章的排版。需要上下比较或滚动变化的数字用等宽数字，独立的大字和居中的金额输入按字形好看选。
-- 重要的名称和说明，不用固定高度去裁。确实要截断时，留一个能看到完整内容的入口，并且别让相近的名称截断以后分不出谁是谁。
-- 先把具体的产品内容写出来，再调布局。按钮上写按下去会发生什么；讲产品好在哪里时写真实的用途，不用空泛的口号、编造的背书或没有意义的英文来填版面。
+- Bagi teks menjadi beberapa peran — judul, body, informasi pendukung, label, dan data — kunci gaya tiap peran, dan pastikan pembeda antar lapisan cukup besar; apakah wrap atau berapa ruang yang disisakan, ditentukan oleh panjang konten yang nyata.
+- Periksa bentuk huruf, weight, dan fallback font dengan bahasa yang benar-benar dipakai produk. Sampel Latin yang bagus belum tentu sah saat teks aslinya dirender; pada teks campuran (misalnya Latin dan CJK), periksa apakah baseline sejajar dan kedua aksara terlihat sama beratnya.
+- Panjang baris dan line-height body text ditetukan dari kenyamanan membaca; tabel padat dibuat untuk dipindai dan dibandingkan, jangan meniru tata letak artikel. Angka yang perlu dibandingkan atas-bawah atau berubah saat scroll memakai angka tabular; angka besar yang berdiri sendiri dan input nominal yang di tengah dipilih berdasarkan keindahan bentuknya.
+- Nama dan deskripsi yang penting tidak dipotong dengan tinggi tetap. Bila memang harus terpotong, sediakan pintu untuk melihat isi lengkapnya, dan jangan biarkan nama-nama yang mirip tak terbedakan setelah terpotong.
+- Tulis dulu konten produk yang konkret, baru menyetel layout. Tombol menuliskan apa yang terjadi saat ditekan; saat menjelaskan keunggulan produk, tulis kegunaan nyatanya — jangan mengisi halaman dengan slogan kosong, endorsemen fiktif, atau bahasa Inggris tanpa makna.
 
-### 可读性是交付门槛
+### Keterbacaan adalah ambang penyerahan
 
-字号与行高在真实视口、实际字体和 100% 阅读尺寸下判断，缩略图只能用来判断构图。阅读型页面的中文正文通常从 16–18px 起步，产品界面正文 14–16px，每天长时间使用的高密度工具可以到 13–14px；正文无单位行高 1.6–1.75；操作文字通常 14–16px。它们是起点，不是跨产品的死规定。不要靠 9–12px 的说明、低对比细字或压缩行高营造“精致”。信息太多先删冗余、调层级或重排。
+Ukuran font dan line-height dinilai pada viewport nyata, font sebenarnya, dan ukuran baca 100%; thumbnail hanya dipakai menilai komposisi. Body text halaman berorientasi baca biasanya mulai dari 16–18px, body text antarmuka produk 14–16px, dan alat padat yang dipakai berjam-jam tiap hari bisa turun ke 13–14px; line-height body (unitless) 1.6–1.75; teks aksi biasanya 14–16px. Semua itu titik awal, bukan hukum mati antar-produk. Jangan membangun kesan “halus” dengan keterangan 9–12px, huruf tipis berkontras rendah, atau line-height yang dipadatkan. Bila informasinya terlalu banyak, hapus dulu yang berlebihan, setel ulang hierarki, atau susun ulang.
 
-多行中文标题通常先用 1.2–1.35 的行高，按真实字形检查。不要照搬英文大写海报的极紧行高，不把标题高度固定为单行，不用负外边距挤压后续内容。展示字确需更紧时，必须看过每个支持视口的实际换行并确认字形不碰撞。
+Judul multi-baris biasanya mulai dengan line-height 1.2–1.35 dan diperiksa dengan bentuk huruf yang sebenarnya. Jangan meniru line-height super rapat poster kapital berbahasa Latin, jangan mengunci tinggi judul satu baris, dan jangan memampatkan konten setelahnya dengan margin negatif. Bila huruf display memang perlu lebih rapat, hasil wrap nyata di setiap viewport yang didukung harus sudah dilihat dan dipastikan tidak ada huruf yang bertabrakan.
 
-中文断行要主动控制：`text-wrap: pretty` 或 `balance` 只能减少孤字，不能消除。数字和单位（38 秒、47 分钟）、“不会”这类不可拆的词用不换行包起来；首屏说明、页边批注这类短段落按语义手动断句。行末只剩一两个字，或者词被拆到两行，都算缺陷。
+Kendalikan pemenggalan baris secara aktif: `text-wrap: pretty` atau `balance` hanya mengurangi kata yatim, tidak menghapusnya. Angka beserta satuannya (38 detik, 47 menit) dan istilah yang tidak boleh terpisah dibungkus tanpa wrap; paragraf pendek seperti penjelas layar pertama atau anotasi tepi dipenggal manual sesuai makna. Baris akhir yang hanya menyisakan satu-dua huruf, atau kata yang terpotong ke dua baris, sama-sama dihitung cacat.
 
-**窄幅展示字（Condensed / Compressed）**：只用于展示标题和极短的编号标签；它牺牲横向辨识度，正文和长阅读用常规宽度的字体。
+**Huruf display sempit (Condensed / Compressed)**: hanya untuk judul display dan label nomor yang sangat pendek; ia mengorbankan keterbacaan horizontal, jadi body text dan bacaan panjang memakai font berlebar normal.
 
-验收时看长标题、两到三行正文、中英混排、数字单位与字体回退；在窄屏和放大阅读后检查行间、上下区块及按钮内部。文字重叠、截断关键信息或被相邻区域压住属于未完成。先修行高、内容驱动高度和容器伸缩，再考虑减小字号。
+Saat acceptance, periksa judul panjang, body dua-tiga baris, teks campuran multi-aksara, angka bersatuan, dan fallback font; setelah layar sempit dan zoom membaca, periksa jarak antar baris, jarak antar blok, dan bagian dalam tombol. Teks saling menumpuk, informasi kunci terpotong, atau tertindih area tetangga dihitung belum selesai. Perbaiki dulu line-height, tinggi yang digerakkan konten, dan elastisitas wadah, baru pertimbangkan mengecilkan font.
 
-### 示例数据要像真的
+### Data contoh harus terasa nyata
 
-示例数据会暴露模板感，即使视觉层已经很好。要避开：整数指标（1,000 位用户、+10%）、张三李四和示例公司、每条都是“2 小时前”、写着“标题”“描述”的占位字、页面上反复出现的“了解更多”“立即开始”。真实数据是不整齐的：1,238 位用户、+1.83%，时间有“刚刚”“昨天 16:12”“3 月 14 日”；名字有长有短，顺带验证长名字的排版。按钮说出具体动作，例如“保存草稿”“周二发送”。一页上有很多演示（组件目录、模板库、功能展示）时，让它们共用一个具体的虚构场景：同一个产品、同一批人、同一组文件和数字，演示之间互相呼应，比各自编一条“示例标题”可信得多；不要把库名、技术栈当成演示内容。
+Data contoh membongkar kesan template, meski lapisan visualnya sudah bagus. Yang harus dihindari: metrik bulat sempurna (1.000 pengguna, +10%), nama generik dan perusahaan contoh, semua item bertanda “2 jam lalu”, placeholder bertulisk “judul”/“deskripsi”, serta “pelajari lebih lanjut” dan “mulai sekarang” yang berulang di halaman. Data nyata itu tidak rapi: 1.238 pengguna, +1,83%, waktu berbunyi “baru saja”, “kemarin 16.12”, “14 Maret”; nama ada yang panjang ada yang pendek — sekalian memverifikasi tata letak nama panjang. Tombol menyebutkan aksinya yang konkret, misalnya “Simpan draf” atau “Kirim hari Selasa”. Bila satu halaman memuat banyak demo (katalog komponen, library template, galeri fitur), biarkan semuanya berbagi satu skenario fiktif yang konkret: produk yang sama, orang-orang yang sama, file dan angka yang sama, dan demo-demo saling menyambung — jauh lebih kredibel daripada tiap demo mengarang “judul contoh” sendiri; jangan menjadikan nama library atau tech stack sebagai isi demo.
 
-## 色彩与表面
+## Warna dan permukaan
 
-每种颜色都有固定的用处：文字、背景、动作、选中或状态。品牌色和表示状态的颜色可以同时存在，但重要的状态不能只靠颜色来区分。
+Setiap warna punya kegunaan yang tetap: teks, latar, aksi, selection, atau status. Warna brand dan warna status boleh hidup berdampingan, tetapi status penting tidak boleh dibedakan hanya lewat warna.
 
-边框、阴影、材质和渐变要和方向一致，并且真的在帮忙：分出层次、带出氛围，或者让人认出品牌。紫色、圆角和渐变都不是禁用项；出问题的是没有理由地到处重复、主次不分，或者不适合这个任务。
+Border, bayangan, material, dan gradasi harus searah dengan arah desain, dan benar-benar membantu: memisahkan lapisan, membawa suasana, atau membuat orang mengenali brand. Ungu, sudut membulat, dan gradasi bukan hal terlarang; yang bermasalah adalah pengulangan di mana-mana tanpa alasan, utamanya tak jelas, atau ketidakcocokan dengan tugas ini.
 
-不要给每张普通卡片都配上不同的强调色、粗边框和重阴影。同一层级的东西看起来一样重；套在里面的轮廓，要和外面的容器协调。
+Jangan menghias setiap kartu biasa dengan warna aksen berbeda, border tebal, dan bayangan berat. Hal-hal yang satu lapisan terlihat sama beratnya; outline yang berada di dalam harus selaras dengan wadah di luarnya.
 
-表面层级可以用色温和色相的偏移来区分，不只靠明暗。配色怎样选，见 [设计方向](design-direction.md) 的“定色彩”；这一节只管颜色怎样用。
+Lapisan permukaan bisa dibedakan lewat geseran suhu warna dan hue, bukan hanya terang-gelap. Cara memilih palet lihat “Tetapkan warna” di [Arah Desain](design-direction.md); bagian ini hanya mengatur cara warna dipakai.
 
-质感按调性的完成度取用，不混用：
-- 精致一端：公差小、层次细，具体手段从这个方向的生成引擎里找。
-- 粗粝一端：手工和印刷留下的痕迹，从这个方向的生成引擎里找，不套一组固定的道具。
+Material/textur diambil sesuai tingkat penyelesaian tone, tanpa campur aduk:
+- Ujung halus: toleransi kecil, lapisan rinci; sarana konkretnya dicari dari mesin generatif arah ini.
+- Ujung kasar: jejak tangan dan cetak; juga dicari dari mesin generatif arah ini, bukan menempelkan satu set properti tetap.
 
-**单色与双色体系**：除了多级中性灰加一种强调色，也可以全页只用一种主色和一种底色，次级信息、边框和禁用态都由主色按透明度或和底色混合派生。
+**Sistem monokrom dan duotone**: selain abu netral berlapis plus satu warna aksen, seluruh halaman juga bisa hanya memakai satu warna utama dan satu warna dasar; informasi sekunder, border, dan status disabled semuanya diturunkan dari warna utama lewat transparansi atau campuran dengan warna dasar.
 
-**正反色块交替**：长页面各区块可以在深底亮字与浅底深字之间以硬边直接切换，不用渐变过渡，形成清楚的段落停顿。
+**Selang-seling blok terang-gelap**: section-section halaman panjang boleh berganti langsung antara latar gelap-teks terang dan latar terang-teks gelap dengan tepian keras tanpa transisi gradasi, membentuk jeda antar-bagian yang jelas.
 
-在实际的背景上看一遍文字、控件的边界、焦点和选中态是否看得清，背景是图片、半透明或会动的时候尤其要看。项目已有可访问性要求的，照它来；读内容和做基本操作，都不该让人靠猜。
+Periksa sekali pada latar yang sebenarnya: apakah teks, tepi kontrol, focus, dan status selection masih terbaca — terutama saat latar berupa gambar, semi-transparan, atau bergerak. Bila proyek sudah punya requirement aksesibilitas, ikuti requirement itu; membaca konten dan melakukan operasi dasar tidak boleh mengandalkan terkaan.
 
-## 控件与图标
+## Kontrol dan ikon
 
-同一个界面里的图标是同一种画法，看起来一样大，并且和旁边的文字对齐。通用图标优先用成熟的图标库；品牌专属的插图单独画，不给每个标题都硬配一个图标。
+Ikon dalam satu antarmuka memakai satu gaya gambar, terlihat sama besar, dan sejajar dengan teks di sebelahnya. Untuk ikon umum, utamakan library ikon yang matang; ilustrasi khusus brand digambar terpisah — jangan memaksakan satu ikon untuk tiap judul.
 
-能点的东西要让人看得出能点，点了要有反馈。默认、按下、聚焦、选中、禁用和处理中是不同的意思，样子也要不同；只在鼠标悬停时才出现的入口，触屏和键盘也要有办法到达。状态变化时，点击区域不变大变小，也不挤动旁边的布局。
+Hal yang bisa diklik harus terlihat bisa diklik, dan memberi feedback saat diklik. Default, pressed, focused, selected, disabled, dan processing adalah makna yang berbeda, wajibnya wujud yang berbeda; pintu yang hanya muncul saat hover harus tetap bisa dicapai lewat layar sentuh dan keyboard. Saat status berubah, area klik tidak membesar-mengecil dan tidak menggeser layout di sekitarnya.
 
-控件是一套语法：圆角、描边、字重、阴影、按下时的位移、选中的表达和状态图标，在按钮、输入、标签、开关和空状态之间用同一套逻辑。方向不只贯穿整页，也贯穿每个控件。按钮和输入框还停在组件库的默认样子，换了主色也认不出是哪个产品，就说明控件还没有进入方向。
+Kontrol adalah satu tata bahasa: radius sudut, stroke, weight, bayangan, pergeseran saat ditekan, cara mengekspresikan selection, dan ikon status — semuanya memakai logika yang sama di tombol, input, label, switch, dan empty state. Arah tidak hanya menembus seluruh halaman, tetapi juga setiap kontrol. Bila tombol dan input masih berbentuk default library komponen, dan tak dikenali produk mana setelah diganti warna utamanya, berarti kontrol belum masuk ke dalam arah.
 
-陌生图标配可见文字；纯图标按钮仍需可访问名称。箭头符号有含义：↗ 表示打开新页面或外部链接，提交、检查这类原地动作不用它。静态标签和装饰不要伪装成按钮，行内按钮不要误触外层卡片动作。
+Ikon yang asing disertai teks yang terlihat; tombol ikon murni tetap butuh nama aksesibel. Simbol panah bermakna: ↗ berarti membuka halaman baru atau tautan eksternal, dan tidak dipakai untuk aksi di tempat seperti submit atau periksa. Label statis dan dekorasi jangan menyamar sebagai tombol, dan tombol inline jangan memicu aksi kartu luar secara tak sengaja.
 
-### 图标库也会趋同
+### Library ikon juga bisa menyamarata
 
-模型的默认是 Lucide 或 Heroicons：24px、2px 描边、圆头端点。库本身没有问题，问题是每个方向都用同一套、同一种摆法。图标和字体一样是方向的一部分，在方向卡里写明用哪一套、什么粗细和端点，或者干脆不用。
+Default model adalah Lucide atau Heroicons: 24px, stroke 2px, ujung membulat. Library-nya sendiri tidak bermasalah; masalahnya setiap arah memakai set yang sama dengan penataan yang sama. Ikon sama seperti font adalah bagian dari arah: tuliskan di kartu arah set mana yang dipakai, seberapa tebal, dan bagaimana ujungnya — atau memang tanpa ikon.
 
-| 方向的气质 | 可以考虑 | 特点 |
+| Karakter arah | Bisa dipertimbangkan | Ciri |
 | --- | --- | --- |
-| 精致、编辑、奢侈 | Phosphor 的 Thin 或 Light，Iconoir | 细描边，配细字重的衬线或无衬线 |
-| 工业、仪器、企业工具 | Carbon，Material Symbols 的 Sharp，Radix Icons | 直角端点、网格严格；Radix 专为 15px 的紧凑界面设计 |
-| 友好、圆润、消费 | Phosphor 的 Fill 或 Duotone，MingCute | 圆角端点，实心或双色 |
-| 中文产品，需要大量业务图标 | IconPark，Remix Icon | 覆盖面广；IconPark 能调描边粗细、端点和主题 |
-| 需要连续调粗细和填充 | Material Symbols | 可变字体，填充、字重、光学尺寸都能连续调节 |
-| 像素、游戏、复古 | Pixelarticons | 像素网格 |
-| 品牌标志 | Simple Icons | 各品牌标志的矢量形状 |
+| Halus, editorial, mewah | Phosphor Thin atau Light, Iconoir | Stroke tipis, dipadukan serif atau sans berweight ringan |
+| Industrial, instrumen, alat korporat | Carbon, Material Symbols Sharp, Radix Icons | Ujung siku, grid ketat; Radix dirancang untuk antarmuka padat 15px |
+| Ramah, membulat, konsumen | Phosphor Fill atau Duotone, MingCute | Ujung membulat, solid atau dua warna |
+| Produk berbahasa CJK, butuh banyak ikon bisnis | IconPark, Remix Icon | Cakupan luas; IconPark bisa menyetel ketebalan stroke, ujung, dan tema |
+| Butuh ketebalan dan fill yang bisa diatur kontinu | Material Symbols | Variable font; fill, weight, dan optical size bisa diatur kontinu |
+| Piksel, game, retro | Pixelarticons | Grid piksel |
+| Logo brand | Simple Icons | Bentuk vektor logo berbagai brand |
 
-用 Iconify 可以按名称取到上面大多数库的单个 SVG。
+Dengan Iconify, SVG tunggal dari mayoritas library di atas bisa diambil langsung per nama.
 
-- **一个产品只用一套。** 需要补缺时，挑描边、端点和圆角一致的，统一成相同的画布尺寸和描边宽度。
-- **粗细跟字重走。** 图标描边接近同尺寸正文的笔画粗细：细字配 1–1.5px，粗黑体配 2px 以上或实心。图标尺寸约为字号的 1–1.25 倍，按视觉中心和文字对齐，不按外框。
-- **能不用就不用。** 编辑类方向常用字符本身：→ ↗ ※ §、编号、缩写。只在能加快识别的地方用图标。
-- **品牌时刻手绘。** 核心动作、空状态这类少数位置，可以用方向自己的线条语言画专属的线条图标或小插图；通用动作仍用库。角色、道具和场景这类主视觉不靠手画 SVG，见 [素材](media.md)。
-- **小样内联。** 自包含小样只内联用到的 SVG，不引用图标字体或 CDN。存量项目沿用已有的库，换库属于改版。
-- **核对许可。** 多数是 MIT、Apache 或 ISC；SF Symbols 只能用在 Apple 平台的界面里，不能用于网页；需要署名的库按要求署名。
+- **Satu produk satu set.** Bila perlu melengkapi kekurangan, pilih yang stroke, ujung, dan radiusnya konsisten, lalu satukan ke canvas size dan ketebalan stroke yang sama.
+- **Ketebalan mengikuti weight.** Stroke ikon mendekati ketebalan goresan body text pada ukuran yang sama: font ringan pasangan 1–1.5px, hitam tebal 2px ke atas atau solid. Ukuran ikon sekitar 1–1,25× ukuran font, disejajarkan dengan pusat visual, bukan dengan kotak luarnya.
+- **Bisa tanpa ikon, ya tanpa ikon.** Arah editorial sering memakai karakter itu sendiri: → ↗ ※ §, penomoran, singkatan. Ikon hanya dipakai di tempat yang benar-benar mempercepat pengenalan.
+- **Momen brand digambar tangan.** Di beberapa posisi seperti aksi inti dan empty state, boleh menggambar ikon garis atau ilustrasi kecil eksklusif dengan bahasa garis milik arah; aksi umum tetap memakai library. Visual utama seperti karakter, properti, dan skenario tidak andalkan SVG gambar tangan, lihat [Aset](media.md).
+- **Mockup di-inline.** Mockup mandiri hanya meng-inline SVG yang dipakainya, tidak merujuk icon font atau CDN. Proyek existing mengikuti library yang sudah dipakai; mengganti library dihitung redesain.
+- **Periksa lisensinya.** Mayoritas MIT, Apache, atau ISC; SF Symbols hanya boleh dipakai di antarmuka platform Apple, tidak untuk web; library yang mewajibkan atribusi, berikan atribusinya.

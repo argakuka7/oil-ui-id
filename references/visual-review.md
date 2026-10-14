@@ -1,38 +1,38 @@
-# 视觉评审派发协议 (主 Agent 专用)
+# Protokol dispatch review visual (khusus agent utama)
 
-主 Agent 用这份文件派发独立评审。打分标准和检查规则在 [评审手册](reviewer-manual.md) 里，由评审者读；主 Agent 不读，只按下面的清单交接。
+Agent utama memakai file ini untuk mendispatch review independen. Standar penilaian dan aturan pemeriksaan ada di [Manual reviewer](reviewer-manual.md) dan dibaca oleh reviewer; agent utama tidak membacanya, hanya menyerah terima sesuai daftar di bawah.
 
-## 1. 什么时候该派发？触发什么模式？
+## 1. Kapan harus dispatch? Mode apa yang terpicu?
 
-当你完成了一个关键页面、设计方案或改动后，按以下清单触发对应的评审子 Agent：
+Setelah menyelesaikan satu halaman kunci, satu proposal desain, atau satu perubahan, picu sub-agent review yang sesuai menurut daftar ini:
 
-| 你做了什么改动 | 子 Agent 的提示词 (Prompt) 模板 |
+| Perubahan yang kamu kerjakan | Template prompt sub-agent |
 | --- | --- |
-| 探索了新界面，或推翻现状重新设计（重塑） | `请读取 references/reviewer-manual.md，按照【全新界面与改版评审】标准，评审这些截图，并给出 1-10 的打分。` |
-| **给已有界面评审**：在已有界面上整理、升级、润色或扩展 | `请读取 references/reviewer-manual.md，按照【存量已有界面润色评审】标准，对比提供的现状规范，指出偏离点。不打分。` |
-| 小改动、单处间距或颜色微调 | **无需派发子 Agent**，主 Agent 结合上下文自行核对即可。 |
+| Mengeksplorasi antarmuka baru, atau membongkar kondisi yang ada dan mendesain ulang | `Baca references/reviewer-manual.md, lalu review screenshot-screenshot ini mengikuti standar【Review antarmuka baru dan redesain】, dan berikan skor 1–10.` |
+| **Review antarmuka existing**: merapikan, meng-upgrade, memoles, atau mengembangkan di atas antarmuka yang sudah ada | `Baca references/reviewer-manual.md, lalu ikuti standar【Review polesan antarmuka existing】: bandingkan dengan spesifikasi kondisi saat ini yang diberikan, dan tunjukkan titik-titik penyimpangannya. Tanpa skor.` |
+| Perubahan kecil, penyetelan jarak tunggal, atau warna | **Tanpa sub-agent**, agent utama memeriksa sendiri dengan konteks yang ada. |
 
-模板里的路径换成本 Skill 目录下的绝对路径：子 Agent 的工作目录不是本目录。
+Ganti path di template dengan path absolut di dalam direktori Skill ini: working directory sub-agent bukan direktori ini.
 
-## 2. 派发前，主 Agent 要准备的“交接清单”
+## 2. Sebelum dispatch, “daftar serah terima” yang disiapkan agent utama
 
-调用宿主提供的隔离执行能力时，必须提供以下物料：
-- **必给**：当前版本的截图/录屏（注明设备视口）、用户原始任务、设计边界和约束；有方向卡时，再给北极星那一句。方向卡里其他需要评审知道的硬性约束，例如品牌要求每屏出现字标，摘成一句写进约束，不交整张方向卡。
-- **如果有**：现有项目的色彩规范、组件约束（存量老项目必须给）；方向卡的选色记录，即“色彩”一栏里颜色来自这个产品的什么那一句；项目里有 `DESIGN.md` 或同类设计文档时，存量润色评审整份给出并以它为标准，新界面与改版评审只把其中的品牌资产和“不要做”摘进约束。
-- **截图工具的默认做法提示**：`report.json` 里 `lint` 字段的提示原样给出；你决定保留的项，每项附一句理由。
-- **不给**：源代码、为自己的做法辩护的说明、之前评审打过的分数（评分要独立）。
+Saat memanggil kemampuan eksekusi terisolasi milik host, materi berikut wajib disediakan:
+- **Wajib**: screenshot/rekaman layar versi terkini (sebutkan viewport perangkatnya), tugas asli pengguna, serta batasan dan constraint desain; bila ada kartu arah, sertakan kalimat North Star-nya. Constraint keras lain di kartu arah yang perlu diketahui reviewer — misalnya brand mewajibkan wordmark tampil di tiap layar — diringkas satu kalimat ke dalam constraint, tanpa menyerahkan satu kartu arah utuh.
+- **Bila ada**: spesifikasi warna proyek existing dan constraint komponen (proyek lama wajib diberikan); catatan pemilihan warna dari kartu arah, yaitu kalimat “dari apa warna ini berasal dalam produk ini” di kolom “Warna”; bila proyek punya `DESIGN.md` atau dokumen desain sejenis, review polesan existing menyerahkan satu dokumen utuh dan menjadikannya standar, sedangkan review antarmuka baru hanya menyaring aset brand dan daftar “jangan lakukan” ke dalam constraint.
+- **Peringatan default practices milik alat screenshot**: berikan isian `lint` dari `report.json` apa adanya; butir yang kamu putuskan pertahankan, masing-masing disertai satu kalimat alasan.
+- **Jangan diberikan**: source code, pembelaan atas pilihanmu sendiri, dan skor review-review sebelumnya (penilaian harus independen).
 
-截图必须属于当前版本，且能被评审者访问；这一轮没有改到的状态和动效，可以沿用上一轮的证据文件，交接时注明哪些是沿用的。长页同时提供整页与必要局部；细节图不能替代整体构图。
+Screenshot harus milik versi terkini dan bisa diakses reviewer; status dan animasi yang tidak tersentuh ronde ini boleh mewarisi file bukti ronde sebelumnya, asal dicatat mana yang diwarisi saat serah terima. Halaman panjang menyediakan versi utuh sekaligus potongan lokal yang perlu; gambar detail tidak bisa menggantikan komposisi keseluruhan.
 
-动效不用逐项备证据：取证那一次的录屏一并交给评审就够。评审能自己打开页面时，把页面地址也给它，录屏里看不清的它会自己操作一遍。
-没有隔离、能看图的执行者时，主 Agent 按同一手册自检，交付时写明“未独立评审”；没有实际画面时不打视觉分。
+Animasi tidak perlu dibukukan satu per satu: cukup serahkan rekaman layar dari sesi pengambilan bukti itu. Bila reviewer bisa membuka halamannya sendiri, berikan juga alamat halamannya; yang tak terlihat jelas di rekaman akan ia operasikan sendiri.
+Bila tidak ada eksekutor terisolasi yang bisa melihat gambar, agent utama memeriksa sendiri dengan manual yang sama dan mencantumkan “belum di-review independen” saat menyerahkan; tanpa gambar nyata, jangan memberi skor visual.
 
-## 3. 主 Agent 如何处理子 Agent 的反馈
+## 3. Cara agent utama memproses feedback reviewer
 
-子 Agent 返回报告后，按以下原则修改：
-- **第一条是“重做”**：回到方向卡，重定被点名区块的骨架或主视觉，不逐条修补。
-- **按清单顺序改**：问题清单从影响最大的一条往下改；“保留”那一行记进设计说明，改的时候对照，别把它修平。
-- **提升条目同样要做**：精致度、设计感和动效的提升不是可选建议，和问题一样按清单做；做不了的在交付说明里写明原因。
-- **默认照删**：子 Agent 列出的“可以直接删掉的无用文字”照删，除非会产生功能歧义。
-- **落到具体调整**：把子 Agent 的高层要求（如“太挤”“层级不清”）落成间距、字号和阴影的实际调整。子 Agent 提议更改用户锁定的品牌色或大框架时，写一句理由后不采纳。
-- **防止死循环**：如果双方审美意见陷入僵持、来回横跳且无可见收益，保留你认为最佳的版本并停止循环。
+Setelah sub-agent mengembalikan laporan, revisi menurut prinsip ini:
+- **Butir pertama berbunyi “kerjakan ulang”**: kembali ke kartu arah, tetapkan ulang kerangka atau visual utama blok yang disebut namanya; jangan menambal satu per satu.
+- **Revisi mengikuti urutan daftar**: daftar masalah direvisi dari yang berdampak paling besar ke bawah; baris “pertahankan” dicatat ke catatan desain dan dijadikan pembanding saat merevisi — jangan justru menghaluskannya.
+- **Butir peningkatan juga dikerjakan**: peningkatan kehalusan, rasa desain, dan animasi bukan saran opsional; kerjakan seperti masalah menurut daftar. Yang tak mampu dikerjakan, tuliskan alasannya di catatan penyerahan.
+- **Default: hapus** untuk “teks tak berguna yang bisa langsung dihapus” yang didaftar sub-agent, kecuali menghapusnya menimbulkan ambiguitas fungsi.
+- **Turunkan ke penyetelan konkret**: tuntutan tingkat tinggi sub-agent (misalnya “terlalu sesak”, “hierarki tak jelas”) diturunkan menjadi penyetelan nyata jarak, ukuran font, dan bayangan. Bila sub-agent mengusulkan mengubah warna brand yang dikunci pengguna atau kerangka besarnya, tuliskan satu kalimat alasan dan jangan diadopsi.
+- **Cegah loop tak berujung**: bila opini estetika kedua pihak terkunci saling dorong, berbolak-balik tanpa perbaikan yang terlihat, pertahankan versi yang kamu nilai terbaik dan hentikan loop-nya.

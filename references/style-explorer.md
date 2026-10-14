@@ -1,57 +1,57 @@
-# 风格对比页
+# Halaman perbandingan gaya
 
-把几个候选放在同一页里并排比较，由用户挑选。用户可以并排或单张查看、按实际尺寸看、选定并复制方向。对比页的外壳只负责比较和挑选，不带风格倾向，也不作为候选的参考。
+Letakkan beberapa kandidat berdampingan di satu halaman untuk dipilih pengguna. Pengguna bisa melihat berdampingan atau per kandidat, membuka ukuran asli, memilih, dan menyalin arahnya. Cangkang halaman perbandingan hanya bertugas membandingkan dan memilih; ia tidak membawa kecenderungan gaya dan tidak dijadikan rujukan kandidat.
 
-几个候选的核心内容、主要动作和目标用户保持一致，变的是构图、信息怎么组织、字体的气质、色彩关系、疏密和用图的方式。放几个候选，看用户要几个、真正有差别的有几个；不复制整个产品来凑数。
+Konten inti, aksi utama, dan pengguna target para kandidat tetap konsisten; yang berubah adalah komposisi, cara informasi diorganisasikan, karakter font, relasi warna, kepadatan, dan cara memakai gambar. Berapa banyak kandidat diletakkan, tergantung berapa yang diminta pengguna dan berapa yang benar-benar berbeda; jangan menggandakan seluruh produk sekadar mengejar jumlah.
 
-## 准备输入
+## Siapkan input
 
-一轮只生成一个对比页。候选能跑就用真实页面：单独写的 HTML 小样直接嵌入，项目里的方案用本机地址，拿不到可运行的页面时才用截图。每个方案一个画面：存量项目选入口或差别最大的那一步，整站方案只放代表页。
+Satu ronde hanya menghasilkan satu halaman perbandingan. Kandidat yang bisa berjalan memakai halaman nyata: mockup HTML yang ditulis terpisah di-embed langsung, proposal di dalam proyek memakai alamat localhost, dan screenshot hanya dipakai bila halaman yang bisa dijalankan tak tersedia. Satu proposal, satu gambar: proyek existing memilih pintu masuk atau langkah yang paling berbeda; proposal satu situs hanya meletakkan halaman representatifnya.
 
-在一个目录里放 `manifest.json` 和候选文件。候选引用的图片、字体、视频也放在这个目录或它的子目录里，用相对路径引用，生成器会把它们内嵌进对比页。manifest 最少这样写，尖括号里换成本轮候选的实际内容，方向用方向卡里写的：
+Di satu direktori letakkan `manifest.json` beserta file kandidat. Gambar, font, dan video yang dirujuk kandidat juga diletakkan di direktori itu atau subdirektorinya, dirujuk dengan path relatif, dan generator akan meng-inline-nya ke halaman perbandingan. Manifest minimal ditulis seperti ini, isi bagian dalam tanda siku dengan isi nyata kandidat ronde ini, dan arahnya mengikuti yang tertulis di kartu arah:
 
 ```json
 {
   "schemaVersion": 1,
-  "project": "<项目名称>",
-  "brief": "<所有候选共同表达的内容与主要任务>",
-  "round": "<轮次，例如 01>",
+  "project": "<nama proyek>",
+  "brief": "<isi dan tugas utama yang diekspresikan bersama semua kandidat>",
+  "round": "<ronde, misalnya 01>",
   "candidates": [
     {
-      "id": "<小写唯一标识>",
-      "name": "<方向名称>",
-      "concept": "<北极星：一句能指导取舍的体验意图>",
-      "typography": "<实际使用的字族、字重与尺度关系>",
-      "palette": ["<十六进制色值>", "<十六进制色值>", "<十六进制色值>"],
-      "traits": ["<可观察特征>", "<可观察特征>"],
-      "source": "<候选文件的相对路径>"
+      "id": "<identitas unik huruf kecil>",
+      "name": "<nama arah>",
+      "concept": "<North Star: satu kalimat niat pengalaman yang memandu trade-off>",
+      "typography": "<font family, weight, dan hubungan skala yang benar-benar dipakai>",
+      "palette": ["<nilai hex>", "<nilai hex>", "<nilai hex>"],
+      "traits": ["<karakteristik teramati>", "<karakteristik teramati>"],
+      "source": "<path relatif file kandidat>"
     }
   ]
 }
 ```
 
-| 情况 | 在 manifest 里加 |
+| Kondisi | Yang ditambahkan ke manifest |
 | --- | --- |
-| 固定画布的界面，不随宽度重排 | 顶层或候选里写 `"nativeViewport": "<宽>x<高>"`。对比页按这个视口渲染，再整体等比缩放，候选不用自己写缩放 |
-| 自己写的可操作小样 | 候选加 `"interactive": true` |
-| 项目里要运行起来才能看的页面 | 候选的 `kind` 设为 `"url"`，用 `url` 指向本机开发服务器；顶层用 `serve` 写下启动命令 |
-| 改动已有页面 | 把现状也放进来，加 `"baseline": true` |
-| 只有截图 | 候选的 `kind` 设为 `"image"` |
+| Antarmuka berkanvas tetap, tidak menyusun ulang mengikuti lebar | Tulis `"nativeViewport": "<lebar>x<tinggi>"` di level atas atau di kandidat. Halaman perbandingan merender dengan viewport itu lalu menskalakan seluruhnya secara proporsional; kandidat tak perlu menulis skalanya sendiri |
+| Mockup interaktif buatan sendiri | Kandidat ditambah `"interactive": true` |
+| Halaman proyek yang harus dijalankan dulu | `kind` kandidat diset `"url"` dengan `url` menunjuk dev server lokal; level atas menuliskan perintah start di `serve` |
+| Mengubah halaman yang sudah ada | Masukkan juga kondisi saat ini, ditambah `"baseline": true` |
+| Hanya punya screenshot | `kind` kandidat diset `"image"` |
 
-每个字段的写法和限制见生成器的 `--help`。
+Cara menulis dan batasan tiap field lihat `--help` milik generator.
 
-## 生成和打开
+## Generate dan buka
 
 ```text
-<python> <skill>/scripts/build_explorer.py <manifest 所在目录>/manifest.json
+<python> <skill>/scripts/build_explorer.py <direktori manifest>/manifest.json
 ```
 
-对比页生成在 manifest 旁边，文件名是 `style-explorer.html`。写错时生成器会把所有要改的地方一次列出来，照着改完再运行；同名文件已经存在时加 `--force`。运行不了生成器时，把 manifest 和候选留给用户直接看，说明对比页还没有组装，不临时另写一套工具。
+Halaman perbandingan dihasilkan di samping manifest dengan nama file `style-explorer.html`. Bila ada kesalahan tulis, generator mendaftarkan sekaligus semua yang harus diperbaiki; perbaiki sesuai daftar lalu jalankan lagi; bila file bernama sama sudah ada, tambahkan `--force`. Bila generator tidak bisa dijalankan, biarkan manifest dan kandidat untuk dilihat langsung oleh pengguna, dan nyatakan bahwa halaman perbandingan belum dirakit; jangan mengarang alat pengganti dadakan.
 
-有本机地址候选时，交付时让开发服务器开着。用户之后说“打开对比页”：读 manifest 里的 `serve`，在 `cwd` 里后台运行 `command`，等 `url` 能访问了再打开对比页。
+Bila ada kandidat berbasis localhost, saat menyerahkan biarkan dev server tetap menyala. Setelahnya pengguna berkata “buka halaman perbandingan”: baca `serve` di dalam manifest, jalankan `command` di background pada `cwd`, tunggu sampai `url` bisa diakses, baru buka halaman perbandingannya.
 
-## 记录选择
+## Mencatat pilihan
 
-用户点“选择”会复制一句话，例如“<轮次>：选 03 <方向名>”。用户粘贴它或直接说出选择后，按轮次和编号对照当前 manifest，确认是这一轮的，把选择和备注更新到设计说明，再回到生成这个对比页的流程接着做。对比页不会写回任何文件，也不会自动给 Agent 发消息。
+Saat pengguna menekan “Pilih”, satu kalimat tersalin, misalnya “<ronde>: pilih 03 <nama arah>”. Setelah pengguna menempelkannya atau langsung menyebutkan pilihannya, cocokkan ronde dan nomornya dengan manifest saat ini untuk memastikan itu ronde yang benar, perbarui pilihan dan catatannya ke catatan desain, lalu kembali ke alur yang menghasilkan halaman perbandingan ini dan lanjutkan pekerjaan. Halaman perbandingan tidak menulis balik ke file mana pun, dan tidak mengirim pesan otomatis ke agent.
 
-交付前核对候选：每张画面和 manifest 里写的页面、状态、视口一致，中文字体真实渲染出来了。判断文字大小和细节时用单张查看的“实际尺寸 100%”，适应窗口的缩小图不能当作可读性通过。对比页本身的功能由 Skill 自带的测试保证，任务里不验证、不读模板源码。
+Sebelum menyerahkan, cocokkan kandidatnya: tiap gambar sesuai dengan halaman, status, dan viewport yang tertulis di manifest, dan font yang dipakai benar-benar ter-render (bukan fallback default). Untuk menilai ukuran teks dan detail, gunakan “ukuran asli 100%” pada mode per kandidat; gambar kecil yang menyesuaikan jendela tidak boleh dijadikan dasar lolos keterbacaan. Fungsi halaman perbandingan sendiri dijamin oleh test bawaan Skill; di dalam tugas tidak perlu diverifikasi dan tidak perlu membaca source template-nya.

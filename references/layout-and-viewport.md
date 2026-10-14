@@ -1,17 +1,17 @@
-# 布局与视口
+# Tata letak dan viewport
 
-## 精准还原
+## Rekonstruksi presisi
 
-先记下参考图对应的视口尺寸或已知的像素尺寸、画面的完整范围，以及哪些区域是固定不动的。图片的像素数不等于视口尺寸，例如 2 倍图要除以 2；确定不了时，写明你是按什么假设的。
+Catat dulu ukuran viewport yang sesuai gambar referensi atau ukuran piksel yang diketahui, cakupan lengkap gambar, serta area mana yang dipatok tidak bergerak. Jumlah piksel gambar bukan ukuran viewport — misalnya gambar 2× harus dibagi dua; bila tidak bisa dipastikan, tuliskan berdasarkan asumsi apa kamu bekerja.
 
-量出主要区域各占多大比例、哪些元素共用一条对齐线、文字多大、图片怎么裁、各处间距之间是什么关系。先把整体的位置、比例和字体对上，再处理边框、阴影和细节；还原任务不重新探索风格。
+Ukur proporsi tiap area utama, elemen mana yang berbagi satu garis perataan, seberapa besar teksnya, bagaimana gambar di-crop, dan hubungan antar jaraknya. Samakan dulu posisi keseluruhan, proporsi, dan fontnya, baru menangani border, bayangan, dan detail; tugas rekonstruksi tidak mengeksplorasi ulang gaya.
 
-用和参考图一样的视口、差不多的内容来比差异。参考图里没有的窄屏和其他状态，按内容的需要补上，并标明哪些是照着参考还原的，哪些是自己合理延伸的。
+Bandingkan perbedaannya dengan viewport yang sama seperti referensi dan konten yang mirip. Layar sempit dan status lain yang tidak ada di referensi dilengkapi sesuai kebutuhan konten, dan ditandai mana yang direkonstruksi mengikuti referensi dan mana yang perpanjangan wajar buatanmu sendiri.
 
-自己判断还原得像不像，结论通常偏乐观；只看一张整页缩略图，也看不出字号、间距和对齐差了多少。每轮修改后用截图工具的 `--compare` 出对比图（见 [工具](tools.md)），先修差异最大的那几格，再在叠加图里核对对齐线、字号和图片裁切；不凭印象宣布“已经还原”。
+Menilai sendiri seberapa mirip hasil rekonstruksinya biasanya terlalu optimis; satu thumbnail halaman penuh pun tak bisa memperlihatkan seberapa jauh melesetnya ukuran font, jarak, dan perataan. Setelah tiap ronde perubahan, gunakan `--compare` milik alat screenshot untuk menghasilkan gambar pembanding (lihat [Alat](tools.md)); perbaiki dulu sel-sel dengan perbedaan terbesar, lalu di gambar overlay periksa garis perataan, ukuran font, dan crop gambar; jangan mengumumkan “sudah direkonstruksi” berdasarkan kesan.
 
-## 验证重点
+## Fokus verifikasi
 
-实际看一遍内容很长、内容为空，以及这次改动涉及的各个状态。手机上留意视口高度的变化、弹出的键盘和屏幕的安全边距，主操作不能被键盘或固定的栏挡住。
+Lihat sendiri sekali kondisi konten yang sangat panjang, konten kosong, serta tiap status yang terdampak perubahan ini. Di ponsel, perhatikan perubahan tinggi viewport, keyboard yang muncul, dan safe area layar; aksi utama tidak boleh tertutup keyboard atau bar yang dipatok.
 
-再检查：页面有没有意外地横向溢出，滚动是不是发生在该滚的那一块，焦点和菜单看不看得见；放大或重新排版以后，阅读和操作的顺序是否还清楚。
+Periksa lagi: apakah halaman meluap horizontal tanpa sengaja, apakah scroll terjadi di blok yang memang seharusnya scroll, apakah focus dan menu terlihat; dan setelah zoom atau penyusunan ulang, apakah urutan membaca dan beroperasi masih jelas.

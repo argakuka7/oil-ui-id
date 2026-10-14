@@ -1,25 +1,25 @@
-# 说服型页面首屏骨架
+# Kerangka layar pertama halaman persuasif
 
-落地页、品牌页、产品发布页、展览页等以说服、传递理念为主的页面，按本规范选定首屏骨架（整体设计方向流程见 [设计方向](design-direction.md)）。
+Landing page, halaman brand, halaman peluncuran produk, halaman pameran, dan halaman-halaman yang berfokus meyakinkan serta menyampaikan gagasan, memilih kerangka layar pertamanya menurut spesifikasi ini (alur arah desain menyeluruh lihat [Arah Desain](design-direction.md)).
 
-模型最顽固的习惯是左右分栏，它在写文案之前就定下来了：先想好标题、一段说明、一个按钮，摆好就是左右两栏。所以骨架要在写任何文案之前决定。
+Kebiasaan model yang paling membandel adalah dua kolom kiri-kanan, dan ia terkunci bahkan sebelum copy ditulis: dipikirkan dulu judul, satu paragraf penjelas, satu tombol, dan begitu ditata langsung menjadi dua kolom. Karena itu kerangka harus diputuskan sebelum satu kata pun ditulis.
 
-每个方向先从下表选一个首屏骨架，再用 3–5 个方框画出首屏线框：每块是什么、占首屏多大面积、阅读从哪里开始。
+Setiap arah memilih satu kerangka layar pertama dari tabel di bawah, lalu menggambar wireframe layar pertama dengan 3–5 kotak: tiap blok berisi apa, seberapa luas porsinya di layar pertama, dan di mana pembacaan dimulai.
 
-| 骨架 | 首屏长什么样 |
+| Kerangka | Wujud layar pertama |
 | --- | --- |
-| 满版图像压字 | 一张图占满首屏，标题和动作压在图的安全区里 |
-| 居中单一物件 | 一个物件或一句话居中，四周是大面积空白 |
-| 画面即界面 | 首屏就是产品界面或一件实物本身，标题、导航和按钮都长在它上面 |
-| 满版文字 | 文字本身就是画面，字大到占满首屏、跨过边缘或被裁切 |
-| 通栏上下堆叠 | 通栏大标题横跨整个宽度，下面紧接内容 |
-| 网格拼贴 | 多块内容同时出现，按网格或拼贴排列，没有单一主角 |
-| 纵排或斜向 | 文字竖排、斜切或旋转，打破从左到右的阅读 |
-| 左右分栏 | 文字一侧，画面一侧。这是模型的默认，一轮最多一个方向使用，并写出为什么适合当前内容。另一侧要有撑得住场面的主角：跨出边界的图像、图形装置，或放大到看清核心操作的产品界面特写，不要塞一张缩得很小、没有重点的整页截图 |
+| Gambar satu layar penuh dengan teks di atasnya | Satu gambar memenuhi layar pertama; judul dan aksi diletakkan di zona aman gambar |
+| Satu objek di tengah | Satu benda atau satu kalimat di tengah, dikelilingi ruang kosong luas |
+| Gambar adalah antarmuka | Layar pertama adalah antarmuka produk atau satu benda nyata itu sendiri; judul, navigasi, dan tombol tumbuh di atasnya |
+| Tipografi satu layar penuh | Teksnya sendiri adalah gambar: hurufnya sedemikian besar hingga memenuhi layar pertama, melintasi tepi, atau terpotong |
+| Satu bidang bertumpuk vertikal | Judul besar membentang selebar bidang, dan konten menyusul tepat di bawahnya |
+| Kolase grid | Banyak blok konten tampil bersamaan, disusun mengikuti grid atau kolase, tanpa satu protagonis tunggal |
+| Vertikal atau diagonal | Teks disusun vertikal, miring, atau diputar, memecah bacaan kiri-ke-kanan |
+| Dua kolom kiri-kanan | Teks di satu sisi, gambar di sisi lain. Ini default model; satu ronde paling banyak satu arah yang memakainya, dan harus menuliskan mengapa ia cocok dengan konten saat ini. Sisi lainnya wajib punya protagonis yang sanggup menopang panggung: gambar yang melintasi tepi, instalasi grafis, atau close-up antarmuka produk yang di-zoom sampai aksi intinya terbaca — jangan menyelipkan screenshot halaman penuh yang mengecil tanpa fokus |
 
-规则：
-- 同一轮的方向，骨架互不相同。
-- 所谓“大标题九栏、说明三栏”同样算左右分栏。
-- 骨架定好之后再写文案。文案去适应骨架，不让骨架去适应“标题 + 说明 + 按钮”的组合。
+Aturan:
+- Arah-arah dalam satu ronde, kerangkanya saling berbeda.
+- Yang disebut “judul sembilan kolom, penjelasan tiga kolom” juga dihitung dua kolom kiri-kanan.
+- Kerangka diputuskan dulu, baru copy ditulis. Copy menyesuaikan kerangka; jangan membiarkan kerangka menyesuaikan kombinasi “judul + penjelasan + tombol”.
 
-构图的大胆程度和调性无关。安静精致的产品，一样可以把一句话放在空白首屏正中，或让纵排标题贯穿整屏，或让界面本身占满首屏。调性决定音量，骨架决定结构；不要因为调性偏安静，就退回左右分栏。
+Keberanian komposisi tidak berhubungan dengan tone. Produk yang tenang dan halus sama saja boleh meletakkan satu kalimat tepat di tengah layar pertama yang kosong, membiarkan judul vertikal menembus satu layar penuh, atau membiarkan antarmukanya sendiri memenuhi layar pertama. Tone menentukan volume; kerangka menentukan struktur. Jangan karena tone-nya condong tenang, mundur kembali ke dua kolom kiri-kanan.

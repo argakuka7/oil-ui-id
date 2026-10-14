@@ -1,100 +1,102 @@
-English · [中文](README.zh-CN.md)
+Bahasa Indonesia · [English (upstream)](https://github.com/oil-oil/oil-ui#readme) · [中文 (upstream)](https://github.com/oil-oil/oil-ui/blob/main/README.zh-CN.md)
+
+> **Catatan:** ini adalah terjemahan bahasa Indonesia tidak resmi dari [oil-ui](https://github.com/oil-oil/oil-ui) karya oil-oil (lisensi MIT). Semua kredit desain dan metodologi milik penulis asli. Untuk versi asli (Inggris/中文), rilis resmi, dan pembaruan, kunjungi repositori upstream. Bug terjemahan dilaporkan di repositori ini.
 
 <p align="center">
-  <img src="./assets/readme/hero.en.webp" width="100%" alt="oil-ui: push AI UI design to its limits. A person pins a yellow pushpin to the middle of three previews in different styles">
+  <img src="./assets/readme/hero.en.webp" width="100%" alt="oil-ui: dorong kemampuan desain UI AI hingga batasnya. Seseorang menyematkan pin kuning di tengah salah satu dari tiga pratinjau bergaya berbeda">
 </p>
 
 <p align="center">
-  <a href="https://ui.oiloil.org/en/?utm_source=github&utm_medium=referral&utm_campaign=readme-en"><img src="./assets/readme/showcase.en.webp" width="100%" alt="Gallery highlights: an English learning app, a music year in review, hardware and component library websites, a project management tool, a ride-hailing app, a voice assistant, a checkout flow, and a film camera"></a>
+  <a href="https://ui.oiloil.org/en/?utm_source=github&utm_medium=referral&utm_campaign=readme-id"><img src="./assets/readme/showcase.en.webp" width="100%" alt="Sorotan galeri: aplikasi belajar bahasa Inggris, rekap tahunan musik, situs hardware dan component library, alat manajemen proyek, aplikasi ride-hailing, asisten suara, alur checkout, dan kamera film"></a>
 </p>
 
-Oil UI is an interface design skill for AI agents. It explores a few genuinely different design directions side by side, lets you choose one, then refines it against real screenshots. It works for websites, apps, dashboards, and components. See more designs at [ui.oiloil.org](https://ui.oiloil.org/en/?utm_source=github&utm_medium=referral&utm_campaign=readme-en).
+Oil UI adalah Skill desain antarmuka untuk AI agent. Ia mengeksplorasi beberapa arah desain yang benar-benar berbeda secara berdampingan, membiarkanmu memilih satu, lalu memolesnya berdasarkan screenshot nyata. Berlaku untuk website, aplikasi, dashboard, dan komponen. Lihat lebih banyak contoh hasil di [ui.oiloil.org](https://ui.oiloil.org/en/?utm_source=github&utm_medium=referral&utm_campaign=readme-id).
 
-## How it designs
+## Cara ia mendesain
 
-1. **Understand what the product is.** Before drawing anything, it names the product category, finds two or three peers with the most distinctive styles, and looks at what they do and why. Then it decides what to keep and what to change.
-2. **Turn “premium” and “clean” into real decisions.** Everyone uses these words, but they don't tell you what to put on the screen. It first sets the tone from the subject, audience, and brand voice, such as lively or calm, polished or raw, dense or airy. Then it turns that tone into visible choices: which typefaces, how much white space, and how much of the page uses color.
-3. **Start each direction from something concrete.** That could be a material in its setting, a scene, a character, or the visual language of another field. Ideas come from the product itself, not from adjectives like “minimal” or “bold.”
-4. **Decide who the first screen is for.** On pages where people browse, shop, or get work done, the first screen should be the content itself. Only pages meant to persuade need a designed opening layout, settled before the copy is written.
-5. **Make the directions truly different.** Of layout, typography, color, and key imagery, any two directions may share at most one. Once the previews exist, it puts them side by side and squints at the light and dark shapes of each first screen. If two look alike, it changes the layout instead of just swapping colors.
-6. **Leave one moment people remember.** Instead of pushing every part of the page, it makes one or two details exceptional, such as the response to a tap, a successful payment, AI at work, or a 404 page. Everything else stays quiet.
-7. **You decide what looks right.** The previews go on one comparison page. You pick one and say what you like and dislike, and it tightens the design around your feedback before going further.
-8. **Trust the real screen.** When a page is done, it opens it at desktop and mobile sizes and checks screenshots. You can also bring in a reviewer who hasn't seen the work in progress. Last comes a round of subtraction: one focal point per page, and no copy, lines, or boxes that don't help you understand it.
+1. **Pahami dulu ini produk apa.** Sebelum menggambar apa pun, ia menyebutkan kategori produknya, mencari dua-tiga pembanding terbaik dengan gaya paling khas, dan menelaah apa yang mereka lakukan serta mengapa. Setelah itu ia memutuskan apa yang diikuti dan apa yang diganti.
+2. **Menerjemahkan “premium” dan “bersih” menjadi keputusan konkret.** Semua orang memakai kata-kata itu, tetapi kata-kata itu tidak mengatakan apa yang harus diletakkan di layar. Ia menetapkan tone lebih dulu dari subjek, audiens, dan suara brand — misalnya meriah atau tenang, kilauan atau kasar, padat atau lapang — lalu menerjemahkan tone itu menjadi pilihan yang terlihat: font apa, berapa banyak ruang kosong, dan seberapa luas halaman yang diberi warna.
+3. **Tiap arah berangkat dari sesuatu yang konkret.** Bisa berupa satu material dalam lingkungannya, satu adegan, satu karakter, atau bahasa visual bidang lain. Idenya lahir dari produk itu sendiri, bukan dari kata sifat seperti “minimalis” atau “berani”.
+4. **Putuskan untuk siapa layar pertama dibuat.** Pada halaman tempat orang menjelajah, berbelanja, atau bekerja, layar pertama adalah kontennya sendiri. Hanya halaman yang bertugas meyakinkan yang butuh tata letak pembuka yang dirancang — ditetapkan sebelum copy ditulis.
+5. **Arah-arahnya harus benar-benar berbeda.** Dari layout, tipografi, warna, dan gambar kunci, dua arah apa pun boleh berbagi paling banyak satu kesamaan. Setelah pratinjau jadi, ia menyandingkannya dan menyipitkan mata melihat sebaran terang-gelap tiap layar pertama. Bila dua di antaranya terlihat mirip, layoutnya yang diubah — bukan sekadar bertukar warna.
+6. **Menyisakan satu momen yang diingat orang.** Alih-alih mendorong semua bagian halaman, ia membuat satu-dua detail menjadi luar biasa — misalnya respons sebuah tap, momen pembayaran sukses, AI yang terlihat sedang bekerja, atau halaman 404. Sisanya tetap tenang.
+7. **Kamu yang memutuskan mana yang terlihat benar.** Pratinjau diletakkan di satu halaman perbandingan. Kamu memilih satu dan menyebutkan apa yang disukai dan tidak, lalu ia menguncup desainnya mengikuti masukanmu sebelum lanjut.
+8. **Percaya layar yang nyata.** Setelah halaman selesai, ia membukanya pada ukuran desktop dan ponsel lalu memeriksa screenshot-nya. Kamu juga bisa melibatkan reviewer yang belum melihat proses pembuatannya. Terakhir, satu ronde pengurangan: satu titik fokus per halaman, tanpa copy, garis, atau kotak yang tidak membantu pemahaman.
 
-For more usable interfaces, existing project redesigns, or effects such as light trails and dot patterns, see [Oil UI Pro](https://ui.oiloil.org/en/pro/?utm_source=github&utm_medium=referral&utm_campaign=readme-en). The differences are listed [below](#open-source-and-pro).
+Untuk antarmuka yang lebih fungsional, redesain proyek existing, atau efek seperti jejak cahaya dan pola titik, lihat [Oil UI Pro](https://ui.oiloil.org/en/pro/?utm_source=github&utm_medium=referral&utm_campaign=readme-id). Perbedaannya didaftarkan [di bawah](#open-source-dan-pro).
 
-## Installation
+## Instalasi
 
-Send this to an agent that can install skills:
+Kirim ini ke agent yang bisa memasang Skill:
 
 ```text
-Install this skill for me: https://github.com/oil-oil/oil-ui
+Pasang Skill ini untuk saya: https://github.com/argakuka7/oil-ui-id
 ```
 
-Or run this in your terminal:
+Atau jalankan di terminal:
 
 ```bash
-npx skills add oil-oil/oil-ui
+npx skills add argakuka7/oil-ui-id
 ```
 
-It's ready to use right after installation, with nothing to configure. When a new version is out, your agent mentions it at the end of a reply; ask it to update whenever you like. If you already have Oil UI Pro, you don't need the open-source version. Installing both makes them compete for the same requests.
+Langsung bisa dipakai setelah terpasang, tanpa konfigurasi apa pun. Bila versi upstream terbit rilis baru, pembaruan terjemahan mengikuti repositori ini — lihat bagian [Pemeriksaan versi](#pemeriksaan-versi). Bila kamu sudah punya Oil UI Pro, versi open source ini tidak perlu dipasang; memasang keduanya membuat keduanya berebut permintaan yang sama.
 
-## Usage
+## Pemakaian
 
-Tell your agent what you need, for example:
+Sampaikan kebutuhanmu langsung ke agent, misalnya:
 
-- “Use oil-ui to explore a few design directions for this course booking product and build pages I can preview.”
-- “Create three designs with different typography, colors, and compositions. Put them on a comparison page so I can choose.”
-- “Polish this page using the project’s existing design guidelines.”
-- “Review this homepage and explain what to change and how. Leave the files untouched.”
-- “Recreate this page from the screenshot and add a mobile layout too.”
+- “Pakai oil-ui untuk mengeksplorasi beberapa arah desain produk booking kursus ini, lalu buat halaman yang bisa saya pratinjau.”
+- “Buat tiga desain dengan tipografi, warna, dan komposisi berbeda. Taruh di satu halaman perbandingan supaya saya bisa memilih.”
+- “Poles halaman ini mengikuti pedoman desain yang sudah ada di proyek.”
+- “Review saja homepage ini, jelaskan apa yang harus diubah dan bagaimana. Jangan sentuh file-nya.”
+- “Rekonstruksi halaman ini dari screenshot, dan tambahkan juga layout ponselnya.”
 
-Share any brand assets, screenshots, or existing project you have. It can start without references and only asks you questions when the deliverable is unclear.
+Sertakan aset brand, screenshot, atau proyek existing kalau ada. Ia bisa mulai tanpa referensi dan hanya bertanya saat deliverable-nya belum jelas.
 
-## Built-in style comparison page
-
-<p align="center">
-  <img src="./assets/readme/proof-mona-lisa.webp" width="100%" alt="Style comparison page: three directions for the same Mona Lisa exhibition page, titled Thirty Centimeters, Extra! 1911, and Sfumato">
-</p>
-
-When you want to compare designs, it puts them side by side on one page. They can be HTML files, images, or running development pages, and the current version can go first as a baseline. You can switch between desktop and mobile sizes, open each one at actual size, and browse with the arrow keys. Click “Select” on the one you like, paste the copied sentence into your agent, and it carries on from there.
-
-## Open source and Pro
+## Halaman perbandingan gaya bawaan
 
 <p align="center">
-  <img src="./assets/readme/proof-van-gogh.webp" width="100%" alt="Full version style comparison page: three directions for a Van Gogh exhibition page, titled To Theo, Brushstrokes, and East Window">
+  <img src="./assets/readme/proof-mona-lisa.webp" width="100%" alt="Halaman perbandingan gaya: tiga arah untuk halaman pameran Mona Lisa yang sama, berjudul Thirty Centimeters, Extra! 1911, dan Sfumato">
 </p>
 
-The open-source version takes a new page from a blank start to a good-looking design. Pro builds on that: it makes interfaces easier to use, improves existing projects, and raises the quality bar with stricter review and polishing.
+Saat kamu ingin membandingkan desain, ia menyandingkannya berdampingan di satu halaman. Yang disandingkan bisa file HTML, gambar, atau halaman dev yang sedang berjalan, dan versi saat ini bisa diletakkan lebih dulu sebagai baseline. Kamu bisa berganti ukuran desktop/ponsel, membuka tiap kandidat pada ukuran asli, dan menjelajah dengan tombol panah. Tekan “Pilih” pada yang kamu sukai, tempel kalimat yang tersalin ke agent, dan ia melanjutkan dari situ.
+
+## Open source dan Pro
+
+<p align="center">
+  <img src="./assets/readme/proof-van-gogh.webp" width="100%" alt="Halaman perbandingan gaya versi lengkap: tiga arah untuk halaman pameran Van Gogh, berjudul To Theo, Brushstrokes, dan East Window">
+</p>
+
+Versi open source membawa halaman baru dari nol sampai menjadi desain yang bagus. Pro dibangun di atasnya: membuat antarmuka lebih mudah dipakai, memperbaiki proyek existing, dan menaikkan standar kualitas lewat review serta polesan yang lebih ketat.
 
 | | Oil UI (open source) | Oil UI Pro |
 | --- | :---: | :---: |
-| Design direction: product category, tone, distinct directions, comparison page | ✓ | ✓ |
-| Visuals: hierarchy, typography, color, spacing, imagery, and motion | ✓ | ✓ |
-| Memorable moments and scroll storytelling (parallax, continuous shots) | ✓ | ✓ |
-| Screenshot recreation | ✓ | ✓ |
-| Pacing, feel, generated assets, and real-time 3D for mini-games | ✓ | ✓ |
-| Independent review | Scored, with issues listed | Repeated review and revision aiming for 9/10; checks whether directions overlap; completes real tasks on the page |
-| Polish: checks for AI design defaults, a detail checklist, and how to simplify | | ✓ |
-| Usability: interactions and states, forms, dialogs and popovers, desktop and mobile layouts | | ✓ |
-| Dashboards and tools: workspace layouts chosen for the product, with one style throughout | | ✓ |
-| Existing projects: separate approaches for a UI refresh, a flow fix, and a new feature | Tells you which one you need | ✓ |
-| Polish a single component to the extreme | | ✓ |
-| 19 card prototypes with code and spatial expansion containers | | ✓ |
-| Effects such as light trails, dot patterns, and flowing gradients | | ✓ |
-| Scene layouts, visuals, and state checks for mini-games | | ✓ |
+| Arah desain: kategori produk, tone, arah yang berbeda, halaman perbandingan | ✓ | ✓ |
+| Visual: hierarki, tipografi, warna, jarak, gambar, dan animasi | ✓ | ✓ |
+| Momen yang membekas dan narasi scroll (paralaks, one-shot) | ✓ | ✓ |
+| Rekonstruksi dari screenshot | ✓ | ✓ |
+| Ritme pertunjukan, feel, aset hasil generate, dan 3D real-time untuk mini-game | ✓ | ✓ |
+| Review independen | Berskor, dengan daftar masalah | Review dan revisi berulang menargetkan 9/10; memeriksa tumpang tindih antar arah; menguji halaman dengan tugas nyata |
+| Polesan: pemeriksaan default estetika AI, checklist detail, cara melakukan pengurangan | | ✓ |
+| Kegunaan: interaksi dan status, form, dialog dan popover, layout desktop dan ponsel | | ✓ |
+| Dashboard dan alat: layout workspace yang dipilih untuk produknya, dengan satu gaya menyeluruh | | ✓ |
+| Proyek existing: pendekatan terpisah untuk refresh UI, perbaikan alur, dan fitur baru | Memberitahumu yang mana yang dibutuhkan | ✓ |
+| Memoles satu komponen sampai tuntas | | ✓ |
+| 19 prototipe kartu dengan kode dan wadah ruang yang bisa melipat-membentang | | ✓ |
+| Efek seperti jejak cahaya, pola titik, dan gradasi mengalir | | ✓ |
+| Layout scene, visual, dan pemeriksaan status untuk mini-game | | ✓ |
 
-Oil UI Pro costs $9.99: a one-time purchase with lifetime updates. Purchase it at [ui.oiloil.org/pro](https://ui.oiloil.org/en/pro/?utm_source=github&utm_medium=referral&utm_campaign=readme-en).
+Oil UI Pro seharga $9.99: sekali beli, pembaruan seumur hidup. Beli di [ui.oiloil.org/pro](https://ui.oiloil.org/en/pro/?utm_source=github&utm_medium=referral&utm_campaign=readme-id).
 
-## Version checks
+## Pemeriksaan versi
 
-Each time it is used, the Skill checks for a newer version, going online at most once every 10 minutes. It only reads the public version list at ui.oiloil.org and uploads nothing from your project. By default it only tells you about an update; it downloads and replaces nothing unless you explicitly ask it to update. Results are cached in `~/.local/state/oil/` (or `XDG_STATE_HOME` when set; `%LOCALAPPDATA%\oil\` on Windows). It needs Python 3. Set `OIL_NO_UPDATE_CHECK=1` to turn it off.
+Setiap kali dipakai, Skill memeriksa versi lebih baru, paling sering sekali tiap 10 menit sekali online. Ia hanya membaca daftar versi publik di ui.oiloil.org dan tidak mengunggah apa pun dari proyekmu. Perlu dicatat: Skill ini adalah terjemahan, dan mekanisme pembaruan bawaan akan mengganti Skill dengan **versi asli upstream (bukan terjemahan)** — jangan jalankan perintah pembaruan bila kamu ingin mempertahankan versi Indonesia. Untuk memperbarui terjemahan, ambil rilis terbaru dari repositori ini. Hasil pemeriksaan di-cache di `~/.local/state/oil/` (atau `XDG_STATE_HOME` bila diset; `%LOCALAPPDATA%\oil\` di Windows). Butuh Python 3. Set `OIL_NO_UPDATE_CHECK=1` untuk mematikannya.
 
-## Use with
+## Dipakai bersama
 
-- [oil-motion](https://github.com/oil-oil/oil-motion): Turn generated videos or frame sequences into web animation controlled by scrolling or dragging, such as product teardowns or camera fly-throughs. Use it for a striking opening animation.
-- [oil-tone](https://github.com/oil-oil/oil-tone): Rewrites headings, descriptions and intro copy so they read naturally and clearly, in Chinese or English. Use it when the copy feels machine-written or awkward.
+- [oil-motion](https://github.com/oil-oil/oil-motion): mengubah video hasil generate atau rangkaian frame menjadi animasi web yang dikendalikan scroll atau drag, misalnya bongkar produk atau terowongan kamera. Pakai untuk animasi pembuka yang kuat.
+- [oil-tone](https://github.com/oil-oil/oil-tone): menulis ulang judul, deskripsi, dan copy pengantar agar terbaca natural dan jelas. Pakai saat copy terasa tulisan mesin atau janggal.
 
-## License
+## Lisensi
 
-[MIT](LICENSE)
+[MIT](LICENSE) — © oil-oil. Terjemahan bahasa Indonesia disediakan dengan lisensi yang sama.

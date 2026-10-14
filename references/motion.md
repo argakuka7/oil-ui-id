@@ -1,123 +1,123 @@
-# 动效
+# Animasi
 
-## 每个界面先做三处动效
+## Tiap antarmuka mulai dengan tiga animasi
 
-完全不动的界面像一张截图：按下没有回应，切换没有来路，用户只能猜刚才发生了什么。新界面和改动了操作流程的界面，先把这三处做出来：
+Antarmuka yang sama sekali diam itu seperti screenshot: tekanan tanpa jawaban, perpindahan tanpa asal — pengguna hanya bisa menebak apa yang baru terjadi. Antarmuka baru dan antarmuka yang alur operasinya berubah, kerjakan dulu tiga ini:
 
-1. **主操作的反馈。** 按下立刻有回应，完成时交出一个结果：按钮陷下去再弹回，勾号画出来，数字滚到新值。
-2. **一处状态切换的来路。** 选中、展开、换视图、增删列表项时，让人看见东西从哪里来、到哪里去，见下文“界面过渡”。
-3. **第一次进入时的一次出场。** 主角先到，其余按阅读顺序跟上，只在首次进入时播放。
+1. **Feedback aksi utama.** Menekan langsung dijawab, menyelesaikan menyerahkan hasil: tombol tenggelam lalu memantul, centang tergambar, angka bergulir ke nilai baru.
+2. **Satu perpindahan status dengan asal yang terlihat.** Saat memilih, membuka, mengganti view, atau menambah-menghapus item daftar, biarkan orang melihat benda datang dari mana dan ke mana, lihat “Transisi antarmuka” di bawah.
+3. **Satu kemunculan saat pertama masuk.** Protagonis tiba lebih dulu, sisanya mengikuti urutan baca, dan hanya diputar saat pertama masuk.
 
-这三处之外再加的动效，每个都要承担反馈、引导、连续或品牌表达中的一项；滚动淡入、视差、跟随鼠标和装饰性循环最容易变成干扰。
+Animasi tambahan di luar tiga ini, masing-masing harus memikul salah satu: feedback, panduan, kontinuitas, atau ekspresi brand; fade-in saat scroll, paralaks, mengikuti kursor, dan loop dekoratif paling mudah menjadi gangguan.
 
-| 目的 | 适合考虑的方式 |
+| Tujuan | Cara yang layak dipertimbangkan |
 | --- | --- |
-| 按下、聚焦、展开或普通的状态变化 | 用浏览器原生的过渡，或已有组件自带的小过渡 |
-| 视图之间的切换、元素换位置 | 共享元素过渡，见下文“界面过渡” |
-| 拖拽、手势、位置和大小的变化、多个元素配合的动画 | 用项目里已有的成熟动效库 |
-| 特殊品牌画面、材质、复杂物理效果 | 图片、3D、着色器或预渲染视频，按需求取舍；什么时候用实时 3D 见 [素材](media.md) |
-| 用鼠标、触控或滚动控制一段叙事的进度 | 让动画的进度直接跟着输入走，往回滚和快速操作都要处理好；见 [滚动叙事](scroll-narrative.md) |
+| Penekanan, focus, membuka, atau pergantian status biasa | Transisi native browser, atau transisi kecil bawaan komponen yang sudah ada |
+| Pergantian antar view, elemen pindah posisi | Shared element transition, lihat “Transisi antarmuka” di bawah |
+| Drag, gesture, perubahan posisi dan ukuran, animasi kerja sama banyak elemen | Library animasi matang yang sudah ada di proyek |
+| Bidang brand khusus, material, efek fisika kompleks | Gambar, 3D, shader, atau video pra-render; pilih sesuai kebutuhan; kapan memakai 3D real-time lihat [Aset](media.md) |
+| Mengendalikan progres satu narasi lewat mouse, sentuhan, atau scroll | Biarkan progres animasi mengikuti input secara langsung; scroll mundur dan operasi cepat keduanya harus tertangani baik; lihat [Narasi Scroll](scroll-narrative.md) |
 
-需要精确控制状态的界面，用代码写动画；画面怎么变早就定好的，可以用生成的视频。要显示实时数据、要让人真的去操作的控件，不能用视频代替。
+Antarmuka yang butuh kendali status presisi, tulis animasinya dengan kode; bila perubahan gambarnya sudah pasti sejak awal, boleh memakai video hasil generate. Yang menampilkan data real-time atau kontrol yang benar-benar dioperasikan orang, tidak boleh digantikan video.
 
-## 手感
+## Feel
 
-动效的手感从方向的材质和调性推出，用“动作 + 实物”来命名和选参数（弹簧刚度 / 阻尼）：
+Feel animasi diturunkan dari material dan tone arah; beri nama dan pilih parameter dengan “aksi + benda nyata” (stiffness / damping untuk spring):
 
-| 动作 | 实物参照 | 刚度 / 阻尼 | 适合 |
+| Aksi | Referensi benda nyata | Stiffness / damping | Cocok untuk |
 | --- | --- | --- | --- |
-| 咔嗒 | 磁铁吸合、卡扣、拨动开关 | 350–400 / 10–15 | 按钮、开关、下拉展开 |
-| 滑入 | 气压闭门器、抽屉阻尼 | 250–300 / 20–25 | 底部面板、抽屉、折叠 |
-| 流淌 | 倒蜂蜜、雾气弥散 | 150–200 / 30–40 | 页面转场、主视觉出现 |
-| 砸落 | 锤击、重物落桌 | 400–500 / 5–10 | 确认选择、完成反馈 |
-| 回弹 | 橡皮球、蹦床 | 300 / 8 | 庆祝提示、儿童与游戏 |
-| 漂浮 | 氦气球、飘絮 | 100 / 25 | 冥想、梦幻场景、空闲循环 |
+| Klik | Magnet menempel, buckle, saklar tuas | 350–400 / 10–15 | Tombol, switch, dropdown membuka |
+| Meluncur masuk | Penutup pintu pneumatik, damping laci | 250–300 / 20–25 | Panel bawah, drawer, lipatan |
+| Mengalir | Menuang madu, kabut menyebar | 150–200 / 30–40 | Transisi halaman, kemunculan visual utama |
+| Menghantam jatuh | Palu, benda berat jatuh ke meja | 400–500 / 5–10 | Konfirmasi pilihan, feedback selesai |
+| Memantul | Bola karet, trampolin | 300 / 8 | Notifikasi perayaan, produk anak dan game |
+| Melayang | Balon helium, serpihan kapas | 100 / 25 | Meditasi, scene fantasi, loop idle |
 
-重的材质（石、金属、陶）偏咔嗒和砸落，轻的材质（纸、布、雾）偏漂浮和流淌；高频操作用短促的动作，少见的品牌时刻才用绵长的。喧闹粗粝的方向可以用硬切、80–150ms 的线性跳变和抽帧，作为有意的品牌表达；被禁止的只是没有考虑过的默认缓动。
+Material berat (batu, logam, keramik) condong ke klik dan menghantam jatuh; material ringan (kertas, kain, kabut) condong ke melayang dan mengalir; operasi frekuensi tinggi memakai aksi pendek, dan momen brand yang jarang baru memakai yang panjang. Arah yang riuh dan kasar boleh memakai hard cut, lompatan linear 80–150ms, dan drop frame sebagai ekspresi brand yang disengaja; yang dilarang hanyalah easing default yang tidak pernah dipikirkan.
 
-过冲幅度跟着面积走。整页、面板这类大面积的东西，过冲不超过 1–2%，否则整块画面会晃；徽章、勾选标记这类小东西可以过冲 10–20%，显得有弹性。表里阻尼偏低的参数只用在小物件上。
+Amplitudo overshoot mengikuti luas area. Halaman penuh dan panel berarea besar, overshoot tidak lebih dari 1–2%, kalau tidak seluruh gambar bergoyang; badge dan tanda centang benda kecil boleh overshoot 10–20% agar terasa elastis. Parameter dengan damping rendah di tabel hanya dipakai untuk benda kecil.
 
-网页可以把弹簧写成缓动曲线：按刚度和阻尼对位移做数值积分，取 20–30 个采样点写进 `linear()`，时长取位移稳定在终点 0.5% 以内的时刻。不支持的浏览器退回相近的 `cubic-bezier`。
+Web bisa menuliskan spring sebagai kurva easing: integrasikan numerik perpindahan berdasarkan stiffness dan damping, ambil 20–30 titik sampel masukkan ke `linear()`, durasi diambil pada saat perpindahan stabil di dalam 0,5% dari titik akhir. Browser yang tidak mendukung mundur ke `cubic-bezier` yang mirip.
 
-## 呼应：让动作彼此接上
+## Keterhubungan: biarkan aksi-aksi tersambung
 
-一个动作引起的变化沿同一条路传下去，前一段的终点是下一段的起点；不要按钮、面板和数字各动各的。
+Perubahan yang dipicu satu aksi merambat menyusuri jalur yang sama; titik akhir segmen sebelumnya adalah titik awal segmen berikutnya. Jangan biarkan tombol, panel, dan angka bergerak masing-masing.
 
-- **从被操作的地方出发。** 点“加入购物袋”，商品缩成一个点飞进袋子，袋子上的数字跟着跳一下；删掉一行，它朝删除按钮的方向收走，下面的行补上来。
-- **一次切换朝一个方向。** 卡片往左滑，标题、序号和底色也往左换；数字往上滚，进度也往上涨。方向一乱，就成了几段互不相干的动画。
-- **主角先动，其余被带动。** 被影响的东西晚 40–80ms 跟上，幅度更小，像被主角拉过去的。全部同时起跑、同样幅度，看起来只是一起闪了一下。
-- **形状接力。** 上一个状态里的元素变成下一个状态里的元素：按钮展开成面板，搜索图标拉长成输入框，播放键变成暂停键。用户一眼看出它们是同一个东西。
-- **动法和画面是同一种材质。** 动作的轻重、停顿和回弹从方向卡的生成引擎和控件语法推出。
+- **Berangkat dari tempat yang dioperasikan.** Tekan “Tambah ke tas”, produk mengecil menjadi satu titik dan terbang masuk ke tas, angka di tas melompat sekali; hapus satu baris, ia menguncup ke arah tombol hapus, baris di bawahnya naik mengisi.
+- **Satu perpindahan satu arah.** Kartu bergeser ke kiri, judul, nomor, dan warna latar ikut berganti ke kiri; angka menggulir naik, progres juga naik. Begitu arahnya kacau, menjadi beberapa animasi yang tak berhubungan.
+- **Protagonis bergerak dulu, sisanya terseret.** Yang terdampak menyusul dalam 40–80ms dengan amplitudo lebih kecil, seperti ditarik oleh protagonis. Semua berlari serentak dengan amplitudo sama hanya terlihat berkedip bersama.
+- **Bentuk bertitipan.** Elemen di status sebelumnya menjadi elemen di status berikutnya: tombol mengembang menjadi panel, ikon pencarian memanjang menjadi input, tombol play menjadi pause. Pengguna sekali lihat tahu itu benda yang sama.
+- **Cara bergerak dan gambar adalah material yang sama.** Berat-ringannya aksi, jeda, dan pantulan diturunkan dari mesin generatif dan tata bahasa kontrol di kartu arah.
 
-### 巧思从产品里找
+### Sentuhan cerdas dicari dari produk
 
-巧思是让一处动效讲出这个产品自己的事，不是加更多花样。写成一句：这个产品里的哪样东西，因为用户的哪个动作，发生了只有它才会有的变化。
+Sentuhan cerdas membuat satu animasi menceritakan hal khas produk ini sendiri, bukan menambah lagi variasi. Tuliskan dalam satu kalimat: benda apa di produk ini, karena aksi pengguna yang mana, mengalami perubahan yang hanya terjadi padanya.
 
-找不到这样的动作，就把三处基本动效做准，不硬造。一页最多一两处巧思，其余动效安静、短促。
+Bila tak menemukan aksi seperti itu, kerjakan tiga animasi dasar dengan benar; jangan memaksakan. Satu halaman paling banyak satu-dua sentuhan cerdas, animasi lainnya tenang dan pendek.
 
-## 界面过渡
+## Transisi antarmuka
 
-**连续。** 用户点的东西就是下一屏的主角。从列表进入详情，被点的那一项放大成详情，其他项淡出；返回时它缩回原位，页面回到原来的滚动位置。原位已经不在视口里，就先把它滚到可见，再缩回去。
+**Kontinu.** Hal yang diklik pengguna adalah protagonis layar berikutnya. Dari daftar masuk detail, item yang diklik membesar menjadi detail, item lain memudar; kembali ia mengecil ke posisi semula, dan halaman kembali ke posisi scroll semula. Bila posisi aslinya sudah keluar viewport, scroll dulu sampai terlihat, baru mengecil kembali.
 
-**方向一致。** 下一项从右边进，上一项从左边进；打开和关闭互为逆过程；侧面板从它所在的那一侧滑入滑出。方向随意的动画比没有动画更让人迷惑。
+**Arah konsisten.** Item berikutnya masuk dari kanan, item sebelumnya dari kiri; membuka dan menutup saling berkebalikan; panel samping meluncur masuk-keluar dari sisi tempatnya berada. Animasi dengan arah sembarangan lebih membingungkan daripada tanpa animasi.
 
-**只变形状时不做交叉淡化。** 切换视口、筛选、展开说明、缩放，这类变化里内容还是同一个东西，只是尺寸和位置变了。让外框直接变形，内容立即显示新状态。交叉淡化会让新旧两张缩放不同的画面叠在一起，出现重影。只有内容本身换了，才淡入淡出。
+**Hanya berubah bentuk, jangan cross-fade.** Mengganti viewport, filter, membuka penjelasan, zoom — pada perubahan seperti ini isinya tetap benda yang sama, yang berubah hanya ukuran dan posisi. Biarkan bingkai luar bermetamorfosis langsung dan konten langsung menampilkan status baru. Cross-fade menumpuk dua gambar dengan skala berbeda dan menghasilkan bayangan ganda. Fade hanya dipakai bila isinya memang berganti.
 
-**离开、加入、留下分开处理。** 被移除的淡出，新加入的淡入，留下的滑到新位置。三者用同一种淡化，列表就会整片闪烁。
+**Keluar, masuk, dan bertahan dipisah.** Yang dihapus memudar keluar, yang baru masuk memudar masuk, yang bertahan meluncur ke posisi baru. Bila ketiganya memakai fade yang sama, seluruh daftar berkedip serempak.
 
-**选中指示用一块会移动的滑块。** 分段控件、标签页、列表当前项，都用同一块底板滑到新位置，而不是旧的熄灭、新的点亮。选项宽度不同时，宽度一起过渡。首次显示、窗口缩放和字体加载完成后直接放到位，不要从 0 宽度长出来。
+**Indikator selection memakai satu slider yang berpindah.** Segmented control, tab, item aktif daftar — semuanya memakai bidang dasar yang sama yang meluncur ke posisi baru, bukan yang lama padam dan yang baru menyala. Saat lebar opsinya berbeda, lebarnya ikut bertransisi. Saat pertama tampil, saat jendela di-zoom, dan setelah font selesai dimuat, langsung diletakkan di posisinya; jangan tumbuh dari lebar 0.
 
-**先准备好目的地。** 目的地要加载的内容，例如图片或内嵌页面，先加载或预先渲染好，否则动画会停在一块白屏上。需要来回切换的视图预先渲染并留在页面里，切换时只移动，不重新加载。内容加载完成后再淡入，不先闪一下白底。
+**Siapkan dulu tujuannya.** Konten yang harus dimuat di tujuan — misalnya gambar atau halaman ter-embed — dimuat atau pra-render dulu; kalau tidak, animasi berhenti di satu bidang putih. View yang bolak-balik diganti pra-render dan dibiarkan di dalam halaman; saat berganti hanya dipindahkan, tidak dimuat ulang. Fade-in dilakukan setelah konten selesai dimuat, bukan berkedip putih dulu.
 
-**离开比进入快。** 退出时长约为进入的 60–70%，用加速曲线；进入用减速曲线或弹簧。
+**Keluar lebih cepat dari masuk.** Durasi keluar sekitar 60–70% dari masuk, memakai kurva akselerasi; masuk memakai kurva deselerasi atau spring.
 
-**到头要有反馈。** 已经是第一项或最后一项时，轻轻顶一下（往返 10–15px），而不是毫无反应。
+**Sampai ujung harus ada feedback.** Saat sudah di item pertama atau terakhir, dorongkan sekali dengan lembut (bolak-balik 10–15px), bukan tanpa reaksi.
 
-### 整页转场的稳定性取舍
+### Trade-off stabilitas transisi satu halaman penuh
 
-整页切换和组件的过渡不一样：旧页面要卸载，新页面要挂载。按稳不稳、难不难做，分三类：
+Pergantian halaman penuh berbeda dari transisi komponen: halaman lama harus di-unload, halaman baru harus di-mount. Dibagi tiga menurut seberapa stabil dan seberapa sulit dibuat:
 
-- **遮罩式（Curtain / Wipe）。** 用一块纯色、纹理或几何形状划过或盖住整个屏幕，趁挡住的时候卸掉旧页、挂上新页。它最简单、最稳，两个页面的结构互不相干，绝大多数页面都适合。
-- **交叠式（Overlapping）。** 新旧两页同时在屏幕上，互相错开、推挤，或者分层淡入淡出。看起来连贯，但两页的 DOM 要同时存在，层级和内存都要管好。
-- **共享元素式（Shared Element）。** 一个关键元素从旧页一直变形到新页，例如缩略图放大成详情页的主图。看起来最顺，也最容易出问题：用户快速双击、中途打断、后退，或者视口变了，都容易错位和闪烁，所以必须留好退路，出问题时直接显示到位的状态。
+- **Curtain / wipe.** Satu bidang warna solid, tekstur, atau bentuk geometris menyapu atau menutupi seluruh layar; selagi menutup, halaman lama dilepas dan halaman baru dipasang. Paling sederhana dan paling stabil; struktur kedua halaman bebas tak berhubungan — cocok untuk hampir semua halaman.
+- **Overlapping.** Halaman lama dan baru tampil bersamaan di layar, bergeser, saling mendorong, atau fade berlapis. Terlihat mengalir, tetapi DOM kedua halaman harus hidup bersamaan; lapisan dan memorinya harus dikelola baik.
+- **Shared element.** Satu elemen kunci bermetamorfosis dari halaman lama terus ke halaman baru — misalnya thumbnail membesar menjadi gambar utama halaman detail. Terlihat paling mulus dan paling rawan bermasalah: dobel-klik cepat, interupsi di tengah, back, atau perubahan viewport semuanya mudah menyebabkan salah posisi dan kedipan; wajib menyediakan jalan mundur — bila bermasalah, langsung tampilkan status final di posisinya.
 
-第一次进站的加载屏（Splash），可以在等大文件加载的时候放一小段叙事或进度；站内的页面跳转，时长按下面“时长和幅度”里整页切换的取值，不让转场挡着用户看内容。
+Splash saat pertama masuk situs boleh menampilkan narasi atau progres pendek selagi menunggu file besar dimuat; perpindahan halaman di dalam situs memakai nilai durasi pergantian halaman penuh pada “Durasi dan amplitudo” di bawah, dan tidak membiarkan transisi menghalangi pengguna melihat isi.
 
-## 时长和幅度
+## Durasi dan amplitudo
 
-| 对象 | 时长 | 要点 |
+| Objek | Durasi | Poin |
 | --- | --- | --- |
-| 按下、开关、选中指示 | 150–300ms | 按下缩到 0.96–0.98，按下时立即生效（约 80ms），松开再弹回 |
-| 下拉、气泡、提示 | 180–250ms | 从触发点方向展开，缩放从 0.96 左右开始，不从 0 开始 |
-| 面板、抽屉、侧栏 | 250–400ms | 按移动距离取值，越远越长 |
-| 整页或视图切换 | 350–500ms | 超过 500ms 就会让人等 |
-| 首次进入时依次出现 | 每项间隔 40–80ms | 总长不超过 600ms；只在首次进入时播放，重新渲染和恢复状态时不重播 |
+| Tekan, switch, indikator selection | 150–300ms | Saat ditekan mengecil ke 0.96–0.98, efektif seketika saat ditekan (±80ms), memantul kembali saat dilepas |
+| Dropdown, bubble, tooltip | 180–250ms | Membuka dari arah pemicunya, skala mulai sekitar 0.96, bukan dari 0 |
+| Panel, drawer, sidebar | 250–400ms | Nilai diambil dari jarak gerak; makin jauh makin panjang |
+| Pergantian halaman penuh atau view | 350–500ms | Lebih dari 500ms membuat orang menunggu |
+| Kemunculan berurutan saat pertama masuk | jeda antar item 40–80ms | Total tidak lebih dari 600ms; hanya diputar saat pertama masuk, tidak diputar ulang saat re-render dan pemulihan status |
 
-这张表管的是界面操作。游戏和抽奖的演出时长见 [游玩](play.md)。
+Tabel ini mengatur operasi antarmuka. Durasi pertunjukan game dan undian lihat [Permainan](play.md).
 
-悬停上浮 2–4px，阴影随之加深。位移超过 20px 的悬停效果会显得轻浮。
+Hover terangkat 2–4px, bayangan ikut menguat. Efek hover dengan perpindahan lebih dari 20px terkesan picak.
 
-## 看不见的结果要说出来
+## Hasil yang tak terlihat harus diucapkan
 
-一次点击产生了看不见的副作用，例如复制到剪贴板、后台保存、发送，就用一条短暂的提示说出结果本身，例如“已复制：……”，而不是只说“成功”。确认类的时刻，例如选中或完成，可以用一次小幅弹出，只在状态第一次变化时播放，重复点击不重播。
+Bila satu klik menimbulkan efek samping yang tak terlihat — tersalin ke clipboard, tersimpan di background, terkirim — sampaikan hasilnya sendiri dengan satu notifikasi singkat, misalnya “Tersalin: …”, bukan sekadar “berhasil”. Momen konfirmasi seperti selection atau penyelesaian boleh memakai satu pop kecil, hanya diputar saat status berubah pertama kali; tekanan berulang tidak memutar ulang.
 
-## 体验与性能
+## Pengalaman dan performa
 
-项目里已有的动效节奏和组件能力先沿用。经常要做的操作，反馈要立刻给，不让动画拖慢事情本身。
+Ritme animasi dan kemampuan komponen yang sudah ada di proyek dipakai lebih dulu. Operasi yang sering dilakukan, feedback-nya langsung; jangan biarkan animasi memperlambat hal itu sendiri.
 
-动画要能被打断。连续快速操作时，新动画从当前位置接着走，不跳回起点重播。CSS 过渡会从当前值重新出发，适合高频切换；关键帧动画会从头重播，适合一次性的出场。业务状态立即更新，不等动画结束。
+Animasi harus bisa diinterupsi. Saat dioperasikan cepat beruntun, animasi baru melanjutkan dari posisi saat ini, tidak melompat ke awal dan memutar ulang. Transisi CSS berangkat lagi dari nilai saat ini, cocok untuk pergantian frekuensi tinggi; keyframe animation diputar ulang dari awal, cocok untuk kemunculan sekali jalan. Status bisnis diperbarui seketika, tidak menunggu animasi selesai.
 
-网页上连续播放的动画，优先只动变换和透明度，过渡里只写会变的那几个属性；很小的指示块可以直接过渡宽高。每一帧都要执行的代码，要有停下来和清理的条件，不要一会儿读布局、一会儿写布局地来回交替；滚出屏幕或没事可做时就停。整页过渡期间页面通常点不动，所以整页过渡要短。
+Animasi yang berjalan kontinu di web, utamakan hanya menganimasikan transform dan opacity; di dalam transisi hanya tulis properti yang benar-benar berubah. Blok indikator yang sangat kecil boleh langsung mentransisi width-height. Kode yang dieksekusi tiap frame harus punya syarat berhenti dan pembersihan; jangan bolak-balik membaca lalu menulis layout; berhenti saat keluar layar atau tak ada yang dikerjakan. Selama transisi halaman penuh, halaman biasanya tak bisa diklik, jadi transisi halaman penuh harus pendek.
 
-有明显位移、缩放或滚动特效的地方，要照顾开了“减少动态效果”的用户：这时所有状态直接到位，内容一样不少。必要的信息和主要的操作，不能等自动播放、声音或动画播完才出现。
+Tempat dengan perpindahan, zoom, atau efek scroll yang mencolok, perlakukan pengguna yang mengaktifkan “reduce motion”: saat itu semua status langsung di posisinya, isinya tidak berkurang sedikit pun. Informasi yang penting dan aksi utama tidak boleh menunggu autoplay, suara, atau animasi selesai baru muncul.
 
-## 检查动效
+## Periksa animasi
 
-按正常速度操作一遍，再往回操作一次、快速连按几次：没有重影和跳动，元素不突然出现，不从奇怪的位置飞来，不卡在中间状态。开启“减少动态效果”后内容直接可读。只有实际测量后才报告帧率或性能改善。
+Operasikan sekali dengan kecepatan normal, lalu operasikan mundur sekali dan tekan cepat beberapa kali: tidak ada bayangan ganda dan lompatan, elemen tidak muncul tiba-tiba, tidak terbang dari posisi aneh, tidak terjebak di status tengah. Setelah “reduce motion” aktif, konten langsung terbaca. Frame rate atau perbaikan performa hanya dilaporkan setelah diukur nyata.
 
-## 网页实现提示
+## Tips implementasi web
 
-- 浏览器原生的视图过渡适合做“同一对象从一处变到另一处”：给前后两个状态里代表同一对象的元素起同一个过渡名，名字在同一时刻必须唯一。
-- 只变形状的过渡里，隐藏旧快照、直接显示新状态，就不会出现重影。
-- 过渡伪元素后面只能跟少数伪类，例如 `:only-child`；写成 `:not(...)` 会让整条规则失效。需要按场景区分规则时，在根元素上加一个属性来切换。
-- 内嵌页面和图片在过渡里会被截成快照；目的地没加载完就开始过渡，会以空白结束。
+- View transition native browser cocok untuk “benda yang sama berubah dari satu tempat ke tempat lain”: beri nama transisi yang sama pada elemen yang mewakili benda yang sama di status sebelum dan sesudah; nama itu harus unik pada satu saat yang sama.
+- Di transisi yang hanya berubah bentuk, sembunyikan snapshot lama dan langsung tampilkan status baru, maka bayangan ganda tidak muncul.
+- Pseudo-elemen transisi hanya bisa mengikuti sedikit pseudo-class seperti `:only-child`; menulis `:not(...)` membuat seluruh rule gagal. Bila perlu membedakan rule per skenario, tambahkan satu atribut di elemen root untuk mengganti.
+- Halaman ter-embed dan gambar akan terpotong menjadi snapshot di dalam transisi; bila transisi dimulai sebelum tujuan selesai dimuat, hasilnya bidang kosong.
