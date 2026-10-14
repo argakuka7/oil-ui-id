@@ -16,6 +16,7 @@ done
 missing_python_notice() {
     case ${LC_ALL:-${LC_MESSAGES:-$LANG}} in
         zh*|ZH*) printf '%s\n' '版本检查需要 Python 3，本次没有检查更新。' ;;
+        id*|ID*) printf '%s\n' 'Pemeriksaan versi membutuhkan Python 3, pemeriksaan pembaruan ini tidak dijalankan.' ;;
         *) printf '%s\n' 'Version checks need Python 3. This update check did not run.' ;;
     esac
 }

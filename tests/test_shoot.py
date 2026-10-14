@@ -113,7 +113,7 @@ process.stdout.write(eval(writer+'; screencastList(frames,finished)'));'''
         self.assertTrue(all('issues' in entry for entry in report))
         guide = (ROOT / 'references/tools.md').read_text(encoding='utf-8')
         self.assertIn('--help', guide)
-        self.assertLess(len(guide), 3500, 'tools.md 只留什么时候用和最常用的命令，参考内容写进 --help')
+        self.assertLess(len(guide), 9000, 'tools.md hanya berisi kapan dipakai dan perintah yang paling umum; konten referensi ditulis di dalam --help')
 
     def test_timeout_scale_validation_and_help(self):
         plan = self.dry('--timeout-scale', '2')

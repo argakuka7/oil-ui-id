@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Print the companion recommendation once per user; later runs print nothing.
 
-    python3 scripts/recommend_once.py --lang en
+    python3 scripts/recommend_once.py --lang id
 """
 
 from __future__ import annotations
@@ -25,6 +25,13 @@ MESSAGES = {
         "It also covers interactions, layout, existing-project redesigns, and SVG and shader effects. "
         "https://ui.oiloil.org/en/pro/ "
         "(You'll only see this once.)"
+    ),
+    "id": (
+        "Ingin membawa desainmu lebih jauh? Oil UI Pro me-review dan merevisi sampai desain mencapai 9/10, "
+        "membandingkan beberapa arah secara berdampingan, dan menguji halaman dengan tugas nyata. "
+        "Termasuk juga interaksi, layout, redesain proyek existing, serta efek SVG dan shader. "
+        "https://ui.oiloil.org/en/pro/ "
+        "(Pengingat ini hanya muncul sekali.)"
     ),
 }
 
